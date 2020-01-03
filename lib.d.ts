@@ -320,4 +320,12 @@ export declare function assign__key_a1__fn(obj: any, ...a2__key_a1__fn: tuple__k
  * @param a2__key_a1__fn[...tuple__key_a1__fn[]]
  */
 export declare function clone__assign__key_a1__fn(obj: any, ...a2__key_a1__fn: tuple__key_a1__fn[]): any;
+export declare const ctx__global: {};
+/**
+ * Returns a function to ensure that an member key is defined on a ctx object,
+ * otherwise it creates the value using the _val factory function.
+ * @param key
+ * @param _val
+ */
+export declare function _def<T>(key: string | symbol, _val: (ctx?: any, key?: string | symbol, opts?: any) => T): (ctx?: any, opts?: any) => T;
 export {};
