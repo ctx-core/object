@@ -555,6 +555,7 @@ export function clone__assign__key_a1__fn(obj, ...a2__key_a1__fn:tuple__key_a1__
 	return assign__key_a1__fn(clone(obj), ...a2__key_a1__fn)
 }
 export const ctx__global = {}
+const pending = Symbol('pending')
 /**
  * Returns a function to ensure that an member key is defined on a ctx object,
  * otherwise it creates the value using the _val factory function.
@@ -568,7 +569,10 @@ export function _def<T>(
 	return (ctx?, opts?)=>{
 		if (!ctx) ctx = ctx__global
 		if (!ctx[key] || opts?.force) {
+			ctx[key] = pending
 			ctx[key] = _val(ctx, key, opts)
+		} else if (ctx[key] === pending) {
+			throw `_def: key '${key.toString()}' has a circular dependency`
 		}
 		return ctx[key]
 	}
