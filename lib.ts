@@ -562,7 +562,7 @@ const pending = Symbol('pending')
  * @param key
  * @param _val
  */
-export function _def<T>(
+export function _be<T>(
 	key:string|symbol,
 	_val:(ctx?:any, key?:string|symbol, opts?:any)=>T,
 ):(ctx?:any, opts?:any)=>T {
@@ -572,8 +572,9 @@ export function _def<T>(
 			ctx[key] = pending
 			ctx[key] = _val(ctx, key, opts)
 		} else if (ctx[key] === pending) {
-			throw `_def: key '${key.toString()}' has a circular dependency`
+			throw `_be: key '${key.toString()}' has a circular dependency`
 		}
 		return ctx[key]
 	}
 }
+export const _b = _be
