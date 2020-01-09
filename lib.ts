@@ -554,7 +554,7 @@ export function assign__key_a1__fn(obj, ...a2__key_a1__fn:tuple__key_a1__fn[]) {
 export function clone__assign__key_a1__fn(obj, ...a2__key_a1__fn:tuple__key_a1__fn[]) {
 	return assign__key_a1__fn(clone(obj), ...a2__key_a1__fn)
 }
-export const ctx__global = {}
+export const global_ctx = {}
 const pending = Symbol('pending')
 /**
  * Returns a function to ensure that an member key is defined on a ctx object,
@@ -567,7 +567,7 @@ export function _be<T>(
 	_val:(ctx?:any, key?:string|symbol, opts?:any)=>T,
 ):(ctx?:any, opts?:any)=>T {
 	return (ctx?, opts?)=>{
-		if (!ctx) ctx = ctx__global
+		if (!ctx) ctx = global_ctx
 		if (!ctx[key] || opts?.force) {
 			ctx[key] = pending
 			ctx[key] = _val(ctx, key, opts)
