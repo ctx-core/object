@@ -2,7 +2,6 @@
 	"name": "@ctx-core/object",
 	"version": "8.0.13",
 	"description": "ctx-core object",
-	"type": "module",
 	"main": "lib.js",
 	"module": "lib.js",
 	"types": "lib.ts",
