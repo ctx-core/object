@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "8.0.13",
+	"version": "8.0.14",
 	"description": "ctx-core object",
 	"main": "lib.js",
 	"module": "lib.js",
@@ -30,7 +30,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@ctx-core/function": "^13.0.5"
+		"@ctx-core/function": "^13.0.6"
 	},
 	"devDependencies": {
 		"typescript": "^3.9.3"
