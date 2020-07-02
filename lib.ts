@@ -556,6 +556,8 @@ export function clone__assign__key_a1__fn(obj, ...a2__key_a1__fn:tuple__key_a1__
 }
 export const global_ctx = {}
 const pending = Symbol('pending')
+export type Be<T> = (ctx?:any, opts?:any)=>T
+export type B<T> = Be<T>
 /**
  * Returns a function to ensure that an member key is defined on a ctx object,
  * otherwise it creates the value using the _val factory function.
@@ -572,6 +574,7 @@ export function _be<T>(
 			ctx[key] = pending
 			ctx[key] = _val(ctx, key, opts)
 		} else if (ctx[key] === pending) {
+			console.trace(`_be: key '${key.toString()}' has a circular dependency`)
 			throw `_be: key '${key.toString()}' has a circular dependency`
 		}
 		return ctx[key]
