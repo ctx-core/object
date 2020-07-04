@@ -555,7 +555,7 @@ export function clone__assign__key_a1__fn(obj, ...a2__key_a1__fn:tuple__key_a1__
 	return assign__key_a1__fn(clone(obj), ...a2__key_a1__fn)
 }
 export const global_ctx = {}
-const pending = Symbol('pending')
+const pending_symbol = Symbol('pending')
 export type Be<T> = (ctx?:any, opts?:any)=>T
 export type B<T> = Be<T>
 /**
@@ -566,14 +566,21 @@ export type B<T> = Be<T>
  */
 export function _be<T>(
 	key:string|symbol,
-	_val:(ctx?:any, key?:string|symbol, opts?:any)=>T,
+	_val:(ctx?:any, key?:string|symbol, opts?:any)=>T|void,
 ):(ctx?:any, opts?:any)=>T {
 	return (ctx?, opts?)=>{
 		if (!ctx) ctx = global_ctx
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
-			ctx[key] = pending
-			ctx[key] = _val(ctx, key, opts)
-		} else if (ctx[key] === pending) {
+			if (!ctx[pending_symbol]) ctx[pending_symbol] = {}
+			const pending = ctx[pending_symbol]
+			pending[key] = true
+			const val = _val(ctx, key, opts)
+			if (!ctx.hasOwnProperty(key)) {
+				if (val === undefined) throw `_be: ${String(key)}: function must return a non-undefined value or directly set the ctx with the property ${String(key)}`
+				ctx[key] = val;
+			}
+			delete pending[key]
+		} else if (ctx[pending_symbol]?.[key]) {
 			console.trace(`_be: key '${key.toString()}' has a circular dependency`)
 			throw `_be: key '${key.toString()}' has a circular dependency`
 		}
