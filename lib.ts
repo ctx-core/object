@@ -570,7 +570,7 @@ export function _be<T>(
 ):(ctx?:any, opts?:any)=>T {
 	return (ctx?, opts?)=>{
 		if (!ctx) ctx = global_ctx
-		if (!ctx[key] || opts?.force) {
+		if (!ctx.hasOwnProperty(key) || opts?.force) {
 			ctx[key] = pending
 			ctx[key] = _val(ctx, key, opts)
 		} else if (ctx[key] === pending) {
