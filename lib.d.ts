@@ -329,6 +329,6 @@ export declare type B<T> = Be<T>;
  * @param key
  * @param _val
  */
-export declare function _be<T>(key: string | symbol, _val: (ctx?: any, key?: string | symbol, opts?: any) => T | void): (ctx?: any, opts?: any) => T;
+export declare function _be<T>(key: string | symbol, _val: (ctx?: any, key?: (string | symbol), opts?: any) => (void | T)): (ctx?: any, opts?: any) => T;
 export declare const _b: typeof _be;
 export {};

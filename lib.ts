@@ -565,9 +565,9 @@ export type B<T> = Be<T>
  * @param _val
  */
 export function _be<T>(
-	key:string|symbol,
-	_val:(ctx?:any, key?:string|symbol, opts?:any)=>T|void,
-):(ctx?:any, opts?:any)=>T {
+    key: string | symbol,
+    _val: (ctx?: any, key?: (string | symbol), opts?: any) => (void | T),
+):(ctx?: any, opts?: any) => T {
 	return (ctx?, opts?)=>{
 		if (!ctx) ctx = global_ctx
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
