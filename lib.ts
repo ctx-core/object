@@ -190,16 +190,41 @@ export function ensure(obj, ...a1__ctx__rest) {
 	return obj
 }
 /**
- * New `obj` with only `a1__key`.
- * @param {*} obj
- * @param {...string} a1__key
+ * New `obj` without `key_a1` keys.
+ * @param obj
+ * @param {...string} key_a1
  * @returns {{}}
  */
-export function pick(obj, ...a1__key) {
+export function omit(obj, ...key_a1:string[]) {
 	if (!obj) return
 	let memo = {}
-	for (let i = 0; i < a1__key.length; i++) {
-		const key = a1__key[i]
+	for (let i = 0; i < key_a1.length; i++) {
+		const key = key_a1[i]
+		if (!(key in obj)) {
+			memo[key] = obj[key]
+		}
+	}
+	return memo
+}
+/**
+ * Returns a function that calls [omit](#omit) with the given `...key_a1`
+ * @param {...string}key_a1
+ * @returns {function(*=, ...[*]): {}}
+ */
+export function _omit(...key_a1) {
+	return (obj, ...key_a1_)=>omit(obj, ...key_a1, ...key_a1_)
+}
+/**
+ * New `obj` with only `key_a1` keys.
+ * @param {*} obj
+ * @param {...string} key_a1
+ * @returns {{}}
+ */
+export function pick(obj, ...key_a1:string[]) {
+	if (!obj) return
+	let memo = {}
+	for (let i = 0; i < key_a1.length; i++) {
+		const key = key_a1[i]
 		if (key in obj) {
 			memo[key] = obj[key]
 		}
@@ -207,24 +232,24 @@ export function pick(obj, ...a1__key) {
 	return memo
 }
 /**
- * Returns a function that calls [pick](#pick) with the given `...a1__key`
- * @param {...string}a1__key
+ * Returns a function that calls [pick](#pick) with the given `...key_a1`
+ * @param {...string}key_a1
  * @returns {function(*=, ...[*]): {}}
  */
-export function _pick(...a1__key) {
-	return (obj, ...a1__key__)=>pick(obj, ...a1__key, ...a1__key__)
+export function _pick(...key_a1) {
+	return (obj, ...key_a1_)=>pick(obj, ...key_a1, ...key_a1_)
 }
 /**
  * Returns object with picked values,
  * not including including inherited property values (i.e. if hasOwnProperty is false).
  * @param {*} obj
- * @param {...string} a1__key
+ * @param {...string} key_a1
  */
-export function pick__hasOwnProperty(obj, ...a1__key) {
+export function pick__hasOwnProperty(obj, ...key_a1) {
 	if (!obj) return
 	let memo = {}
-	for (let i = 0; i < a1__key.length; i++) {
-		const key = a1__key[i]
+	for (let i = 0; i < key_a1.length; i++) {
+		const key = key_a1[i]
 		if (obj.hasOwnProperty(key)) memo[key] = obj[key]
 	}
 	return memo

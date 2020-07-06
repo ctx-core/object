@@ -113,25 +113,38 @@ export declare function merge(target: any, ...a1__source: any[]): any;
  */
 export declare function ensure(obj: any, ...a1__ctx__rest: any[]): any;
 /**
- * New `obj` with only `a1__key`.
- * @param {*} obj
- * @param {...string} a1__key
+ * New `obj` without `key_a1` keys.
+ * @param obj
+ * @param {...string} key_a1
  * @returns {{}}
  */
-export declare function pick(obj: any, ...a1__key: any[]): {};
+export declare function omit(obj: any, ...key_a1: string[]): {};
 /**
- * Returns a function that calls [pick](#pick) with the given `...a1__key`
- * @param {...string}a1__key
+ * Returns a function that calls [omit](#omit) with the given `...key_a1`
+ * @param {...string}key_a1
  * @returns {function(*=, ...[*]): {}}
  */
-export declare function _pick(...a1__key: any[]): (obj: any, ...a1__key__: any[]) => {};
+export declare function _omit(...key_a1: any[]): (obj: any, ...key_a1_: any[]) => {};
+/**
+ * New `obj` with only `key_a1` keys.
+ * @param {*} obj
+ * @param {...string} key_a1
+ * @returns {{}}
+ */
+export declare function pick(obj: any, ...key_a1: string[]): {};
+/**
+ * Returns a function that calls [pick](#pick) with the given `...key_a1`
+ * @param {...string}key_a1
+ * @returns {function(*=, ...[*]): {}}
+ */
+export declare function _pick(...key_a1: any[]): (obj: any, ...key_a1_: any[]) => {};
 /**
  * Returns object with picked values,
  * not including including inherited property values (i.e. if hasOwnProperty is false).
  * @param {*} obj
- * @param {...string} a1__key
+ * @param {...string} key_a1
  */
-export declare function pick__hasOwnProperty(obj: any, ...a1__key: any[]): {};
+export declare function pick__hasOwnProperty(obj: any, ...key_a1: any[]): {};
 /**
  * Does not include `a1__keys` from `obj`
  * @param {*} obj
