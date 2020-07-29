@@ -105,12 +105,13 @@ export function clone(...arg_a1) {
 	return assign({}, ...arg_a1)
 }
 /**
- * Performs a deep clone of the assigned arguments
+ * Performs a deep clone of the value
  * @returns {*}
  */
-export function clone__deep(...arg_a1) {
-	return JSON.parse(JSON.stringify(clone(...arg_a1)))
+export function deep_clone(obj: any) {
+	return JSON.parse(JSON.stringify(obj))
 }
+export const clone__deep = deep_clone
 /**
  * Mixin properties from a1__source into target
  * @param {Object} target

@@ -75,10 +75,11 @@ export declare function assign__unless__null(obj: any, ...arg_a1: any[]): any;
  */
 export declare function clone(...arg_a1: any[]): any;
 /**
- * Performs a deep clone of the assigned arguments
+ * Performs a deep clone of the value
  * @returns {*}
  */
-export declare function clone__deep(...arg_a1: any[]): any;
+export declare function deep_clone(obj: any): any;
+export declare const clone__deep: typeof deep_clone;
 /**
  * Mixin properties from a1__source into target
  * @param {Object} target
