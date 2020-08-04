@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "9.0.9",
+	"version": "9.0.10",
 	"description": "ctx-core object",
 	"main": "./index.js",
 	"module": "./index.js",
@@ -30,7 +30,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@ctx-core/function": "^13.1.2"
+		"@ctx-core/function": "^13.2.0"
 	},
 	"devDependencies": {
 		"typescript": "^3.9.7"
