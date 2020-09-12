@@ -1,4 +1,4 @@
-import { assign_fn_type } from './call_assign';
+import type { assign_fn_type } from './call_assign';
 /**
  * Assigns to obj array of keys the return value of function in key_a1_fn_a2.
  */

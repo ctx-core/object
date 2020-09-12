@@ -1,5 +1,5 @@
 import { map_obj_andand } from './map_obj_andand'
-import { map_obj_obj_type } from './map_obj'
+import type { map_obj_obj_type } from './map_obj'
 /**
  * Returns function to
  * map `values` `andand` `key_a1` in `obj` to `fn`, returning object with values return by `fn`.
