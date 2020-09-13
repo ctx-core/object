@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "10.0.4",
+	"version": "10.0.5",
 	"description": "ctx-core object",
 	"main": "./index.js",
 	"module": "./index.js",
