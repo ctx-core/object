@@ -1,4 +1,4 @@
 /**
  * New `obj` without `key_a1` keys.
  */
-export declare function omit(obj: any, ...key_a1: string[]): {};
+export declare function omit<T = unknown>(obj: T, ...key_a1: string[]): T;

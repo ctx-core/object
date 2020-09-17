@@ -1,6 +1,6 @@
 /**
  * Object.assign
  */
-export function assign(obj, ...arg_a1:any[]) {
-	return Object.assign(obj, ...arg_a1)
+export function assign<I = object>(obj: I, ...arg_a1:Partial<I>[]) {
+	return Object.assign(obj as unknown as object, ...arg_a1) as I
 }

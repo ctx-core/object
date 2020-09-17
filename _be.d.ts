@@ -7,5 +7,8 @@ export declare type B<T> = Be<T>;
  * @param key
  * @param _val
  */
-export declare function _be<T>(key: string | symbol, _val: (ctx?: any, key?: (string | symbol), opts?: any) => (void | T)): (ctx?: any, opts?: any) => T;
+export declare function _be<O = unknown>(key: string | symbol, _val: (ctx?: unknown, key?: (string | symbol), opts?: _be_opts_type) => (void | O)): (ctx?: unknown, opts?: _be_opts_type) => O;
 export declare const _b: typeof _be;
+export declare type _be_opts_type = {
+    force?: boolean;
+};

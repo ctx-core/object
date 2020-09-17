@@ -7,7 +7,7 @@
  *		}
  *	})
  */
-export function mixin(target, ...source_a1) {
+export function mixin<T = unknown, S = T>(target: T, ...source_a1: S[]) {
 	if (!target) return
 	for (let i = 0; i < source_a1.length; i++) {
 		const source = source_a1[i]
@@ -17,7 +17,8 @@ export function mixin(target, ...source_a1) {
 			Object.defineProperty(
 				target,
 				propertyName,
-				Object.getOwnPropertyDescriptor(source, propertyName))
+				Object.getOwnPropertyDescriptor(source, propertyName) as PropertyDescriptor
+			)
 		}
 	}
 	return target

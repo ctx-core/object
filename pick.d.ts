@@ -1,4 +1,4 @@
 /**
  * New `obj` with only `key_a1` keys.
  */
-export declare function pick(obj: any, ...key_a1: string[]): {};
+export declare function pick<T = unknown>(obj: T, ...key_a1: string[]): T;

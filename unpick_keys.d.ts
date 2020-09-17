@@ -1,7 +1,7 @@
 /**
- * Does not include keys on `obj__keys` from `obj`
+ * Does not include keys on `keys_obj` from `obj`
  * @param {*} obj
- * @param {*} obj__keys
+ * @param {*} keys_obj
  */
-export declare function unpick_keys(obj: any, obj__keys: any): {};
+export declare function unpick_keys(obj: unknown, keys_obj: unknown): unknown;
 export declare const unpick__keys: typeof unpick_keys;

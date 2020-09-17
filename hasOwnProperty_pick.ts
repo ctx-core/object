@@ -2,12 +2,12 @@
  * Returns object with picked values,
  * not including including inherited property values (i.e. if hasOwnProperty is false).
  */
-export function hasOwnProperty_pick(obj, ...key_a1) {
+export function hasOwnProperty_pick<T = unknown, M = T>(obj: T, ...key_a1: string[]) {
 	if (!obj) return
-	let memo = {}
+	let memo = {} as M
 	for (let i = 0; i < key_a1.length; i++) {
 		const key = key_a1[i]
-		if (obj.hasOwnProperty(key)) memo[key] = obj[key]
+		if ((obj as any).hasOwnProperty(key)) (memo as any)[key] = (obj as any)[key]
 	}
 	return memo
 }

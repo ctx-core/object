@@ -3,4 +3,4 @@
  * @param {...*} * Assigned to cloned object
  * @returns {*} assigned object
  */
-export declare function clone(...arg_a1: any[]): any;
+export declare function clone<T = object>(...arg_a1: Partial<T>[]): T;

@@ -1,7 +1,7 @@
 import { pick } from './pick'
 /**
- * Returns a function that calls [pick](#pick) with the given `...key_a1`
+ * Returns a function that calls [pick](#pick) with the given `...in_key_a1`
  */
-export function _pick(...key_a1) {
-	return (obj, ...key_a1_)=>pick(obj, ...key_a1, ...key_a1_)
+export function _pick<T = unknown>(...in_key_a1: string[]) {
+	return (obj: T, ...fn_key_a1: string[])=>pick<T>(obj, ...in_key_a1, ...fn_key_a1)
 }

@@ -8,10 +8,10 @@ export type B<T> = Be<T>
  * @param key
  * @param _val
  */
-export function _be<T>(
+export function _be<O = unknown>(
     key: string | symbol,
-    _val: (ctx?: any, key?: (string | symbol), opts?: any) => (void | T),
-):(ctx?: any, opts?: any) => T {
+    _val: (ctx?: unknown, key?: (string | symbol), opts?: _be_opts_type) => (void | O),
+):(ctx?: unknown, opts?: _be_opts_type) => O {
 	return (ctx?, opts?)=>{
 		if (!ctx) ctx = global_ctx
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
@@ -32,3 +32,6 @@ export function _be<T>(
 	}
 }
 export const _b = _be
+export type _be_opts_type = {
+	force?: boolean
+}
