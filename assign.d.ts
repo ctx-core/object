@@ -1,4 +1,4 @@
 /**
  * Object.assign
  */
-export declare function assign<I = object>(obj: I, ...arg_a1: Partial<I>[]): I;
+export declare function assign<I extends object>(obj: I, ...arg_a1: unknown[]): I;

@@ -7,4 +7,4 @@
  *		}
  *	})
  */
-export declare function mixin<T = unknown, S = T>(target: T, ...source_a1: S[]): T;
+export declare function mixin<T = unknown, S = T>(target: T, ...source_a1: S[]): T | undefined;

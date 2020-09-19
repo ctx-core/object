@@ -1,5 +1,4 @@
 /**
  * Object keys
- * @function keys
  */
-export declare const keys: any;
+export declare const keys: (obj: object) => string[];

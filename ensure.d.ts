@@ -6,4 +6,4 @@
  * obj = {baz: 99}
  * ensure(obj, {foo: 1, baz: 4}, {foo: 2, bar: 3}) // {baz:99, foo: 1, bar: 3}
  */
-export declare function ensure<T = unknown>(obj: T, ...rest_ctx_a1: Partial<T>[]): T;
+export declare function ensure<T = unknown>(obj: T, ...rest_ctx_a1: Partial<T>[]): T | undefined;

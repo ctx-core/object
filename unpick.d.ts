@@ -1,4 +1,5 @@
+import type { maybe } from '@ctx-core/function';
 /**
  * Does not include `key_a1` from `obj`
  */
-export declare function unpick<T = unknown>(obj: T, ...key_a1: string[]): T;
+export declare function unpick<I>(obj: Record<string, I>, ...key_a1: string[]): maybe<Record<string, I>>;
