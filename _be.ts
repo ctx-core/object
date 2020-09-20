@@ -6,7 +6,7 @@ const pending_symbol = Symbol('pending')
  * Returns a function to ensure that an member key is defined on a ctx object,
  * otherwise it creates the value using the _val factory function.
  */
-export function _be<O extends object>(
+export function _be<O extends unknown>(
 	key:string|symbol,
 	_val:(ctx?:object, key?:(string|symbol), opts?:_be_opts_type)=>(void|O),
 ):(ctx?:object, opts?:_be_opts_type)=>O {

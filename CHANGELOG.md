@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 12.0.2
+
+### Patch Changes
+
+- fix: \_be,\_b: allow unknown type
+
 ## 12.0.1
 
 ### Patch Changes
