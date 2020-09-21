@@ -1,5 +1,14 @@
 # @ctx-core/object
 
+## 12.0.3
+
+### Patch Changes
+
+- stricter type checking of generics
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @ctx-core/function@16.1.0
+
 ## 12.0.2
 
 ### Patch Changes
