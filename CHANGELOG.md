@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 12.0.4
+
+### Patch Changes
+
+- fix: \_pick: pick<I extends object>
+
+  fix: \_pick: typescript build
+
 ## 12.0.3
 
 ### Patch Changes
