@@ -1,5 +1,29 @@
 # @ctx-core/object
 
+## 12.0.6
+
+### Patch Changes
+
+- fix: more specific generics typing: I extends unknown
+
+      _clear_ctx
+      _clear_ctx
+      _pick_value
+      _pick_value_a1.d.ts
+      _pick_value_a1.ts
+      assign_fn_key_a1.d.ts
+      assign_fn_key_a1.ts
+      call_assign.d.ts
+      call_assign.ts
+      clone_assign_fn_key_a1.d.ts
+      clone_assign_fn_key_a1.ts
+      map_obj_andand.d.ts
+      map_obj_andand.ts
+      some.d.ts
+      some.ts
+      unpick.d.ts
+      unpick.ts
+
 ## 12.0.5
 
 ### Patch Changes

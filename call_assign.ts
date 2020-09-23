@@ -1,7 +1,7 @@
 /**
  * Assigns function calls into obj
  */
-export function call_assign<I>(
+export function call_assign<I extends unknown>(
 	obj:Record<string, I>,
 	...assign_fn_h_a1:Record<string, assign_fn_type<I>>[]
 ) {
@@ -15,5 +15,5 @@ export function call_assign<I>(
 	return obj
 }
 export const assign__call = call_assign
-export type assign_fn_type<I> =
+export type assign_fn_type<I extends unknown> =
 	(value:I, obj?:Record<string, I>, key?:string)=>I

@@ -2,7 +2,7 @@ import type { assign_fn_type } from './call_assign'
 /**
  * Assigns to obj array of keys the return value of function in key_a1_fn_a2.
  */
-export function assign_fn_key_a1<I>(
+export function assign_fn_key_a1<I extends unknown>(
 	obj:Record<string, I>,
 	...key_a1_fn_a2:fn_key_a1_tuple_type<I>[]
 ) {
