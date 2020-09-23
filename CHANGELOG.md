@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 12.0.5
+
+### Patch Changes
+
+- unpick_keys: <I extends unknown>
+
 ## 12.0.4
 
 ### Patch Changes

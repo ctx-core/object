@@ -3,7 +3,7 @@ import { keys } from './keys'
 /**
  * Does not include keys on `keys_o` from `rec`
  */
-export function unpick_keys<I>(
+export function unpick_keys<I extends unknown>(
 	rec:Record<string, I>,
 	keys_o:Record<string, unknown>
 ) {
