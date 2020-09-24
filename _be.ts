@@ -1,4 +1,3 @@
-import { assign } from './assign'
 export const global_ctx = {} as object
 const pending_symbol = Symbol('pending')
 /**
@@ -13,7 +12,7 @@ export function _be<O extends unknown>(
 		if (!ctx) ctx = global_ctx
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
 			if (!ctx[pending_symbol]) {
-				assign(ctx, { [pending_symbol]: {} })
+				ctx[pending_symbol] = {}
 			}
 			const pending = ctx[pending_symbol]
 			pending[key] = true
@@ -21,7 +20,7 @@ export function _be<O extends unknown>(
 			if (!ctx.hasOwnProperty(key)) {
 				if (val === undefined)
 					throw `_be: ${String(key)}: function must return a non-undefined value or directly set the ctx with the property ${String(key)}`
-				assign(ctx, { key: val })
+				ctx[key] = val
 			}
 			delete pending[key]
 		} else if (ctx[pending_symbol]?.[key]) {

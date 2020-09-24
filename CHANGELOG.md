@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 12.0.11
+
+### Patch Changes
+
+- fix: \_be,\_b: setting ctx[key]
+
 ## 12.0.10
 
 ### Patch Changes
