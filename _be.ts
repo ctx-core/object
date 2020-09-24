@@ -1,5 +1,4 @@
 import { assign } from './assign'
-import get = Reflect.get
 export const global_ctx = {} as object
 const pending_symbol = Symbol('pending')
 /**
@@ -13,8 +12,10 @@ export function _be<O extends unknown>(
 	return (ctx?:object, opts?)=>{
 		if (!ctx) ctx = global_ctx
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
-			if (!get(ctx, pending_symbol)) assign(ctx, { [pending_symbol]: {} })
-			const pending = get(ctx, pending_symbol)
+			if (!ctx[pending_symbol]) {
+				assign(ctx, { [pending_symbol]: {} })
+			}
+			const pending = ctx[pending_symbol]
 			pending[key] = true
 			const val = _val(ctx, key, opts)
 			if (!ctx.hasOwnProperty(key)) {
@@ -23,11 +24,12 @@ export function _be<O extends unknown>(
 				assign(ctx, { key: val })
 			}
 			delete pending[key]
-		} else if (get(ctx, pending_symbol)?.[key]) {
+		} else if (ctx[pending_symbol]?.[key]) {
 			console.trace(`_be: key '${key.toString()}' has a circular dependency`)
 			throw `_be: key '${key.toString()}' has a circular dependency`
 		}
-		return get(ctx, key) as O
+		const val = ctx[key]
+		return val as O
 	}
 }
 export const _b = _be

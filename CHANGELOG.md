@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 12.0.10
+
+### Patch Changes
+
+- fix: \_be,\_b return value
+
 ## 12.0.9
 
 ### Patch Changes
