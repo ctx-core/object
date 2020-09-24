@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 12.0.7
+
+### Patch Changes
+
+- fix: inferred type issue
+
 ## 12.0.6
 
 ### Patch Changes

@@ -7,6 +7,6 @@ export function unpick_keys<I extends unknown>(
 	rec:Record<string, I>,
 	keys_o:Record<string, unknown>
 ) {
-	return unpick<I>(rec, ...keys(keys_o))
+	return unpick<I>(rec, ...keys(keys_o)) as Record<string, I>
 }
 export const unpick__keys = unpick_keys
