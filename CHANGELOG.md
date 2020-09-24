@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 12.0.8
+
+### Patch Changes
+
+- default generic types
+- Updated dependencies [undefined]
+  - @ctx-core/function@16.1.1
+
 ## 12.0.7
 
 ### Patch Changes
@@ -34,13 +42,13 @@
 
 ### Patch Changes
 
-- unpick_keys: <I extends unknown>
+- unpick_keys: <I extends unknown = unknown>
 
 ## 12.0.4
 
 ### Patch Changes
 
-- fix: \_pick: pick<I extends object>
+- fix: \_pick: pick<I extends object = object>
 
   fix: \_pick: typescript build
 
