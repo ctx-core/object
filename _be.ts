@@ -8,7 +8,7 @@ const pending_symbol = Symbol('pending')
  */
 export function _be<O extends unknown>(
 	key:string|symbol,
-	_val:(ctx?:object, key?:(string|symbol), opts?:_be_opts_type)=>(void|O),
+	_val:(ctx:object, key:(string|symbol), opts?:_be_opts_type)=>(void|O),
 ):(ctx?:object, opts?:_be_opts_type)=>O {
 	return (ctx?:object, opts?)=>{
 		if (!ctx) ctx = global_ctx

@@ -1,5 +1,12 @@
 # @ctx-core/object
 
+## 12.0.9
+
+### Patch Changes
+
+- fix: \_be,\_b: \_val(ctx, key, opts?): ctx & key are always passed
+- explicitly setting B types when \_b is invoked
+
 ## 12.0.8
 
 ### Patch Changes
