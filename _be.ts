@@ -1,3 +1,5 @@
+import { assign } from './assign'
+import get = Reflect.get
 export const global_ctx = {} as object
 const pending_symbol = Symbol('pending')
 /**
@@ -12,7 +14,7 @@ export function _be<O extends unknown>(
 		if (!ctx) ctx = global_ctx
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
 			if (!ctx[pending_symbol]) {
-				ctx[pending_symbol] = {}
+				assign(ctx, { [pending_symbol]: {} })
 			}
 			const pending = ctx[pending_symbol]
 			pending[key] = true
@@ -20,15 +22,14 @@ export function _be<O extends unknown>(
 			if (!ctx.hasOwnProperty(key)) {
 				if (val === undefined)
 					throw `_be: ${String(key)}: function must return a non-undefined value or directly set the ctx with the property ${String(key)}`
-				ctx[key] = val
+				assign(ctx, { [key]: val })
 			}
 			delete pending[key]
 		} else if (ctx[pending_symbol]?.[key]) {
 			console.trace(`_be: key '${key.toString()}' has a circular dependency`)
 			throw `_be: key '${key.toString()}' has a circular dependency`
 		}
-		const val = ctx[key]
-		return val as O
+		return get(ctx, key) as O
 	}
 }
 export const _b = _be

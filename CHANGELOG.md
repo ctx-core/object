@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 12.0.12
+
+### Patch Changes
+
+- fix: \_be,\_b: typescript errors
+
 ## 12.0.11
 
 ### Patch Changes
