@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 12.0.13
+
+### Patch Changes
+
+- fix: \_be,\_b: nondeterministic build issues
+
 ## 12.0.12
 
 ### Patch Changes
