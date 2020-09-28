@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 13.0.0
+
+### Major Changes
+
+- BREAKING CHANGE: assign: alias for Object.assign: remove generic
+
 ## 12.0.13
 
 ### Patch Changes
