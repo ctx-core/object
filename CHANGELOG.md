@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 13.0.2
+
+### Patch Changes
+
+- typescript: ^4.0.5 -> ^4.1.2
+- Updated dependencies [undefined]
+  - @ctx-core/function@16.1.3
+
 ## 13.0.1
 
 ### Patch Changes
