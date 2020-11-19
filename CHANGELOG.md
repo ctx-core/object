@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 13.0.3
+
+### Patch Changes
+
+- isArray.d.ts update
+
 ## 13.0.2
 
 ### Patch Changes
