@@ -1,5 +1,15 @@
 # @ctx-core/object
 
+## 15.0.0
+
+### Major Changes
+
+- \_be,\_b: ctx is required
+
+### Patch Changes
+
+- fix: \_b: generic types
+
 ## 14.0.0
 
 ### Major Changes
