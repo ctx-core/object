@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 13.1.0
+
+### Minor Changes
+
+- interface instead of type
+
 ## 13.0.3
 
 ### Patch Changes
