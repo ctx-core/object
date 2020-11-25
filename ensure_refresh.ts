@@ -15,9 +15,9 @@ export function ensure_refresh<T = unknown>(obj:ensure_refresh_obj_type<T>, ...r
 	return obj[key]
 }
 export const ensure__refresh = ensure_refresh
-export type refresh_ctx_type<T> = {
+export interface refresh_ctx_type<T> {
 	key:string
 	ensure:(obj:ensure_refresh_obj_type<T>)=>T
-	refresh: (obj:ensure_refresh_obj_type<T>, val: T) => void
+	refresh:(obj:ensure_refresh_obj_type<T>, val:T)=>void
 }
 export type ensure_refresh_obj_type<T> = Record<string, T>

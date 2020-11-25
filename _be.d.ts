@@ -7,6 +7,6 @@ export declare function _be<O extends unknown>(key: string | symbol, _val: (ctx:
 export declare const _b: typeof _be;
 export declare type Be<O> = (ctx: object, opts?: _be_opts_type) => O;
 export declare type B<O> = Be<O>;
-export declare type _be_opts_type = {
+export interface _be_opts_type {
     force?: boolean;
-};
+}

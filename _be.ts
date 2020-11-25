@@ -35,6 +35,6 @@ export function _be<O extends unknown>(
 export const _b = _be
 export type Be<O> = (ctx:object, opts?:_be_opts_type)=>O
 export type B<O> = Be<O>
-export type _be_opts_type = {
+export interface _be_opts_type {
 	force?:boolean
 }
