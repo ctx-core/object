@@ -1,5 +1,15 @@
 # @ctx-core/object
 
+## 14.0.0
+
+### Major Changes
+
+- \_be,\_b: ctx is required
+
+### Minor Changes
+
+- \_be,\_b: C generic type for ctx argument
+
 ## 13.1.0
 
 ### Minor Changes

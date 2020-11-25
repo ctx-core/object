@@ -1,17 +1,15 @@
 import { assign } from './assign'
 import get = Reflect.get
-export const global_ctx = {} as object
 const pending_symbol = Symbol('pending')
 /**
  * Returns a function to ensure that an member key is defined on a ctx object,
  * otherwise it creates the value using the _val factory function.
  */
-export function _be<O extends unknown>(
+export function _be<O extends unknown, C extends object>(
 	key:string|symbol,
-	_val:(ctx:object, key:(string|symbol), opts?:_be_opts_type)=>(void|O),
-):(ctx?:object, opts?:_be_opts_type)=>O {
-	return (ctx?:object, opts?)=>{
-		if (!ctx) ctx = global_ctx
+	_val:(ctx:C, key:(string|symbol), opts?:_be_opts_type)=>(void|O),
+):(ctx:C, opts?:_be_opts_type)=>O {
+	return (ctx:C, opts?)=>{
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
 			if (!get(ctx, pending_symbol)) {
 				assign(ctx, { [pending_symbol]: {} })
