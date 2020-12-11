@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 15.0.3
+
+### Patch Changes
+
+- update native_isArray.d.ts
+
 ## 15.0.2
 
 ### Patch Changes
