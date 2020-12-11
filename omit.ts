@@ -1,14 +1,13 @@
 /**
  * New `obj` without `key_a1` keys.
  */
-export function omit<T = unknown>(obj: T, ...key_a1:string[]) {
-	if (!obj) return
-	let memo = {} as T
-	for (let i = 0; i < key_a1.length; i++) {
-		const key = key_a1[i]
-		if (!(key in obj)) {
-			(memo as any)[key] = (obj as any)[key]
-		}
-	}
-	return memo
+export function omit<T = unknown>(obj: T, ...key_a1: string[]) {
+  if (!obj) return
+  let memo = {} as T
+  for (const key in obj) {
+    if (!~key_a1.indexOf(key)) {
+      memo[key] = obj[key]
+    }
+  }
+  return memo
 }

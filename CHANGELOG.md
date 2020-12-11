@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 15.0.1
+
+### Patch Changes
+
+- fix: omit: implementation
+
 ## 15.0.0
 
 ### Major Changes
