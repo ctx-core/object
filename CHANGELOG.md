@@ -1,5 +1,14 @@
 # @ctx-core/object
 
+## 15.0.4
+
+### Patch Changes
+
+- interface instead of type: ensure_refresh_obj_type,map_obj_fn_type,map_obj_obj_type
+- using export as instead of export const
+- Updated dependencies [undefined]
+  - @ctx-core/function@16.1.5
+
 ## 15.0.3
 
 ### Patch Changes
