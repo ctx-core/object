@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 15.0.5
+
+### Patch Changes
+
+- fix: export alias type with "isolatedModules": true
+
 ## 15.0.4
 
 ### Patch Changes

@@ -7,4 +7,5 @@ export declare type Be<O> = (ctx: object, opts?: _be_opts_type) => O;
 export interface _be_opts_type {
     force?: boolean;
 }
-export { _be as _b, Be as B, };
+export declare type B<O> = Be<O>;
+export { _be as _b, };
