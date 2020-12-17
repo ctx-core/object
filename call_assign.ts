@@ -14,6 +14,8 @@ export function call_assign<I extends unknown = unknown>(
 	}
 	return obj
 }
-export const assign__call = call_assign
 export type assign_fn_type<I extends unknown = unknown> =
 	(value:I, obj?:Record<string, I>, key?:string)=>I
+export {
+	call_assign as assign__call
+}

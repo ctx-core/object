@@ -11,6 +11,8 @@ export function map_obj<I, O = I>(
 	}
 	return obj as O
 }
-export const map__obj = map_obj
-export type map_obj_obj_type<O = unknown> = Record<string, O>
+export interface map_obj_obj_type<O = unknown> extends Record<string, O> {}
 export type map_obj_fn_type<I, O = unknown> = (in_obj: I, key: string)=>O
+export {
+	map_obj as map__obj
+}

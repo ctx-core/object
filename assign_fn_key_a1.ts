@@ -15,5 +15,7 @@ export function assign_fn_key_a1<I extends unknown = unknown>(
 	}
 	return obj
 }
-export const assign__key_a1__fn = assign_fn_key_a1
 export type fn_key_a1_tuple_type<I> = [string[], assign_fn_type<I>]
+export {
+	assign_fn_key_a1 as assign__key_a1__fn
+}

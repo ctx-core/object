@@ -30,9 +30,11 @@ export function _be<O extends unknown = unknown, C extends object = object>(
 		return get(ctx, key) as O
 	}
 }
-export { _be as _b }
 export type Be<O> = (ctx:object, opts?:_be_opts_type)=>O
-export type B<O> = Be<O>
 export interface _be_opts_type {
 	force?:boolean
+}
+export {
+	_be as _b,
+	Be as B,
 }

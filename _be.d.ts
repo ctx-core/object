@@ -3,9 +3,8 @@
  * otherwise it creates the value using the _val factory function.
  */
 export declare function _be<O extends unknown = unknown, C extends object = object>(key: string | symbol, _val: (ctx: C, key: (string | symbol), opts?: _be_opts_type) => (void | O)): (ctx: C, opts?: _be_opts_type) => O;
-export { _be as _b };
 export declare type Be<O> = (ctx: object, opts?: _be_opts_type) => O;
-export declare type B<O> = Be<O>;
 export interface _be_opts_type {
     force?: boolean;
 }
+export { _be as _b, Be as B, };
