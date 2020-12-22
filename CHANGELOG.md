@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 15.0.9
+
+### Patch Changes
+
+- fix: \_be,\_b: pending logic when key is not present in the ctx
+
+  export pending_symbol
+
 ## 15.0.8
 
 ### Patch Changes

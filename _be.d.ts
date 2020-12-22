@@ -1,3 +1,4 @@
+export declare const pending_symbol: unique symbol;
 /**
  * Returns a function to ensure that an member key is defined on a ctx object,
  * otherwise it creates the value using the _val factory function.

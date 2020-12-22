@@ -1,6 +1,6 @@
 import { assign } from './assign'
 import get = Reflect.get
-const pending_symbol = Symbol('pending')
+export const pending_symbol = Symbol('pending')
 /**
  * Returns a function to ensure that an member key is defined on a ctx object,
  * otherwise it creates the value using the _val factory function.
@@ -11,10 +11,15 @@ export function _be<O extends unknown = unknown, C extends object = object>(
 ):(ctx:C, opts?:_be_opts_type)=>O {
 	return (ctx:C, opts?)=>{
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
-			if (!get(ctx, pending_symbol)) {
-				assign(ctx, { [pending_symbol]: {} })
+			let pending = get(ctx, pending_symbol)
+			if (!pending) {
+				pending = {}
+				assign(ctx, { [pending_symbol]: pending })
 			}
-			const pending = get(ctx, pending_symbol)
+			if (pending[key]) {
+				console.trace(`_be: key '${key.toString()}' has a circular dependency`)
+				throw `_be: key '${key.toString()}' has a circular dependency`
+			}
 			pending[key] = true
 			const val = _val(ctx, key, opts)
 			if (!ctx.hasOwnProperty(key)) {
@@ -23,9 +28,6 @@ export function _be<O extends unknown = unknown, C extends object = object>(
 				assign(ctx, { [key]: val })
 			}
 			delete pending[key]
-		} else if (get(ctx, pending_symbol)?.[key]) {
-			console.trace(`_be: key '${key.toString()}' has a circular dependency`)
-			throw `_be: key '${key.toString()}' has a circular dependency`
 		}
 		return get(ctx, key) as O
 	}
