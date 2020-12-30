@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 16.0.1
+
+### Patch Changes
+
+- Back to \_be<O, C> generic ordering: O is more often required to be defined than C
+
 ## 16.0.0
 
 ### Major Changes
