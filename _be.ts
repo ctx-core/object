@@ -5,10 +5,10 @@ export const pending_symbol = Symbol('pending')
  * Returns a function to ensure that an member key is defined on a ctx object,
  * otherwise it creates the value using the _val factory function.
  */
-export function _be<O extends unknown = unknown, C extends object = object>(
+export function _be<C extends object = object, O extends unknown = unknown>(
 	key:string|symbol,
 	_val:(ctx:C, key:(string|symbol), opts?:_be_opts_type)=>(void|O),
-):(ctx:C, opts?:_be_opts_type)=>O {
+):be_type<C, O> {
 	return (ctx:C, opts?)=>{
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
 			let pending = get(ctx, pending_symbol)
@@ -37,6 +37,8 @@ export interface _be_opts_type {
 	force?:boolean
 }
 export type B<O> = Be<O>
+export type be_type<C extends object = object, O extends unknown = unknown> =
+	(ctx:C, opts?:_be_opts_type)=>O
 export {
 	_be as _b,
 }

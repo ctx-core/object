@@ -1,5 +1,15 @@
 # @ctx-core/object
 
+## 16.0.0
+
+### Major Changes
+
+- \_be: <C, O>: flipped generic arguments
+
+### Minor Changes
+
+- be_type<C extends object = object, O extends unknown = unknown> = (ctx:C, opts?:\_be_opts_type)=>O
+
 ## 15.0.16
 
 ### Patch Changes
