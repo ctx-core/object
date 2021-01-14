@@ -1,5 +1,12 @@
 # @ctx-core/object
 
+## 16.0.4
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/function@16.9.1
+
 ## 16.0.3
 
 ### Patch Changes
