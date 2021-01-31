@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 17.0.0
+
+### Major Changes
+
+- src directory
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/function@17.0.0
+
 ## 16.1.1
 
 ### Patch Changes
