@@ -1,7 +1,7 @@
 /**
  * `ensure` `obj[key]` is present or call `ensure(obj)`. Then call `refresh(obj, obj[key])`.
  */
-export declare function ensure_refresh<T = unknown>(obj: ensure_refresh_obj_type<T>, ...refresh_ctx_a1: refresh_ctx_type<T>[]): T | undefined;
+export declare function ensure_refresh<I extends unknown = unknown>(obj: ensure_refresh_obj_type<I>, ...refresh_ctx_a1: refresh_ctx_type<I>[]): I | undefined;
 export interface refresh_ctx_type<T> {
     key: string;
     ensure: (obj: ensure_refresh_obj_type<T>) => T;

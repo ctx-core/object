@@ -8,4 +8,6 @@ export function map_obj_andand<I extends unknown, O extends unknown>(
 ) {
 	return map_obj<I, O>(obj, _one_andand<I, O>(...key_a1))
 }
-export const map__obj__andand = map_obj_andand
+export {
+	map_obj_andand as map__obj__andand
+}

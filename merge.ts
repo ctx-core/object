@@ -1,7 +1,7 @@
 /**
  * Performs a deep merge on the target with each source_a1
  */
-export function merge<T = unknown, S = T>(target:T, ...source_a1:S[]) {
+export function merge<I extends unknown = unknown, O = I>(target:I, ...source_a1:O[]) {
 	if (!target) return
 	// Loop through each object and conduct a merge
 	for (let i = 0; i < source_a1.length; i++) {

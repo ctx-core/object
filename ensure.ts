@@ -7,7 +7,7 @@ import { keys } from './keys'
  * obj = {baz: 99}
  * ensure(obj, {foo: 1, baz: 4}, {foo: 2, bar: 3}) // {baz:99, foo: 1, bar: 3}
  */
-export function ensure<T = unknown>(obj: T, ...rest_ctx_a1: Partial<T>[]) {
+export function ensure<I extends unknown = unknown>(obj: I, ...rest_ctx_a1: Partial<I>[]) {
 	if (!obj) return
 	for (let i = 0; i < rest_ctx_a1.length; i++) {
 		const rest = rest_ctx_a1[i]

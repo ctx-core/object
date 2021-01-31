@@ -7,4 +7,6 @@ export function has_some_key(obj: object) {
 	}
 	return false
 }
-export const has__some__key = has_some_key
+export {
+	has_some_key as has__some__key
+}

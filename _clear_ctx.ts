@@ -12,4 +12,4 @@ export function _clear_ctx<I extends unknown = unknown>(
 	}
 	return clear_ctx
 }
-export const _ctx__clear = _clear_ctx
+export { _clear_ctx as _ctx__clear }

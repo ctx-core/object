@@ -1,7 +1,7 @@
 /**
  * Maps values in `in_obj` to `fn`, returning object with values returned by `fn`.
  */
-export function map_obj<I, O = I>(
+export function map_obj<I extends unknown = unknown, O = I>(
 	in_obj:Record<string, I>,
 	fn:map_obj_fn_type<I, O>
 ) {

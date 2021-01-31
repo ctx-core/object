@@ -9,4 +9,6 @@ export function clone_assign_fn_key_a1<I extends object = object>(
 ) {
 	return assign_fn_key_a1(clone<Record<string, I>>(obj), ...key_a1_fn_a2)
 }
-export const clone__assign__key_a1__fn = clone_assign_fn_key_a1
+export {
+	clone_assign_fn_key_a1 as clone__assign__key_a1__fn
+}

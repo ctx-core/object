@@ -1,7 +1,7 @@
 /**
  * Exclude keys from obj
  */
-export function exclude<I, O = I>(obj: I, ...key_a1: string[]) {
+export function exclude<I extends unknown = unknown, O = I>(obj: I, ...key_a1: string[]) {
 	if (!obj) return
 	const out = {} as O
 	const exclude = new Set(key_a1)

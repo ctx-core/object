@@ -3,4 +3,4 @@
  * If no key is given, returns a boolean of whether or not the obj has any key.
  */
 export declare function _has_key(obj: object, in_key?: string): boolean;
-export declare const _has__key: typeof _has_key;
+export { _has_key as _has__key };

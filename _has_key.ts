@@ -11,4 +11,4 @@ export function _has_key(obj: object, in_key?:string) {
 		: !!$keys.length
 	)
 }
-export const _has__key = _has_key
+export { _has_key as _has__key }

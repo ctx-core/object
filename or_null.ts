@@ -9,9 +9,11 @@ export function or_null(opts:opts_or = {}) {
 	} = opts
 	return value == null ? or_value : (nor_value || value)
 }
-export const or__null = or_null
-type opts_or = {
-	value?:any;
-	or_value?:any;
-	nor_value?:any;
+export interface opts_or {
+	value?:any
+	or_value?:any
+	nor_value?:any
+}
+export {
+	or_null as or__null
 }

@@ -15,4 +15,6 @@ export function has_key(obj: object, in_key = no_key_arg_symbol) {
 	}
 	return false
 }
-export const has__key = has_key
+export {
+	has_key as has__key
+}

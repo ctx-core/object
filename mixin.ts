@@ -7,7 +7,7 @@
  *		}
  *	})
  */
-export function mixin<T = unknown, S = T>(target: T, ...source_a1: S[]) {
+export function mixin<I extends unknown = unknown, O = I>(target:I, ...source_a1:O[]) {
 	if (!target) return
 	for (let i = 0; i < source_a1.length; i++) {
 		const source = source_a1[i]

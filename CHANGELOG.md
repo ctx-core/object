@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 16.1.0
+
+### Minor Changes
+
+- export aliases
+
 ## 16.0.4
 
 ### Patch Changes

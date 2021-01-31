@@ -6,4 +6,6 @@ import { keys } from './keys'
 export function pick_keys(obj: object, in_key_obj: object) {
 	return pick(obj, ...keys(in_key_obj))
 }
-export const pick__keys = pick_keys
+export {
+	pick_keys as pick__keys
+}
