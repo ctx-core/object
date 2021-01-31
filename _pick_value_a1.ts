@@ -10,4 +10,6 @@ export function _pick_value_a1<I extends unknown = unknown>(obj: Record<string, 
 	}
 	return value_a1
 }
-export const _a1__value__pick = _pick_value_a1
+export {
+	_pick_value_a1 as _a1__value__pick
+}

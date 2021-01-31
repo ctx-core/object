@@ -10,4 +10,6 @@ export function _zip_ctx<T extends unknown = unknown>(key_a1: string[], value_a1
 	}
 	return zip_ctx
 }
-export const _ctx__zip = _zip_ctx
+export {
+	_zip_ctx as _ctx__zip
+}

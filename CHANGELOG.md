@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 16.1.1
+
+### Patch Changes
+
+- export alias: use as keyword
+
 ## 16.1.0
 
 ### Minor Changes
