@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "17.0.1",
+	"version": "17.0.2",
 	"description": "ctx-core object",
 	"keywords": [
 		"ctx-core",
@@ -27,7 +27,7 @@
 		"prepublishOnly": "npm run compile"
 	},
 	"dependencies": {
-		"@ctx-core/function": "workspace:^17.0.1"
+		"@ctx-core/function": "workspace:^17.1.0"
 	},
 	"devDependencies": {
 		"typescript": "^4.1.3"
