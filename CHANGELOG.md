@@ -1,5 +1,12 @@
 # @ctx-core/object
 
+## 17.0.7
+
+### Patch Changes
+
+- pick_keys,unpick_keys: KEYS_OBJ extends object = object: generic
+- fix: unpick: <I extends object = object>
+
 ## 17.0.6
 
 ### Patch Changes
