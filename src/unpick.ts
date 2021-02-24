@@ -1,17 +1,24 @@
+import { assign } from './assign'
 import { keys } from './keys'
 /**
  * Does not include `key_a1` from `obj`
  */
-export function unpick<obj_T extends object = object>(obj:obj_T, ...key_a1:string[]):Partial<obj_T> {
-	const memo:Partial<obj_T> = {}
+export function unpick</*@formatter:off*/
+	In extends { [key:string]:any } = object,
+	Out extends Partial<In> = Partial<In>
+>/*@formatter:on*/(obj:In, ...key_a1:string[]):Partial<In> {
+	const memo = {} as Out
 	const obj_key_a1 = keys(obj)
 	for (let i = 0; i < obj_key_a1.length; i++) {
 		const key = obj_key_a1[i]
-		if (key_a1.indexOf(key) === -1) memo[key] = obj[key] as obj_T
+		if (key_a1.indexOf(key) === -1) assign(memo, { [key]: obj[key] })
 	}
-	return memo as Partial<obj_T>
+	return memo as Out
 }
-export function maybe_unpick<I extends object = object>(obj:I, ...key_a1:string[]):void|Partial<I> {
+export function maybe_unpick</*@formatter:off*/
+	In extends { [key:string]:any } = object,
+	Out extends Partial<In> = Partial<In>
+>/*@formatter:on*/(obj:In, ...key_a1:string[]):void|Partial<In> {
 	if (!obj) return
-	return unpick<I>(obj, ...key_a1)
+	return unpick<In>(obj, ...key_a1) as Out
 }
