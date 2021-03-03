@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.1.0
+
+### Minor Changes
+
+- feat: \_extract: https://stackoverflow.com/a/50895613/142571
+
 ## 17.0.11
 
 ### Patch Changes
