@@ -1,4 +1,5 @@
 /**
+ * _extract takes an array of keys of Type
  * @see {@link https://stackoverflow.com/a/50895613/142571}
  */
-export declare function _extract<T>(properties: Record<keyof T, true>): <TActual extends T>(value: TActual) => T;
+export declare function _extract<Type>(properties: [...(keyof Type)[]]): <TActual extends Type>(value: TActual) => Type;

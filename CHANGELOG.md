@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 17.2.0
+
+### Minor Changes
+
+- \_extract takes an array of keys of Type
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/function@17.4.0
+
 ## 17.1.0
 
 ### Minor Changes
