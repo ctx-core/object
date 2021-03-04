@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.2.1
+
+### Patch Changes
+
+- version bump
+
 ## 17.2.0
 
 ### Minor Changes
