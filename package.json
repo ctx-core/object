@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "17.2.2",
+	"version": "17.3.0",
 	"description": "ctx-core object",
 	"keywords": [
 		"ctx-core",
@@ -24,7 +24,8 @@
 		"clean": "rm -f tsconfig.tsbuildinfo",
 		"compile": "./node_modules/.bin/tsc -b",
 		"exec": "$@",
-		"prepublishOnly": "npm run compile"
+		"prepublishOnly": "npm run compile",
+		"test": "ava"
 	},
 	"dependencies": {
 		"@ctx-core/function": "workspace:^17.4.0"

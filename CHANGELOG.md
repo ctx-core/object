@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.3.0
+
+### Minor Changes
+
+- feat: extract
+
 ## 17.2.2
 
 ### Patch Changes

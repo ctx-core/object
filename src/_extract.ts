@@ -1,12 +1,9 @@
+import { extract } from './extract'
 /**
  * @see {@link https://stackoverflow.com/a/50895613/142571}
  */
 export function _extract<Type>(properties:Record<keyof Type, true>) {
-	return function extract<TActual extends Type>(value:TActual) {
-		let result = {} as Type
-		for (const property of Object.keys(properties) as Array<keyof Type>) {
-			result[property] = value[property]
-		}
-		return result
+	return function curry_extract<TActual extends Type>(value:TActual) {
+		return extract<Type, TActual>(value, properties)
 	}
 }
