@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.2.2
+
+### Patch Changes
+
+- \_extract: back to Record<keyof Type, true>
+
 ## 17.2.1
 
 ### Patch Changes
