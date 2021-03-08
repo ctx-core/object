@@ -5,11 +5,11 @@ export const pending_symbol = Symbol('pending')
  * Returns a function to ensure that an member key is defined on a ctx object,
  * otherwise it creates the value using the _val factory function.
  */
-export function _be<O extends unknown = unknown, C extends object = object>(
+export function _be<Output extends unknown = unknown, Ctx extends object = object>(
 	key:string|symbol,
-	_val:(ctx:C, key:(string|symbol), opts?:_be_opts_type)=>(void|O),
-):be_type<O, C> {
-	return (ctx:C, opts?)=>{
+	_val:(ctx:Ctx, key:(string|symbol), opts?:_be_opts_T)=>(void|Output),
+):Be<Output, Ctx> {
+	return (ctx:Ctx, opts?:_be_opts_T)=>{
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
 			let pending = get(ctx, pending_symbol)
 			if (!pending) {
@@ -29,16 +29,16 @@ export function _be<O extends unknown = unknown, C extends object = object>(
 			}
 			delete pending[key]
 		}
-		return get(ctx, key) as O
+		return get(ctx, key) as Output
 	}
 }
-export type Be<O> = (ctx:object, opts?:_be_opts_type)=>O
-export interface _be_opts_type {
+export type Be<Output extends unknown = unknown, Ctx extends object = object> =
+	(ctx:Ctx, opts?:_be_opts_T)=>Output
+export type B<Output extends unknown = unknown, Ctx extends object = object> = Be<Output, Ctx>
+export type be_T<Output extends unknown = unknown, Ctx extends object = object> = Be<Output, Ctx>
+export interface _be_opts_T {
 	force?:boolean
 }
-export type B<O> = Be<O>
-export type be_type<O extends unknown = unknown, C extends object = object> =
-	(ctx:C, opts?:_be_opts_type)=>O
 export {
 	_be as _b,
 }

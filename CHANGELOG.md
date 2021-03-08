@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.4.0
+
+### Minor Changes
+
+- fix: Be<Output extends unknown = unknown, Ctx extends object = object>
+
 ## 17.3.1
 
 ### Patch Changes
@@ -184,7 +190,7 @@
 
 ### Minor Changes
 
-- be_type<C extends object = object, O extends unknown = unknown> = (ctx:C, opts?:\_be_opts_type)=>O
+- be_type<C extends object = object, O extends unknown = unknown> = (ctx:C, opts?:\_be_opts_T)=>O
 
 ## 15.0.16
 
