@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 17.4.1
+
+### Patch Changes
+
+- fix: npm run compile: tsc -b .
+- Updated dependencies [undefined]
+  - @ctx-core/function@17.4.2
+
 ## 17.4.0
 
 ### Minor Changes
