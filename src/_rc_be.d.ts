@@ -6,15 +6,15 @@ export declare const rc_set_h_symbol: unique symbol;
  */
 export declare function _rc_be<Output extends unknown = unknown, Ctx extends object = object>(key: string | symbol, _val: (this: _val_this_T, ctx: Ctx, key: (string | symbol), opts?: _rc_be_opts_T) => (void | Output)): RcBe<Output, Ctx>;
 export interface _val_this_T {
-    push_unsubscribers(...unsubscribers: rc_be_unsubscribe_T[]): void;
+    register_destroy(...destroy_a1: rc_be_destroy_T[]): void;
 }
 export interface _rc_be_opts_T extends _be_opts_T {
     owner?: object;
 }
-export declare type rc_be_unsubscribe_T = () => void;
+export declare type rc_be_destroy_T = () => void;
 export interface RcBe_return_T<Output extends unknown = unknown> {
     value: Output;
-    destroy: rc_be_unsubscribe_T;
+    destroy: rc_be_destroy_T;
 }
 export declare type RcBe<Output extends unknown = unknown, Ctx extends object = object> = (ctx: Ctx, opts?: _be_opts_T) => RcBe_return_T<Output>;
 export declare type RcB<Output extends unknown = unknown, Ctx extends object = object> = RcBe<Output, Ctx>;

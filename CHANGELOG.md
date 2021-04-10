@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.4
+
+### Patch Changes
+
+- \_rc_be: push_unsubscribers->register_destroy
+
 ## 17.5.3
 
 ### Patch Changes

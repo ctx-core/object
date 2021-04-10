@@ -11,10 +11,10 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 	_val:(this:_val_this_T, ctx:Ctx, key:(string|symbol), opts?:_rc_be_opts_T)=>(void|Output),
 ):RcBe<Output, Ctx> {
 	return (ctx:Ctx, opts?:_rc_be_opts_T)=>{
-		const unsubscribers:rc_be_unsubscribe_T[] = []
+		const destroy_a1:rc_be_destroy_T[] = []
 		const _val_this:_val_this_T = {
-			push_unsubscribers(...$$unsubscribers) {
-				unsubscribers.push(...$$unsubscribers)
+			register_destroy(...$$destroy_a1) {
+				destroy_a1.push(...$$destroy_a1)
 			}
 		}
 		const be = _be<Output, Ctx>(
@@ -46,15 +46,15 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 	}
 }
 export interface _val_this_T {
-	push_unsubscribers(...unsubscribers:rc_be_unsubscribe_T[]):void
+	register_destroy(...destroy_a1:rc_be_destroy_T[]):void
 }
 export interface _rc_be_opts_T extends _be_opts_T {
 	owner?:object
 }
-export type rc_be_unsubscribe_T = ()=>void
+export type rc_be_destroy_T = ()=>void
 export interface RcBe_return_T<Output extends unknown = unknown> {
 	value:Output
-	destroy:rc_be_unsubscribe_T
+	destroy:rc_be_destroy_T
 }
 export type RcBe<Output extends unknown = unknown, Ctx extends object = object> =
 	(ctx:Ctx, opts?:_be_opts_T)=>RcBe_return_T<Output>
