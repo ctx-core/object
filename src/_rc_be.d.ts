@@ -9,6 +9,10 @@ export interface _rc_be_opts_T extends _be_opts_T {
     owner?: object;
 }
 export declare type rc_be_unsubscribe_T = () => void;
-export declare type RcBe<Output extends unknown = unknown, Ctx extends object = object> = (ctx: Ctx, opts?: _be_opts_T) => [Output, rc_be_unsubscribe_T];
+export interface RcBe_return_T<Output extends unknown = unknown> {
+    value: Output;
+    destroy: rc_be_unsubscribe_T;
+}
+export declare type RcBe<Output extends unknown = unknown, Ctx extends object = object> = (ctx: Ctx, opts?: _be_opts_T) => RcBe_return_T<Output>;
 export declare type RcB<Output extends unknown = unknown, Ctx extends object = object> = RcBe<Output, Ctx>;
 export { _rc_be as _rc_b };

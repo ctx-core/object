@@ -23,21 +23,28 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 		}
 		const owner = opts?.owner || {}
 		rc_set.add(owner)
-		let unsubscribe = ()=>{
+		let destroy = ()=>{
 			rc_set.delete(owner)
 			if (!rc_set.size) {
 				delete ctx[key]
 			}
 		}
-		return [be(ctx, opts), unsubscribe]
+		return {
+			value: be(ctx, opts),
+			destroy,
+		}
 	}
 }
 export interface _rc_be_opts_T extends _be_opts_T {
 	owner?:object
 }
 export type rc_be_unsubscribe_T = ()=>void
+export interface RcBe_return_T<Output extends unknown = unknown> {
+	value:Output
+	destroy:rc_be_unsubscribe_T
+}
 export type RcBe<Output extends unknown = unknown, Ctx extends object = object> =
-	(ctx:Ctx, opts?:_be_opts_T)=>[Output, rc_be_unsubscribe_T]
+	(ctx:Ctx, opts?:_be_opts_T)=>RcBe_return_T<Output>
 export type RcB<Output extends unknown = unknown, Ctx extends object = object> = RcBe<Output, Ctx>
 export {
 	_rc_be as _rc_b

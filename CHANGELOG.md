@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.2
+
+### Patch Changes
+
+- \_rc_be: returns a RcBe_return_T
+
 ## 17.5.1
 
 ### Patch Changes
