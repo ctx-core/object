@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.0
+
+### Minor Changes
+
+- \_rc_be: referencing counting be
+
 ## 17.4.4
 
 ### Patch Changes
