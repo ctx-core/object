@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.3
+
+### Patch Changes
+
+- \_rc_be: + this: \_val_this_T
+
 ## 17.5.2
 
 ### Patch Changes

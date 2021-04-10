@@ -4,7 +4,10 @@ export declare const rc_set_h_symbol: unique symbol;
  * Returns _be with referencing counting.
  * When all unsubscribes have been called, the ctx[key] is deleted.
  */
-export declare function _rc_be<Output extends unknown = unknown, Ctx extends object = object>(key: string | symbol, _val: (ctx: Ctx, key: (string | symbol), opts?: _rc_be_opts_T) => (void | Output)): RcBe<Output, Ctx>;
+export declare function _rc_be<Output extends unknown = unknown, Ctx extends object = object>(key: string | symbol, _val: (this: _val_this_T, ctx: Ctx, key: (string | symbol), opts?: _rc_be_opts_T) => (void | Output)): RcBe<Output, Ctx>;
+export interface _val_this_T {
+    push_unsubscribers(...unsubscribers: rc_be_unsubscribe_T[]): void;
+}
 export interface _rc_be_opts_T extends _be_opts_T {
     owner?: object;
 }
