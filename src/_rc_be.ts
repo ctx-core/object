@@ -9,7 +9,7 @@ export const rc_set_h_symbol = Symbol('rc_set_h')
 export function _rc_be<Output extends unknown = unknown, Ctx extends object = object>(
 	key:string|symbol,
 	_val:(ctx:Ctx, key:(string|symbol), opts?:_rc_be_opts_T)=>(void|Output),
-):Rc_Be<Output, Ctx> {
+):RcBe<Output, Ctx> {
 	return (ctx:Ctx, opts?:_rc_be_opts_T)=>{
 		const be = _be<Output, Ctx>(key, _val)
 		let rc_set_h:Record<string|symbol, Set<any>> = get(ctx, rc_set_h_symbol)
@@ -36,9 +36,9 @@ export interface _rc_be_opts_T extends _be_opts_T {
 	owner?:object
 }
 export type rc_be_unsubscribe_T = ()=>void
-export type Rc_Be<Output extends unknown = unknown, Ctx extends object = object> =
+export type RcBe<Output extends unknown = unknown, Ctx extends object = object> =
 	(ctx:Ctx, opts?:_be_opts_T)=>[Output, rc_be_unsubscribe_T]
-export type Rc_B<Output extends unknown = unknown, Ctx extends object = object> = Rc_Be<Output, Ctx>
+export type RcB<Output extends unknown = unknown, Ctx extends object = object> = RcBe<Output, Ctx>
 export {
 	_rc_be as _rc_b
 }

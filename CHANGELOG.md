@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.1
+
+### Patch Changes
+
+- Rc_Be->RcBe,Rc_B->RcB
+
 ## 17.5.0
 
 ### Minor Changes
