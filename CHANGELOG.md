@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.5
+
+### Patch Changes
+
+- \_rc_be: register_destroy->on_destroy
+
 ## 17.5.4
 
 ### Patch Changes

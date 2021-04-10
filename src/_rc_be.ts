@@ -13,9 +13,7 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 	return (ctx:Ctx, opts?:_rc_be_opts_T)=>{
 		const destroy_a1:rc_be_destroy_T[] = []
 		const _val_this:_val_this_T = {
-			register_destroy(...$$destroy_a1) {
-				destroy_a1.push(...$$destroy_a1)
-			}
+			on_destroy,
 		}
 		const be = _be<Output, Ctx>(
 			key,
@@ -43,10 +41,13 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 			value: be(ctx, opts),
 			destroy,
 		}
+		function on_destroy(...$$destroy_a1) {
+			destroy_a1.push(...$$destroy_a1)
+		}
 	}
 }
 export interface _val_this_T {
-	register_destroy(...destroy_a1:rc_be_destroy_T[]):void
+	on_destroy(...destroy_a1:rc_be_destroy_T[]):void
 }
 export interface _rc_be_opts_T extends _be_opts_T {
 	owner?:object
