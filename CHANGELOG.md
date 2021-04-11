@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.6
+
+### Patch Changes
+
+- \_rc_be: onDestroy aliases on_destroy
+
 ## 17.5.5
 
 ### Patch Changes

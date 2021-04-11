@@ -14,6 +14,7 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 		const destroy_a1:rc_be_destroy_T[] = []
 		const _val_this:_val_this_T = {
 			on_destroy,
+			onDestroy: on_destroy,
 		}
 		const be = _be<Output, Ctx>(
 			key,
@@ -46,8 +47,10 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 		}
 	}
 }
+export type _val_this_on_destroy_T = (...destroy_a1:rc_be_destroy_T[])=>void
 export interface _val_this_T {
-	on_destroy(...destroy_a1:rc_be_destroy_T[]):void
+	on_destroy:_val_this_on_destroy_T
+	onDestroy:_val_this_on_destroy_T
 }
 export interface _rc_be_opts_T extends _be_opts_T {
 	owner?:object
