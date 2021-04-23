@@ -1,4 +1,3 @@
-import get = Reflect.get
 import { assign } from './assign'
 import { _be, _be_opts_T } from './_be'
 export const rc_set_h_symbol = Symbol('rc_set_h')
@@ -21,11 +20,11 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 			(ctx, key, opts)=>
 				_val.apply(_val_this, [ctx, key, opts])
 		)
-		let rc_set_h:Record<string|symbol, Set<any>> = get(ctx, rc_set_h_symbol)
+		let rc_set_h:Record<string|symbol, Set<any>> = ctx[rc_set_h_symbol]
 		if (!rc_set_h) {
 			rc_set_h = {}
 		}
-		let rc_set:Set<any> = get(rc_set_h, key)
+		let rc_set:Set<any> = rc_set_h[key as string]
 		if (!rc_set) {
 			rc_set = new Set()
 			assign(rc_set_h, { [key]: rc_set })

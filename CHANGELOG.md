@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.8
+
+### Patch Changes
+
+- - Reflect.get
+
 ## 17.5.7
 
 ### Patch Changes

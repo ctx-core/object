@@ -1,5 +1,4 @@
 import { assign } from './assign'
-import get = Reflect.get
 export const pending_symbol = Symbol('pending')
 /**
  * Returns a function to ensure that an member key is defined on a ctx object,
@@ -11,7 +10,7 @@ export function _be<Output extends unknown = unknown, Ctx extends object = objec
 ):Be<Output, Ctx> {
 	return (ctx:Ctx, opts?:_be_opts_T)=>{
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
-			let pending = get(ctx, pending_symbol)
+			let pending = ctx[pending_symbol]
 			if (!pending) {
 				pending = {}
 				assign(ctx, { [pending_symbol]: pending })
@@ -29,7 +28,7 @@ export function _be<Output extends unknown = unknown, Ctx extends object = objec
 			}
 			delete pending[key]
 		}
-		return get(ctx, key) as Output
+		return ctx[key] as Output
 	}
 }
 export type Be<Output extends unknown = unknown, Ctx extends object = object> =
