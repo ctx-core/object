@@ -44,8 +44,8 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 			value: be(ctx, opts),
 			destroy,
 		}
-		function on_destroy(...$$destroy_a1) {
-			destroy_cb_a1.push(...$$destroy_a1)
+		function on_destroy(...in_destroy_cb_a1) {
+			destroy_cb_a1.push(...in_destroy_cb_a1)
 		}
 	}
 }
