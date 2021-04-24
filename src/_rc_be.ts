@@ -10,7 +10,7 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 	_val:(this:_val_this_T, ctx:Ctx, key:(string|symbol), opts?:_rc_be_opts_T)=>(void|Output),
 ):RcBe<Output, Ctx> {
 	return (ctx:Ctx, opts?:_rc_be_opts_T)=>{
-		const destroy_a1:rc_be_destroy_T[] = []
+		const destroy_cb_a1:rc_be_destroy_T[] = []
 		const _val_this:_val_this_T = {
 			on_destroy,
 			onDestroy: on_destroy,
@@ -34,6 +34,9 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 		let destroy = ()=>{
 			rc_set.delete(owner)
 			if (!rc_set.size) {
+				for (const destroy_cb of destroy_cb_a1) {
+					destroy_cb()
+				}
 				delete ctx[key]
 			}
 		}
@@ -42,7 +45,7 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 			destroy,
 		}
 		function on_destroy(...$$destroy_a1) {
-			destroy_a1.push(...$$destroy_a1)
+			destroy_cb_a1.push(...$$destroy_a1)
 		}
 	}
 }

@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.9
+
+### Patch Changes
+
+- fix: \_rc_be: onDestroy callbacks are invoked
+
 ## 17.5.8
 
 ### Patch Changes
