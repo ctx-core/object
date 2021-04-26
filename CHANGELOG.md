@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.11
+
+### Patch Changes
+
+- fix: \_rc_be: initializing ctx[rc_set_h_symbol]
+
 ## 17.5.10
 
 ### Patch Changes

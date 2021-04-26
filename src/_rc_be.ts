@@ -23,6 +23,7 @@ export function _rc_be<Output extends unknown = unknown, Ctx extends object = ob
 		let rc_set_h:Record<string|symbol, Set<any>> = ctx[rc_set_h_symbol]
 		if (!rc_set_h) {
 			rc_set_h = {}
+			ctx[rc_set_h_symbol] = rc_set_h
 		}
 		let rc_set:Set<any> = rc_set_h[key as string]
 		if (!rc_set) {
