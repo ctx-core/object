@@ -2,7 +2,9 @@ import { clone } from './clone'
 /**
  * `ensure` `obj[key]` is present or call `ensure(obj)`. Then call `refresh(obj, obj[key])`.
  */
-export function ensure_refresh<I extends unknown = unknown>(obj:ensure_refresh_obj_type<I>, ...refresh_ctx_a1:refresh_ctx_type<I>[]) {
+export function ensure_refresh<I extends unknown = unknown>(
+	obj:ensure_refresh_obj_type<I>, ...refresh_ctx_a1:refresh_ctx_type<I>[]
+) {
 	if (!obj) return
 	const refresh_ctx = clone(...refresh_ctx_a1)
 	const {
