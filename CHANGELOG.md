@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.14
+
+### Patch Changes
+
+- fix: \_be,\_rc_be: strict type issues
+
 ## 17.5.13
 
 ### Patch Changes
