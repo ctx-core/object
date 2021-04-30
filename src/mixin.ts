@@ -8,18 +8,19 @@
  *	})
  */
 export function mixin<I extends unknown = unknown, O = I>(target:I, ...source_a1:O[]) {
-	if (!target) return
-	for (let i = 0; i < source_a1.length; i++) {
-		const source = source_a1[i]
-		const propertyNames = Object.getOwnPropertyNames(source)
-		for (let j = 0; j < propertyNames.length; j++) {
-			const propertyName = propertyNames[j]
-			Object.defineProperty(
-				target,
-				propertyName,
-				Object.getOwnPropertyDescriptor(source, propertyName) as PropertyDescriptor
-			)
-		}
-	}
+	source_a1.forEach(source=>{
+		let descriptors = Object.keys(source).reduce((descriptors, key)=>{
+			descriptors[key] = Object.getOwnPropertyDescriptor(source, key)
+			return descriptors
+		}, {})
+		// By default, Object.assign copies enumerable Symbols, too
+		Object.getOwnPropertySymbols(source).forEach(sym=>{
+			let descriptor = Object.getOwnPropertyDescriptor(source, sym) as PropertyDescriptor
+			if (descriptor.enumerable) {
+				descriptors[sym] = descriptor
+			}
+		})
+		Object.defineProperties(target, descriptors)
+	})
 	return target
 }

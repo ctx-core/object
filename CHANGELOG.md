@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.15
+
+### Patch Changes
+
+- mixin: implementation from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#copying_accessors
+
 ## 17.5.14
 
 ### Patch Changes
