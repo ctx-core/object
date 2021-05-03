@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 17.5.16
+
+### Patch Changes
+
+- fix: mixin: typescript strict compilation error
+
 ## 17.5.15
 
 ### Patch Changes
