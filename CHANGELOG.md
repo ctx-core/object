@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 17.5.25
+
+### Patch Changes
+
+- fix: type issues
+- Updated dependencies [undefined]
+  - @ctx-core/function@17.8.3
+
 ## 17.5.24
 
 ### Patch Changes
