@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 17.6.0
+
+### Minor Changes
+
+- "noImplicitAny": true
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/function@17.9.0
+
 ## 17.5.27
 
 ### Patch Changes
