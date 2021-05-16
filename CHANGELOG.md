@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 17.6.2
+
+### Patch Changes
+
+- .npmignore: + ~
+- Updated dependencies [undefined]
+  - @ctx-core/function@17.9.2
+
 ## 17.6.1
 
 ### Patch Changes
