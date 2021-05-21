@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 18.0.0
+
+### Major Changes
+
+- \_be,\_b,\_rc_be,\_rc_b: generic type is Ctx & keyof Ctx
+
 ## 17.6.2
 
 ### Patch Changes

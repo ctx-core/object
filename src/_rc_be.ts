@@ -1,21 +1,21 @@
 import { assign } from './assign'
 import { _be, _be_opts_T } from './_be'
-export const rc_set_h_symbol: unique symbol = Symbol('rc_set_h')
+export const rc_set_h_symbol:unique symbol = Symbol('rc_set_h')
 /**
  * Returns _be with referencing counting.
  * When all unsubscribes have been called, the ctx[key] is deleted.
  */
-export function _rc_be<Output extends unknown = unknown, Ctx extends Object = Object>(
-	key:string|symbol,
-	_val:(this:_val_this_T, ctx:Ctx, key:(string|symbol), opts?:_rc_be_opts_T)=>(void|Output),
-):RcBe<Output, Ctx> {
+export function _rc_be<Ctx extends object = object, Key extends keyof Ctx = keyof Ctx>(
+	key:Key,
+	_val:(this:_val_this_T, ctx:Ctx, key:Key, opts?:_rc_be_opts_T)=>(void|Ctx[Key]),
+):RcBe<Ctx, Key> {
 	return (ctx:Ctx, opts?:_rc_be_opts_T)=>{
 		const destroy_cb_a1:rc_be_destroy_T[] = []
 		const _val_this:_val_this_T = {
 			on_destroy,
 			onDestroy: on_destroy,
 		}
-		const be = _be<Output, Ctx>(
+		const be = _be<Ctx, Key>(
 			key,
 			(ctx, key, opts)=>
 				_val.apply(_val_this, [ctx, key, opts])
@@ -64,9 +64,10 @@ export interface RcBe_return_T<Output extends unknown = unknown> {
 	value:Output
 	destroy:rc_be_destroy_T
 }
-export type RcBe<Output extends unknown = unknown, Ctx extends object = object> =
-	(ctx:Ctx, opts?:_be_opts_T)=>RcBe_return_T<Output>
-export type RcB<Output extends unknown = unknown, Ctx extends object = object> = RcBe<Output, Ctx>
+export type RcBe<Ctx extends object = object, Key extends keyof Ctx = keyof Ctx> =
+	(ctx:Ctx, opts?:_be_opts_T)=>RcBe_return_T<Ctx[Key]>
+export type RcB<Ctx extends object = object, Key extends keyof Ctx = keyof Ctx> =
+	RcBe<Ctx, Key>
 export {
 	_rc_be as _rc_b
 }

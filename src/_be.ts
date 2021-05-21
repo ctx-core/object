@@ -4,10 +4,10 @@ export const pending_symbol = Symbol('pending')
  * Returns a function to ensure that an member key is defined on a ctx object,
  * otherwise it creates the value using the _val factory function.
  */
-export function _be<Output extends unknown = unknown, Ctx extends object = object>(
-	key:string|symbol,
-	_val:(ctx:Ctx, key:(string|symbol), opts?:_be_opts_T)=>(void|Output),
-):Be<Output, Ctx> {
+export function _be<Ctx extends object = Record<string, unknown>, Key extends keyof Ctx = keyof Ctx>(
+	key:Key,
+	_val:(ctx:Ctx, key:Key, opts?:_be_opts_T)=>(void|Ctx[Key]),
+):Be<Ctx, Key> {
 	return (ctx:Ctx, opts?:_be_opts_T)=>{
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
 			let pending = (ctx as any)[pending_symbol]
@@ -28,13 +28,18 @@ export function _be<Output extends unknown = unknown, Ctx extends object = objec
 			}
 			delete pending[key]
 		}
-		return (ctx as any)[key] as Output
+		return (ctx as any)[key] as NonNullable<Ctx[Key]>
 	}
 }
-export type Be<Output extends unknown = unknown, Ctx extends object = object> =
-	(ctx:Ctx, opts?:_be_opts_T)=>Output
-export type B<Output extends unknown = unknown, Ctx extends object = object> = Be<Output, Ctx>
-export type be_T<Output extends unknown = unknown, Ctx extends object = object> = Be<Output, Ctx>
+export type Be<Ctx extends object = object, Key extends keyof Ctx = keyof Ctx> =
+	(
+		ctx:Ctx,
+		opts?:_be_opts_T
+	)=>NonNullable<Ctx[Key]>
+export type B<Ctx extends object = object, Key extends keyof Ctx = keyof Ctx> =
+	Be<Ctx, Key>
+export type be_T<Ctx extends object = object, Key extends keyof Ctx = keyof Ctx> =
+	Be<Ctx, Key>
 export interface _be_opts_T {
 	force?:boolean
 }
