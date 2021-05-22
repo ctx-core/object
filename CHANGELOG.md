@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 18.0.1
+
+### Patch Changes
+
+- \_be,\_b,\_rc_be,\_rc_b: Out generic for return values
+
 ## 18.0.0
 
 ### Major Changes
