@@ -8,11 +8,11 @@ export const rc_set_h_symbol:unique symbol = Symbol('rc_set_h')
 export function _rc_be</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,
-	Out extends NonNullable<Ctx[Key]> = NonNullable<Ctx[Key]>
+	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
 /*@formatter:off*/>(
 	key:Key,
 	_val:(this:_val_this_T, ctx:Ctx, key:Key, opts?:_rc_be_opts_T)=>(void|Ctx[Key]),
-):RcBe<Ctx, Key> {
+):RcBe<Ctx, Key, Out> {
 	return (ctx:Ctx, opts?:_rc_be_opts_T)=>{
 		const destroy_cb_a1:rc_be_destroy_T[] = []
 		const _val_this:_val_this_T = {
@@ -22,7 +22,7 @@ export function _rc_be</*@formatter:on*/
 		const be = _be<Ctx, Key, Out>(
 			key,
 			(ctx, key, opts)=>
-				_val.apply(_val_this, [ctx, key, opts])
+				_val.apply(_val_this, [ctx, key, opts]) as Out
 		)
 		let rc_set_h:set_h_symbol_T = (ctx as any)[rc_set_h_symbol]
 		if (!rc_set_h) {
@@ -71,13 +71,13 @@ export interface RcBe_return_T<Out extends unknown = unknown> {
 export type RcBe</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,
-	Out extends NonNullable<Ctx[Key]> = NonNullable<Ctx[Key]>
+	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
 /*@formatter:off*/> =
 	(ctx:Ctx, opts?:_be_opts_T)=>RcBe_return_T<Out>
 export type RcB</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,
-	Out extends NonNullable<Ctx[Key]> = NonNullable<Ctx[Key]>
+	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
 /*@formatter:off*/> =
 	RcBe<Ctx, Key, Out>
 export {

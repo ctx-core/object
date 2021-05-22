@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 18.0.2
+
+### Patch Changes
+
+- fix: \_be,\_b,\_rc_be,\_rc_b: Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>: more flexible type
+
 ## 18.0.1
 
 ### Patch Changes
