@@ -4,7 +4,7 @@ export declare const rc_set_h_symbol: unique symbol;
  * Returns _be with referencing counting.
  * When all unsubscribes have been called, the ctx[key] is deleted.
  */
-export declare function _rc_be</*@formatter:on*/ Ctx extends object = Record<string, unknown>, Key extends keyof Ctx = keyof Ctx, Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>>(key: Key, _val: (this: _val_this_T, ctx: Ctx, key: Key, opts?: _rc_be_opts_T) => (void | Ctx[Key])): RcBe<Ctx, Key, Out>;
+export declare function _rc_be</*@formatter:on*/ Ctx extends object = Record<string, unknown>, Key extends keyof Ctx = keyof Ctx, Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>>(key: Key, _val: (ctx: Ctx, key: Key, opts?: _be_opts_T) => Out): RcBe<Ctx, Key, Out>;
 export declare type set_h_symbol_T = Record<string | symbol, Set<any>>;
 export declare type _val_this_on_destroy_T = (...destroy_a1: rc_be_destroy_T[]) => void;
 export interface _val_this_T {

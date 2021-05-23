@@ -10,7 +10,7 @@ export function _be</*@formatter:on*/
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
 /*@formatter:off*/>(
 	key:Key,
-	_val:(ctx:Ctx, key:Key, opts?:_be_opts_T)=>(void|Out),
+	_val:(ctx:Ctx, key:Key, opts?:_be_opts_T)=>Out,
 ):Be<Ctx, Key, Out> {
 	return (ctx:Ctx, opts?:_be_opts_T)=>{
 		if (!ctx.hasOwnProperty(key) || opts?.force) {

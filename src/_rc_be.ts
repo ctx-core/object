@@ -11,7 +11,7 @@ export function _rc_be</*@formatter:on*/
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
 /*@formatter:off*/>(
 	key:Key,
-	_val:(this:_val_this_T, ctx:Ctx, key:Key, opts?:_rc_be_opts_T)=>(void|Ctx[Key]),
+	_val:(ctx:Ctx, key:Key, opts?:_be_opts_T)=>Out,
 ):RcBe<Ctx, Key, Out> {
 	return (ctx:Ctx, opts?:_rc_be_opts_T)=>{
 		const destroy_cb_a1:rc_be_destroy_T[] = []
