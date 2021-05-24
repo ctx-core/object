@@ -11,7 +11,7 @@ export function _be</*@formatter:on*/
 	/*@formatter:off*/>(
 	key:Key,
 	_val:(ctx:Ctx, key:Key, opts?:_be_opts_T)=>Out,
-):(ctx:Ctx, opts?:_be_opts_T)=>Out {
+):(ctx:Ctx, opts?:_be_opts_T)=>Out /* Duplicated to avoid error TS2742 */ {
 	return (ctx:Ctx, opts?:_be_opts_T)=>{
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
 			let pending = (ctx as any)[pending_symbol]

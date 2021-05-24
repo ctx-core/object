@@ -12,7 +12,7 @@ export function _rc_be</*@formatter:on*/
 /*@formatter:off*/>(
 	key:Key,
 	_val:(this: _val_this_T, ctx:Ctx, key:Key, opts?:_be_opts_T)=>Out,
-):(ctx:Ctx, opts?:_be_opts_T)=>RcBe_return_T<Out> {
+):(ctx:Ctx, opts?:_be_opts_T)=>RcBe_return_T<Out> /* Duplicated to avoid error TS2742 */ {
 	return (ctx:Ctx, opts?:_rc_be_opts_T)=>{
 		const destroy_cb_a1:rc_be_destroy_T[] = []
 		const _val_this:_val_this_T = {
@@ -72,13 +72,13 @@ export type RcBe</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-/*@formatter:off*/> =
+	/*@formatter:off*/> =
 	(ctx:Ctx, opts?:_be_opts_T)=>RcBe_return_T<Out>
 export type RcB</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-/*@formatter:off*/> =
+	/*@formatter:off*/> =
 	RcBe<Ctx, Key, Out>
 export {
 	_rc_be as _rc_b
