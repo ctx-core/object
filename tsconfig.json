@@ -5,6 +5,7 @@
 		"strict": true,
 		"composite": true,
 		"declaration": true,
+		"sourceMap": true,
 		"noEmitOnError": true,
 		"noErrorTruncation": true,
 		"module": "esnext",
@@ -21,12 +22,15 @@
 			"../../node_modules/@types",
 			"node_modules/@types"
 		],
-		"outDir": ".",
-		"declarationDir": ".",
+		"rootDir": "src",
+		"outDir": "dist",
+		"mapRoot": "dist",
+		"declarationDir": "types",
 		"importsNotUsedAsValues": "error"
 	},
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"types"
 	],
 	"references": []
 }
