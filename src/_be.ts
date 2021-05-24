@@ -8,10 +8,10 @@ export function _be</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-/*@formatter:off*/>(
+	/*@formatter:off*/>(
 	key:Key,
 	_val:(ctx:Ctx, key:Key, opts?:_be_opts_T)=>Out,
-):Be<Ctx, Key, Out> {
+):(ctx:Ctx, opts?:_be_opts_T)=>Out {
 	return (ctx:Ctx, opts?:_be_opts_T)=>{
 		if (!ctx.hasOwnProperty(key) || opts?.force) {
 			let pending = (ctx as any)[pending_symbol]
@@ -39,7 +39,7 @@ export type Be</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-/*@formatter:off*/> =
+	/*@formatter:off*/> =
 	(
 		ctx:Ctx,
 		opts?:_be_opts_T
@@ -48,13 +48,13 @@ export type B</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-/*@formatter:off*/> =
+	/*@formatter:off*/> =
 	Be<Ctx, Key, Out>
 export type be_T</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-/*@formatter:off*/> =
+	/*@formatter:off*/> =
 	Be<Ctx, Key, Out>
 export interface _be_opts_T {
 	force?:boolean

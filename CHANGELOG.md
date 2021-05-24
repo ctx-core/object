@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 18.0.5
+
+### Patch Changes
+
+- fix: \_be,\_b,\_rc_be,\_rc_b: directly defining return type to avoid error TS2742
+
 ## 18.0.4
 
 ### Patch Changes

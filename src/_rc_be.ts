@@ -12,7 +12,7 @@ export function _rc_be</*@formatter:on*/
 /*@formatter:off*/>(
 	key:Key,
 	_val:(this: _val_this_T, ctx:Ctx, key:Key, opts?:_be_opts_T)=>Out,
-):RcBe<Ctx, Key, Out> {
+):(ctx:Ctx, opts?:_be_opts_T)=>RcBe_return_T<Out> {
 	return (ctx:Ctx, opts?:_rc_be_opts_T)=>{
 		const destroy_cb_a1:rc_be_destroy_T[] = []
 		const _val_this:_val_this_T = {
