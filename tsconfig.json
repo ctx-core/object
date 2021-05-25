@@ -25,12 +25,12 @@
 		"rootDir": "src",
 		"outDir": "dist",
 		"mapRoot": "dist",
-		"declarationDir": "types",
+		"declarationDir": "dist",
 		"importsNotUsedAsValues": "error"
 	},
 	"exclude": [
 		"node_modules",
-		"types"
+		"dist"
 	],
 	"references": []
 }
