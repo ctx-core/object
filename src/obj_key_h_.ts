@@ -1,7 +1,7 @@
 /**
  * Returns Hash of each `value[key]` in `obj`.
  */
-export function _obj_key_hash</*@formatter:off*/
+export function obj_key_h_</*@formatter:off*/
 	T extends unknown = unknown
 /*@formatter:on*/>(obj:T, key:string) {
 	const obj_key_hash = {} as Record<string, T[keyof T]>
@@ -11,5 +11,6 @@ export function _obj_key_hash</*@formatter:off*/
 	return obj_key_hash
 }
 export {
-	_obj_key_hash as _hash__key__obj
+	obj_key_h_ as _obj_key_hash,
+	obj_key_h_ as _hash__key__obj,
 }

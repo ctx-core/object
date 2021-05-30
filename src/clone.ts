@@ -2,6 +2,6 @@ import { assign } from './assign'
 /**
  * Assigns arguments to new object
  */
-export function clone<I extends object = object>(...arg_a1: Partial<I>[]) {
-	return assign({}, ...arg_a1) as I
+export function clone<I extends object = object>(...arg_a: Partial<I>[]) {
+	return assign({}, ...arg_a) as I
 }

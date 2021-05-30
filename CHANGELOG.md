@@ -1,5 +1,18 @@
 # @ctx-core/object
 
+## 19.0.0
+
+### Major Changes
+
+- \$ suffix for stores
+- \_ suffix for factory functions
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @ctx-core/function@18.0.0
+
 ## 18.2.1
 
 ### Patch Changes
@@ -503,7 +516,7 @@
 
 ### Minor Changes
 
-- be_type<C extends object = object, O extends unknown = unknown> = (ctx:C, opts?:\_be_opts_T)=>O
+- be_type<C extends object = object, O extends unknown = unknown> = (ctx:C, opts?:\be\_\_opts_T)=>O
 
 ## 15.0.16
 

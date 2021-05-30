@@ -1,6 +1,6 @@
 import test from 'ava'
-import { _has_key } from '..'
+import { has_key_ } from '..'
 test('_has_key', t=>{
-	t.true(_has_key({ foo: 'bar' }, 'foo'))
-	t.false(_has_key({ foo: 'bar' }, 'not-inside'))
+	t.true(has_key_({ foo: 'bar' }, 'foo'))
+	t.false(has_key_({ foo: 'bar' }, 'not-inside'))
 })
