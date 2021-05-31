@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 19.0.2
+
+### Patch Changes
+
+- _b->be_
+
 ## 19.0.1
 
 ### Patch Changes
@@ -69,7 +75,7 @@
 
 ### Patch Changes
 
-- fix: \_be,\_b,\_rc_be,\_rc_b: directly defining return type to avoid error TS2742
+- fix: \_be,\be\_,_rc_be,\_rc_b: directly defining return type to avoid error TS2742
 
 ## 18.0.4
 
@@ -81,25 +87,25 @@
 
 ### Patch Changes
 
-- fix: \_be,\_b,\_rc_be,\_rc_b: \_val argument: return type set to Out
+- fix: \_be,\be\_,_rc_be,\_rc_b: \_val argument: return type set to Out
 
 ## 18.0.2
 
 ### Patch Changes
 
-- fix: \_be,\_b,\_rc_be,\_rc_b: Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>: more flexible type
+- fix: \_be,\be\_,_rc_be,\_rc_b: Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>: more flexible type
 
 ## 18.0.1
 
 ### Patch Changes
 
-- \_be,\_b,\_rc_be,\_rc_b: Out generic for return values
+- \_be,\be\_,_rc_be,\_rc_b: Out generic for return values
 
 ## 18.0.0
 
 ### Major Changes
 
-- \_be,\_b,\_rc_be,\_rc_b: generic type is Ctx & keyof Ctx
+- \_be,\be\_,_rc_be,\_rc_b: generic type is Ctx & keyof Ctx
 
 ## 17.6.2
 
@@ -581,7 +587,7 @@
 
 ### Patch Changes
 
-- fix: \_be,\_b: pending logic when key is not present in the ctx
+- fix: \_be,\be\_: pending logic when key is not present in the ctx
 
   export pending_symbol
 
@@ -645,21 +651,21 @@
 
 ### Major Changes
 
-- \_be,\_b: ctx is required
+- \_be,\be\_: ctx is required
 
 ### Patch Changes
 
-- fix: \_b: generic types
+- fix: \be\_: generic types
 
 ## 14.0.0
 
 ### Major Changes
 
-- \_be,\_b: ctx is required
+- \_be,\be\_: ctx is required
 
 ### Minor Changes
 
-- \_be,\_b: C generic type for ctx argument
+- \_be,\be\_: C generic type for ctx argument
 
 ## 13.1.0
 
@@ -699,32 +705,32 @@
 
 ### Patch Changes
 
-- fix: \_be,\_b: nondeterministic build issues
+- fix: \_be,\be\_: nondeterministic build issues
 
 ## 12.0.12
 
 ### Patch Changes
 
-- fix: \_be,\_b: typescript errors
+- fix: \_be,\be\_: typescript errors
 
 ## 12.0.11
 
 ### Patch Changes
 
-- fix: \_be,\_b: setting ctx[key]
+- fix: \_be,\be\_: setting ctx[key]
 
 ## 12.0.10
 
 ### Patch Changes
 
-- fix: \_be,\_b return value
+- fix: \_be,\be\_ return value
 
 ## 12.0.9
 
 ### Patch Changes
 
-- fix: \_be,\_b: \_val(ctx, key, opts?): ctx & key are always passed
-- explicitly setting B types when \_b is invoked
+- fix: \_be,\be\_: \_val(ctx, key, opts?): ctx & key are always passed
+- explicitly setting B types when \be\_ is invoked
 
 ## 12.0.8
 
@@ -791,7 +797,7 @@
 
 ### Patch Changes
 
-- fix: \_be,\_b: allow unknown type
+- fix: \_be,\be\_: allow unknown type
 
 ## 12.0.1
 
