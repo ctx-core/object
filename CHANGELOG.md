@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 19.0.3
+
+### Patch Changes
+
+- update dependencies
+
 ## 19.0.2
 
 ### Patch Changes
