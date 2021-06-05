@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 19.0.4
+
+### Patch Changes
+
+- a*assign,zip_ctx*
+
 ## 19.0.3
 
 ### Patch Changes

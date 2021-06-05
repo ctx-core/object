@@ -1,7 +1,7 @@
 /**
  * Returns obj with  zipped value_a1
  */
-export function _zip_ctx<T extends unknown = unknown>(key_: string[], value_a1?: T[keyof T][]) {
+export function zip_ctx_<T extends unknown = unknown>(key_: string[], value_a1?: T[keyof T][]) {
 	const zip_ctx = {} as T
 	if (key_) {
 		for (let i = 0; i < key_.length; i++) {
@@ -11,5 +11,6 @@ export function _zip_ctx<T extends unknown = unknown>(key_: string[], value_a1?:
 	return zip_ctx
 }
 export {
-	_zip_ctx as _ctx__zip
+	zip_ctx_ as _zip_ctx,
+	zip_ctx_ as _ctx__zip,
 }
