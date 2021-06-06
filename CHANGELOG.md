@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 19.1.2
+
+### Patch Changes
+
+- fix: build: clean up old build files in dist
+- Updated dependencies [undefined]
+  - @ctx-core/function@18.1.2
+
 ## 19.1.1
 
 ### Patch Changes
