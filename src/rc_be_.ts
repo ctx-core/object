@@ -1,5 +1,6 @@
 import { assign } from './assign'
-import { be_, be__opts_T } from './be_'
+import { be_ } from './be_'
+import type { be_opts_T } from './be_'
 export const rc_set_h_symbol:unique symbol = Symbol('rc_set_h')
 /**
  * Returns _be with referencing counting.
@@ -10,10 +11,10 @@ export function rc_be_</*@formatter:on*/
 	Key extends keyof Ctx = keyof Ctx,
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
 	/*@formatter:off*/>(
-	key:Key,
-	val_:(this: val__this_T, ctx:Ctx, key:Key, opts?:be__opts_T)=>Out,
-):(ctx:Ctx, opts?:be__opts_T)=>RcBe_return_T<Out> /* Duplicated to avoid error TS2742 */ {
-	return (ctx:Ctx, opts?:rc_be__opts_I)=>{
+	key:Key, val_:rc_be__val__T<Ctx, Key, Out>,
+):(ctx:Ctx, opts?:rc_be_opts_T)=>RcBe_return_T<Out> /* Duplicated to avoid error TS2742 */ {
+	return (ctx:Ctx, opts?:rc_be_opts_T)=>{
+		const ctx_any = ctx as any
 		const destroy_cb_a:rc_be_destroy_T[] = []
 		const val__this:val__this_T = {
 			on_destroy,
@@ -24,10 +25,10 @@ export function rc_be_</*@formatter:on*/
 			(ctx, key, opts)=>
 				val_.apply(val__this, [ctx, key, opts]) as Out
 		)
-		let rc_set_h:set_h_symbol_T = (ctx as any)[rc_set_h_symbol]
+		let rc_set_h:set_h_symbol_T = ctx_any[rc_set_h_symbol]
 		if (!rc_set_h) {
 			rc_set_h = {}
-			;(ctx as any)[rc_set_h_symbol] = rc_set_h
+			ctx_any[rc_set_h_symbol] = rc_set_h
 		}
 		let rc_set:Set<any> = rc_set_h[key as string]
 		if (!rc_set) {
@@ -42,27 +43,33 @@ export function rc_be_</*@formatter:on*/
 				for (const destroy_cb of destroy_cb_a) {
 					destroy_cb()
 				}
-				delete (ctx as any)[key]
+				delete ctx_any[key]
 			}
 		}
 		return {
 			value: be(ctx, opts),
 			destroy,
 		}
-		function on_destroy(...in_destroy_cb_a1:rc_be_destroy_T[]) {
-			destroy_cb_a.push(...in_destroy_cb_a1)
+		function on_destroy(...in_destroy_cb_a:rc_be_destroy_T[]) {
+			destroy_cb_a.push(...in_destroy_cb_a)
 		}
 	}
 }
 export type set_h_symbol_T = Record<string|symbol, Set<any>>
-export type val__this_on_destroy_T = (...destroy_a1:rc_be_destroy_T[])=>void
+export type val__this_on_destroy_T = (...destroy_a:rc_be_destroy_T[])=>void
 export interface val__this_T {
 	on_destroy:val__this_on_destroy_T
 	onDestroy:val__this_on_destroy_T
 }
-export interface rc_be__opts_I extends be__opts_T {
+export interface rc_be_opts_T extends be_opts_T {
 	owner?:object
 }
+export type rc_be__val__T</*@formatter:on*/
+	Ctx extends object = Record<string, unknown>,
+	Key extends keyof Ctx = keyof Ctx,
+	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
+	/*@formatter:off*/> =
+	(this: val__this_T, ctx:Ctx, key:Key, opts?:rc_be_opts_T)=>Out
 export type rc_be_destroy_T = ()=>void
 export interface RcBe_return_T<Out extends unknown = unknown> {
 	value:Out
@@ -73,7 +80,7 @@ export type RcBe</*@formatter:on*/
 	Key extends keyof Ctx = keyof Ctx,
 	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
 	/*@formatter:off*/> =
-	(ctx:Ctx, opts?:be__opts_T)=>RcBe_return_T<Out>
+	(ctx:Ctx, opts?:be_opts_T)=>RcBe_return_T<Out>
 export type RcB</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,

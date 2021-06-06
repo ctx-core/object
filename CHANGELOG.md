@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 19.1.0
+
+### Minor Changes
+
+- feat: be,b,rc_be,rc_b
+
 ## 19.0.4
 
 ### Patch Changes
