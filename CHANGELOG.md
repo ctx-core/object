@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 19.1.3
+
+### Patch Changes
+
+- version bump: run build
+- Updated dependencies [undefined]
+  - @ctx-core/function@18.1.3
+
 ## 19.1.2
 
 ### Patch Changes
