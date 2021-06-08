@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 19.1.4
+
+### Patch Changes
+
+- fix: map*obj,map_obj*,map*obj_andand,map_obj_andand*: return type
+
 ## 19.1.3
 
 ### Patch Changes
