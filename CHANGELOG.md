@@ -1,5 +1,12 @@
 # @ctx-core/object
 
+## 19.3.0
+
+### Minor Changes
+
+- zip*o*: <Obj extends object = object>(key_a:(keyof Obj)[], val_a:Obj[keyof Obj][]): Obj
+- zip\__o_: alias to zip*h*
+
 ## 19.2.0
 
 ### Minor Changes
