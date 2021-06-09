@@ -1,5 +1,15 @@
 # @ctx-core/object
 
+## 19.2.0
+
+### Minor Changes
+
+- pick*val_a*: alias to pick*value_a*
+
+### Patch Changes
+
+- fix: pick*val_a*: Obj type represents an object key_a being (keyof Obj)[]
+
 ## 19.1.5
 
 ### Patch Changes
