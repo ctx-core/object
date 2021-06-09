@@ -1,5 +1,12 @@
 # @ctx-core/object
 
+## 19.1.5
+
+### Patch Changes
+
+- fix: zip*h*: return value
+- zip*h* with zip*ctx* alias
+
 ## 19.1.4
 
 ### Patch Changes
