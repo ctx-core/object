@@ -3,10 +3,10 @@ import { clone } from './clone'
  * `ensure` `obj[key]` is present or call `ensure(obj)`. Then call `refresh(obj, obj[key])`.
  */
 export function ensure_refresh<I extends unknown = unknown>(
-	obj:ensure_refresh_obj_type<I>, ...refresh_ctx_a1:refresh_ctx_type<I>[]
+	obj:ensure_refresh_obj_type<I>, ...refresh_ctx_a:refresh_ctx_T<I>[]
 ) {
 	if (!obj) return
-	const refresh_ctx = clone(...refresh_ctx_a1)
+	const refresh_ctx = clone(...refresh_ctx_a)
 	const {
 		key, ensure, refresh
 	} = refresh_ctx
@@ -16,7 +16,7 @@ export function ensure_refresh<I extends unknown = unknown>(
 	refresh(obj, obj[key])
 	return obj[key]
 }
-export interface refresh_ctx_type<T> {
+export interface refresh_ctx_T<T> {
 	key:string
 	ensure:(obj:ensure_refresh_obj_type<T>)=>T
 	refresh:(obj:ensure_refresh_obj_type<T>, val:T)=>void
