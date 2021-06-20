@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 20.0.5
+
+### Patch Changes
+
+- npm run prepare instead of npm run prepublishOnly
+- Updated dependencies [undefined]
+  - @ctx-core/function@19.1.4
+
 ## 20.0.4
 
 ### Patch Changes
