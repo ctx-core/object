@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 20.0.6
+
+### Patch Changes
+
+- "prepare": "npm run clean && npm run compile"
+- Updated dependencies [undefined]
+  - @ctx-core/function@19.1.5
+
 ## 20.0.5
 
 ### Patch Changes
