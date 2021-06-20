@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 20.0.7
+
+### Patch Changes
+
+- fix: deploying \*.js files
+- Updated dependencies [undefined]
+  - @ctx-core/function@19.1.6
+
 ## 20.0.6
 
 ### Patch Changes
