@@ -1,6 +1,6 @@
 import { assign } from './assign'
 const { get } = Reflect
-export function ctx_<Ctx extends object = object>(back_ctx = {}):Ctx {
+export function weak_ctx_<Ctx extends object = object>(back_ctx = {}):Ctx {
 	if (typeof window === 'undefined' || typeof window.WeakRef !== 'undefined') {
 		const proxy_ctx = new Proxy(back_ctx, {
 			getOwnPropertyDescriptor(back_ctx, prop) {
