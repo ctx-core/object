@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 20.1.3
+
+### Patch Changes
+
+- fix: ctx\_: check for deref in value
+
 ## 20.1.2
 
 ### Patch Changes

@@ -5,7 +5,7 @@ export function ctx_<Ctx extends object = object>(back_ctx = {}):Ctx {
 		const proxy_ctx = new Proxy(back_ctx, {
 			getOwnPropertyDescriptor(back_ctx, prop) {
 				let value = get(back_ctx, prop)
-				if ('deref' in value) {
+				if (value?.deref) {
 					value = value.deref()
 				}
 				return (
@@ -22,7 +22,7 @@ export function ctx_<Ctx extends object = object>(back_ctx = {}):Ctx {
 			get(back_ctx, prop) {
 				const uw_val = get(back_ctx, prop)
 				return (
-					'deref' in uw_val
+					uw_val?.deref
 					? uw_val.deref()
 					: uw_val
 				)
