@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 20.1.0
+
+### Minor Changes
+
+- - ctx\_: returns a ctx storing the values using a WeakRef to garbage collect unused values
+
 ## 20.0.8
 
 ### Patch Changes
