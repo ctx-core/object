@@ -1,12 +1,11 @@
 import { assign } from './assign'
 const { get } = Reflect
-export function ctx_<Ctx extends object = object>():Ctx {
+export function ctx_<Ctx extends object = object>(back_ctx = {}):Ctx {
 	if (typeof window === 'undefined' || typeof window.WeakRef !== 'undefined') {
-		const back_ctx:Record<string, any> = {}
 		const proxy_ctx = new Proxy(back_ctx, {
 			getOwnPropertyDescriptor(back_ctx, prop) {
 				let value = get(back_ctx, prop)
-				if (typeof value === 'object') {
+				if ('deref' in value) {
 					value = value.deref()
 				}
 				return (
@@ -23,7 +22,7 @@ export function ctx_<Ctx extends object = object>():Ctx {
 			get(back_ctx, prop) {
 				const uw_val = get(back_ctx, prop)
 				return (
-					typeof uw_val === 'object'
+					'deref' in uw_val
 					? uw_val.deref()
 					: uw_val
 				)
