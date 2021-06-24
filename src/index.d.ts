@@ -1,4 +1,3 @@
-export * from './test';
 export * from './a_assign';
 export * from './assign';
 export * from './assign_fn_key_a';
