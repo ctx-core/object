@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 20.2.0
+
+### Minor Changes
+
+- weak*r* as weak*ctx*
+- weak*r*: + add_strong,delete_strong: add/delete strong reference keys on the record
+- + ref_strong,set_strong,ref_weak,unset_weak,weak_r_T
+
 ## 20.1.4
 
 ### Patch Changes
