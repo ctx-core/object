@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 20.2.2
+
+### Patch Changes
+
+- dist directory
+- Updated dependencies [undefined]
+  - @ctx-core/function@19.1.10
+
 ## 20.2.1
 
 ### Patch Changes
