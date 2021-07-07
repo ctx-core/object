@@ -1,5 +1,12 @@
 # @ctx-core/object
 
+## 20.3.0
+
+### Minor Changes
+
+- ref_strong,set_strong,ref_weak,unset_weak,weak_r_T: string|symbol->keyof_T
+- - keyof_T
+
 ## 20.2.5
 
 ### Patch Changes

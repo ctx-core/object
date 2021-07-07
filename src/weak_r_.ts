@@ -1,4 +1,5 @@
 import { assign } from './assign'
+import type { keyof_T } from './keyof_T'
 const { get } = Reflect
 const add_strong_sym = Symbol('add_strong')
 const delete_strong_sym = Symbol('delete_strong')
@@ -54,12 +55,12 @@ export function weak_r_<Ctx extends object = object>(back_ctx = {}):Ctx {
 	return back_ctx as Ctx
 }
 export function ref_strong<Ctx extends weak_r_T>(
-	ctx:Ctx, prop:string|symbol
+	ctx:Ctx, prop:keyof_T
 ):void {
 	ctx[add_strong_sym](prop)
 }
 export function set_strong<Ctx extends weak_r_T, Val extends unknown = unknown>(
-	ctx:Ctx, prop:string|symbol, val:Val
+	ctx:Ctx, prop:keyof_T, val:Val
 ):void {
   ref_strong<Ctx>(ctx, prop)
 	if (val !== undefined) {
@@ -67,19 +68,19 @@ export function set_strong<Ctx extends weak_r_T, Val extends unknown = unknown>(
 	}
 }
 export function ref_weak<Ctx extends weak_r_T>(
-	ctx:Ctx, prop:string|symbol
+	ctx:Ctx, prop:keyof_T
 ):void {
 	ctx[delete_strong_sym](prop)
 }
 export function unset_weak<Ctx extends weak_r_T>(
-	ctx:Ctx, prop:string|symbol
+	ctx:Ctx, prop:keyof_T
 ):void {
   ref_weak<Ctx>(ctx, prop)
 	delete (ctx as any)[prop]
 }
 export interface weak_r_T {
-	[add_strong_sym](prop:string|symbol, key?:any):void
-	[delete_strong_sym](prop:string|symbol):void
+	[add_strong_sym](prop:keyof_T, key?:any):void
+	[delete_strong_sym](prop:keyof_T):void
 }
 export {
 	weak_r_ as weak_ctx_,
