@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 20.4.0
+
+### Minor Changes
+
+- nullish*or*
+
 ## 20.3.0
 
 ### Minor Changes
