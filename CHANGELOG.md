@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 20.4.1
+
+### Patch Changes
+
+- nullish*or*: + or\_ argument
+
 ## 20.4.0
 
 ### Minor Changes
