@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 20.5.0
+
+### Minor Changes
+
+- aa instead of a2,aaa instead of a3
+
 ## 20.4.2
 
 ### Patch Changes
