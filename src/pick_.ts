@@ -1,4 +1,4 @@
-import { pick } from './pick'
+import { pick } from './pick.js'
 /**
  * Returns a function that calls [pick](#pick) with the given `...in_key_a`
  */

@@ -1,7 +1,7 @@
-import { assign } from './assign'
-import { be_ } from './be_'
-import type { be_opts_T } from './be_'
-export const rc_set_h_symbol:unique symbol = Symbol('rc_set_h')
+import { assign } from './assign.js'
+import { be_ } from './be_.js'
+import type { be_opts_T } from './be_.js'
+export const rc_set_r_symbol:unique symbol = Symbol('rc_set_r')
 /**
  * Returns _be with referencing counting.
  * When all unsubscribes have been called, the ctx[key] is deleted.
@@ -25,15 +25,15 @@ export function rc_be_</*@formatter:on*/
 			(ctx, key, opts)=>
 				val_.apply(val__this, [ctx, key, opts]) as Out
 		)
-		let rc_set_h:set_h_symbol_T = ctx_any[rc_set_h_symbol]
-		if (!rc_set_h) {
-			rc_set_h = {}
-			ctx_any[rc_set_h_symbol] = rc_set_h
+		let rc_set_r:set_h_symbol_T = ctx_any[rc_set_r_symbol]
+		if (!rc_set_r) {
+			rc_set_r = {}
+			ctx_any[rc_set_r_symbol] = rc_set_r
 		}
-		let rc_set:Set<any> = rc_set_h[key as string]
+		let rc_set:Set<any> = rc_set_r[key as string]
 		if (!rc_set) {
 			rc_set = new Set()
-			assign(rc_set_h, { [key]: rc_set })
+			assign(rc_set_r, { [key]: rc_set })
 		}
 		const owner = opts?.owner || {}
 		rc_set.add(owner)

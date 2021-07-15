@@ -1,5 +1,5 @@
-import { assign } from './assign'
-import type { keyof_T } from './keyof_T'
+import { assign } from './assign.js'
+import type { keyof_T } from './keyof_T.js'
 const { get } = Reflect
 const add_strong_sym = Symbol('add_strong')
 const delete_strong_sym = Symbol('delete_strong')

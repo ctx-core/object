@@ -1,4 +1,4 @@
-import { clone } from './clone'
+import { clone } from './clone.js'
 /**
  * `ensure` `obj[key]` is present or call `ensure(obj)`. Then call `refresh(obj, obj[key])`.
  */

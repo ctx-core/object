@@ -1,4 +1,4 @@
-import { keys } from './keys'
+import { keys } from './keys.js'
 /**
  * Ensures that the keys in `rest_ctx_a` are added to obj
  *   only if the key is not defined on obj (== null).

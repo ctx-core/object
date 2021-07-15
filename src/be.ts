@@ -1,5 +1,5 @@
-import type { be_opts_T } from './be_'
-import { be_ } from './be_'
+import type { be_opts_T } from './be_.js'
+import { be_ } from './be_.js'
 export function be</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,

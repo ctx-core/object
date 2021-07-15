@@ -1,4 +1,4 @@
-import { assign } from './assign'
+import { assign } from './assign.js'
 /**
  * Assigns arguments to new object
  */

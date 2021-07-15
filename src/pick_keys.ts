@@ -1,5 +1,5 @@
-import { pick } from './pick'
-import { keys } from './keys'
+import { pick } from './pick.js'
+import { keys } from './keys.js'
 /**
  * Picks the keys on `in_key_obj` from `obj`
  */

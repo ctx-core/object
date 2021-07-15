@@ -1,5 +1,5 @@
-import { assign_fn_key_a, fn_key_a_tuple_T } from './assign_fn_key_a'
-import { clone } from './clone'
+import { assign_fn_key_a, fn_key_a_tuple_T } from './assign_fn_key_a.js'
+import { clone } from './clone.js'
 /**
  * Assigns to cloned obj array of keys the return value of function in key_a_fn_aa.
  */

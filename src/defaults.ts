@@ -1,4 +1,4 @@
-import { clone } from './clone'
+import { clone } from './clone.js'
 /**
  * Returns the obj with default values. If `obj[key] == null`, use `default[key]`
  */

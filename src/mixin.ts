@@ -1,10 +1,10 @@
-import { assign } from './assign'
+import { assign } from './assign.js'
 /**
  * Mixin properties from source_a into target
  * @example
  * mixin(obj, {
  *		get foo() {
- *			return 'bar'
+ *			return 'bar.js'
  *		}
  *	})
  */

@@ -1,5 +1,5 @@
-import { unpick } from './unpick'
-import { keys } from './keys'
+import { unpick } from './unpick.js'
+import { keys } from './keys.js'
 /**
  * Does not include keys on `keys_obj` from `rec`
  */

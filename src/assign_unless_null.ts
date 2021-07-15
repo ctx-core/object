@@ -1,4 +1,4 @@
-import { assign } from './assign'
+import { assign } from './assign.js'
 /**
  * Assign only if obj is not null
  */

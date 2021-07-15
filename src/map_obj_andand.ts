@@ -1,6 +1,6 @@
 import type { andand_key_T, nullish } from '@ctx-core/function'
 import { one_andand_ } from '@ctx-core/function'
-import { map_obj, map_obj_fn_T } from './map_obj'
+import { map_obj, map_obj_fn_T } from './map_obj.js'
 /**
  * Map `values` `andand` `key_a` in `obj` to `fn`, returning object with values return by `fn`.
  */

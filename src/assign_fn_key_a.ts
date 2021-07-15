@@ -1,4 +1,4 @@
-import type { assign_fn_T } from './call_assign'
+import type { assign_fn_T } from './call_assign.js'
 /**
  * Assigns to obj array of keys the return value of function in key_a_fn_aa.
  */

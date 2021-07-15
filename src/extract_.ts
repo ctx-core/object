@@ -1,4 +1,4 @@
-import { extract } from './extract'
+import { extract } from './extract.js'
 /**
  * @see {@link https://stackoverflow.com/a/50895613/142571}
  */

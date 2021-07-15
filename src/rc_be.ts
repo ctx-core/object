@@ -1,5 +1,5 @@
-import type { rc_be__val__T } from './rc_be_'
-import { rc_be_ } from './rc_be_'
+import type { rc_be__val__T } from './rc_be_.js'
+import { rc_be_ } from './rc_be_.js'
 export function rc_be</*@formatter:on*/
 	Ctx extends object = Record<string, unknown>,
 	Key extends keyof Ctx = keyof Ctx,

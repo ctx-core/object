@@ -1,5 +1,5 @@
-import { assign } from './assign'
-import { keys } from './keys'
+import { assign } from './assign.js'
+import { keys } from './keys.js'
 /**
  * Does not include `key_` from `obj`
  */

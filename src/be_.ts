@@ -1,4 +1,4 @@
-import { assign } from './assign'
+import { assign } from './assign.js'
 export const pending_symbol = Symbol('pending')
 /**
  * Returns a function to ensure that an member key is defined on a ctx object,

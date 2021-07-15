@@ -1,4 +1,4 @@
-import { assign } from './assign'
+import { assign } from './assign.js'
 export function a_assign<Val extends object = object>(arg_a:Val[]):Val {
 	return assign(arg_a[0], ...arg_a.slice(1))
 }

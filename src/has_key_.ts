@@ -1,4 +1,4 @@
-import { keys } from './keys'
+import { keys } from './keys.js'
 /**
  * If a key is given, returns boolean of whether or not the given key is a member of the obj.
  * If no key is given, returns a boolean of whether or not the obj has any key.

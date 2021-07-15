@@ -1,4 +1,4 @@
-import { omit } from './omit'
+import { omit } from './omit.js'
 /**
  * Returns a function that calls [omit](#omit) with the given `...in_key_a`
  */
