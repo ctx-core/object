@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 21.0.0
+
+### Major Changes
+
+- "type": "module": module npm type
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/function@20.0.0
+
 ## 20.5.0
 
 ### Minor Changes
