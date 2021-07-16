@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "21.0.7",
+	"version": "21.0.8",
 	"description": "ctx-core object",
 	"keywords": [
 		"ctx-core",
@@ -28,12 +28,12 @@
 		"build": "npm run clean && npm run copy-mjs && npm run compile",
 		"clean": "rm -f tsconfig.tsbuildinfo && rm -f src/**/*.js && rm -f src/**/*.d.ts && rm -f src/**/*.map",
 		"compile": "./node_modules/.bin/tsc -b .",
-		"copy-mjs": "cd dist && echo \"require = require('esm')(module)\nmodule.exports = require('./index.js')\" > index.cjs",
+		"copy-mjs": "cd dist && echo \"module.exports = (async () => import('./index.js'))()\" > index.cjs",
 		"exec": "$@",
 		"prepublishOnly": "npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/function": "workspace:^20.0.7"
+		"@ctx-core/function": "workspace:^20.0.8"
 	},
 	"devDependencies": {
 		"ava": "^3.15.0",
