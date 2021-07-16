@@ -1,7 +1,7 @@
 {
 	"compileOnSave": true,
 	"compilerOptions": {
-		"target": "ES2018",
+		"target": "ES2019",
 		"strict": true,
 		"composite": true,
 		"declaration": true,
@@ -24,7 +24,7 @@
 		],
 		"rootDir": "src",
 		"outDir": "dist",
-		"mapRoot": "dist",
+		"mapRoot": "",
 		"declarationDir": "dist",
 		"importsNotUsedAsValues": "error",
 		"lib": ["dom", "ESNext"]
