@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 21.0.11
+
+### Patch Changes
+
+- exports: + "package.json": "./package.json"
+- Updated dependencies [undefined]
+  - @ctx-core/function@20.0.11
+
 ## 21.0.10
 
 ### Patch Changes
