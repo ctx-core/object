@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 21.0.15
+
+### Patch Changes
+
+- update dependencies
+
 ## 21.0.14
 
 ### Patch Changes
