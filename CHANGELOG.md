@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 21.0.22
+
+### Patch Changes
+
+- compile using swc
+- Updated dependencies
+  - @ctx-core/function@20.2.3
+
 ## 21.0.21
 
 ### Patch Changes
