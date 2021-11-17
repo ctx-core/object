@@ -1,6 +1,6 @@
 import { assign } from './assign.js'
-import { be_ } from './be_.js'
 import type { be_opts_T } from './be_.js'
+import { be_ } from './be_.js'
 export const rc_set_r_symbol:unique symbol = Symbol('rc_set_r')
 /**
  * Returns _be with referencing counting.
