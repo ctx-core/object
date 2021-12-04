@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 21.0.28
+
+### Patch Changes
+
+- @swc/core: ^1.2.116 -> ^1.2.117
+- Updated dependencies
+  - @ctx-core/function@20.2.9
+
 ## 21.0.27
 
 ### Patch Changes
