@@ -1,5 +1,17 @@
 # @ctx-core/object
 
+## 22.0.0
+
+### Major Changes
+
+- BREAKING CHANGE: be\_,be: ctx is a Map: Be<Out extends NonNullable<unknown>> = (ctx:Ctx, opts?:be_opts_T)=>Out
+
+  - Ctx,be\_\_return_T
+
+### Patch Changes
+
+- package.json: - module
+
 ## 21.0.30
 
 ### Patch Changes

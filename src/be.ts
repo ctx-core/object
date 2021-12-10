@@ -1,13 +1,9 @@
-import type { be_opts_T } from './be_.js'
-import { be_ } from './be_.js'
-export function be</*@formatter:on*/
-	Ctx extends object = Record<string, unknown>,
-	Key extends keyof Ctx = keyof Ctx,
-	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-	/*@formatter:off*/>(
-	ctx:Ctx, key:Key, val_:(ctx:Ctx, key:Key, opts?:be_opts_T)=>Out,
+import type { Ctx } from './be_.js'
+import { be_, be__val__T } from './be_.js'
+export function be<Out extends NonNullable<unknown>>(
+	ctx:Ctx, key:string, val_:be__val__T<Out>,
 ):Out {
-	return be_<Ctx, Key, Out>(key, val_)(ctx)
+	return be_<Out>(key, val_)(ctx)
 }
 export {
 	be as b,
