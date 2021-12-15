@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 22.0.2
+
+### Patch Changes
+
+- fix: package.json: exports
+- Updated dependencies
+  - @ctx-core/function@20.2.14
+
 ## 22.0.1
 
 ### Patch Changes
