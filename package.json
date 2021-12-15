@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "22.0.0",
+	"version": "22.0.1",
 	"description": "ctx-core object",
 	"keywords": [
 		"ctx-core",
@@ -32,7 +32,7 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/function": "workspace:^20.2.12"
+		"@ctx-core/function": "workspace:^20.2.13"
 	},
 	"devDependencies": {
 		"@swc/cli": "^0.1.55",
@@ -47,5 +47,6 @@
 	},
 	"ava": {
 		"require": []
-	}
+	},
+	"svelte": "./dist/index.js"
 }
