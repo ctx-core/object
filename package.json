@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "22.0.7",
+	"version": "22.0.8",
 	"description": "ctx-core object",
 	"keywords": [
 		"ctx-core",
@@ -17,7 +17,7 @@
 	"license": "Apache-2.0",
 	"author": "Brian Takita",
 	"type": "module",
-	"types": "./src/index.ts",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"import": "./dist/index.js"
@@ -35,10 +35,10 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/function": "workspace:^20.2.19"
+		"@ctx-core/function": "workspace:^20.2.20"
 	},
 	"devDependencies": {
-		"@ctx-core/function": "workspace:^20.2.19",
+		"@ctx-core/function": "workspace:^20.2.20",
 		"@swc/cli": "^0.1.55",
 		"@swc/core": "^1.2.120",
 		"ava": "^3.15.0",
