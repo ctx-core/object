@@ -1,49 +1,57 @@
-import { assign } from './assign.js'
-import type { be_opts_T } from './be_.js'
+import type { Be, be__val__T, be_opts_T, Ctx } from './be_.js'
 import { be_ } from './be_.js'
-export const rc_set_r_symbol:unique symbol = Symbol('rc_set_r')
+export const be_m_set_key:unique symbol = Symbol('be_m_set')
 /**
  * Returns _be with referencing counting.
  * When all unsubscribes have been called, the ctx[key] is deleted.
  */
-export function rc_be_</*@formatter:on*/
-	Ctx extends object = Record<string, unknown>,
-	Key extends keyof Ctx = keyof Ctx,
-	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-	/*@formatter:off*/>(
-	key:Key, val_:rc_be__val__T<Ctx, Key, Out>,
-):(ctx:Ctx, opts?:rc_be_opts_T)=>RcBe_return_T<Out> /* Duplicated to avoid error TS2742 */ {
+export function rc_be_<Out extends NonNullable<unknown>>(
+	val_:rc_be__val__T<Out>,
+):rc_be__return_T<Out>
+export function rc_be_<Out extends NonNullable<unknown>>(
+	key:string,
+	val_:rc_be__val__T<Out>,
+):rc_be__return_T<Out>
+export function rc_be_<Out extends NonNullable<unknown>>(
+	key_or_val:string|rc_be__val__T<Out>,
+	arg_val_?:rc_be__val__T<Out>,
+):rc_be__return_T<Out> {
 	return (ctx:Ctx, opts?:rc_be_opts_T)=>{
 		const ctx_any = ctx as any
 		const destroy_cb_a:rc_be_destroy_T[] = []
-		const val__this:val__this_T = {
+		const val_this:val_this_T = {
 			on_destroy,
 			onDestroy: on_destroy,
 		}
-		const be = be_<Ctx, Key, Out>(
-			key,
-			(ctx, key, opts)=>
-				val_.apply(val__this, [ctx, key, opts]) as Out
-		)
-		let rc_set_r:set_h_symbol_T = ctx_any[rc_set_r_symbol]
-		if (!rc_set_r) {
-			rc_set_r = {}
-			ctx_any[rc_set_r_symbol] = rc_set_r
+		const val_ = arg_val_ ? arg_val_ : key_or_val as be__val__T<Out>
+		const key = arg_val_ ? key_or_val as string : null
+		const be:Be<Out> =
+			arg_val_
+			? be_<Out>(val_)
+			: be_<Out>(
+				key!,
+				(ctx, be, opts)=>
+					arg_val_!.call(val_this, ctx, be, opts) as Out
+			)
+		let be_m_set:be_m_set_T<Out> = ctx_any[be_m_set_key]
+		if (!be_m_set) {
+			be_m_set = new Map<Be<Out>, Set<any>>()
+			ctx_any[be_m_set_key] = be_m_set
 		}
-		let rc_set:Set<any> = rc_set_r[key as string]
+		let rc_set:Set<any>|undefined = be_m_set.get(be)
 		if (!rc_set) {
 			rc_set = new Set()
-			assign(rc_set_r, { [key]: rc_set })
+			be_m_set.set(be, rc_set)
 		}
 		const owner = opts?.owner || {}
 		rc_set.add(owner)
 		let destroy = ()=>{
-			rc_set.delete(owner)
-			if (!rc_set.size) {
+			rc_set!.delete(owner)
+			if (!rc_set!.size) {
 				for (const destroy_cb of destroy_cb_a) {
 					destroy_cb()
 				}
-				delete ctx_any[key]
+				ctx.delete(be)
 			}
 		}
 		return {
@@ -55,38 +63,27 @@ export function rc_be_</*@formatter:on*/
 		}
 	}
 }
-export type set_h_symbol_T = Record<string|symbol, Set<any>>
-export type val__this_on_destroy_T = (...destroy_a:rc_be_destroy_T[])=>void
-export interface val__this_T {
-	on_destroy:val__this_on_destroy_T
-	onDestroy:val__this_on_destroy_T
+export type rc_be__return_T<Out extends NonNullable<unknown>> = (ctx:Ctx, opts?:rc_be_opts_T)=>RcBe_return_T<Out>
+export type be_m_set_T<Out extends NonNullable<unknown>> = Map<Be<Out>, Set<any>>
+export type val_this_on_destroy_T = (...destroy_a:rc_be_destroy_T[])=>void
+export interface val_this_T {
+	on_destroy:val_this_on_destroy_T
+	onDestroy:val_this_on_destroy_T
 }
 export interface rc_be_opts_T extends be_opts_T {
 	owner?:object
 }
-export type rc_be__val__T</*@formatter:on*/
-	Ctx extends object = Record<string, unknown>,
-	Key extends keyof Ctx = keyof Ctx,
-	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-	/*@formatter:off*/> =
-	(this: val__this_T, ctx:Ctx, key:Key, opts?:rc_be_opts_T)=>Out
+export type rc_be__val__T<Out extends NonNullable<unknown>> =
+	(this:val_this_T, ctx:Ctx, key:Be<Out>, opts?:rc_be_opts_T)=>Out
 export type rc_be_destroy_T = ()=>void
 export interface RcBe_return_T<Out extends unknown = unknown> {
 	value:Out
 	destroy:rc_be_destroy_T
 }
-export type RcBe</*@formatter:on*/
-	Ctx extends object = Record<string, unknown>,
-	Key extends keyof Ctx = keyof Ctx,
-	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-	/*@formatter:off*/> =
+export type RcBe<Out extends NonNullable<unknown>> =
 	(ctx:Ctx, opts?:be_opts_T)=>RcBe_return_T<Out>
-export type RcB</*@formatter:on*/
-	Ctx extends object = Record<string, unknown>,
-	Key extends keyof Ctx = keyof Ctx,
-	Out extends NonNullable<unknown> = NonNullable<Ctx[Key]>
-	/*@formatter:off*/> =
-	RcBe<Ctx, Key, Out>
+export type RcB<Out extends NonNullable<unknown>> =
+	RcBe<Out>
 export {
 	rc_be_ as _rc_be,
 	rc_be_ as _rc_b,
