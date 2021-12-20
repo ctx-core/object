@@ -40,7 +40,7 @@
 	"devDependencies": {
 		"@ctx-core/function": "workspace:^20.2.20",
 		"@swc/cli": "^0.1.55",
-		"@swc/core": "^1.2.120",
+		"@swc/core": "^1.2.121",
 		"ava": "^3.15.0",
 		"rimraf": "^3.0.2",
 		"typescript": "next"
