@@ -30,4 +30,3 @@ import { assign } from './assign.js';
     return target;
 }
 
-//# sourceMappingURL=mixin.js.map

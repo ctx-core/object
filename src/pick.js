@@ -16,4 +16,3 @@ export function maybe_pick(obj, ...key_) {
     return pick(obj, ...key_);
 }
 
-//# sourceMappingURL=pick.js.map

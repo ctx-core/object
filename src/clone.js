@@ -6,4 +6,3 @@ import { assign } from './assign.js';
     }, ...arg_a);
 }
 
-//# sourceMappingURL=clone.js.map

@@ -5,4 +5,3 @@ export const native_isArray = Array.isArray;
     return native_isArray ? native_isArray(obj) : toString.call(obj) === '[object Array]';
 }
 
-//# sourceMappingURL=isArray.js.map

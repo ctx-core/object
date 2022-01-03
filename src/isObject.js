@@ -5,4 +5,3 @@
 }
 export { isObject as _is_Object, isObject as _is__Object };
 
-//# sourceMappingURL=isObject.js.map

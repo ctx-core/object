@@ -8,4 +8,3 @@ import { extract } from '../extract/index.js';
 }
 export { extract_ as _extract,  };
 
-//# sourceMappingURL=index.js.map

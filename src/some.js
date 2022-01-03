@@ -11,4 +11,3 @@
     return false;
 }
 
-//# sourceMappingURL=some.js.map

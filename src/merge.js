@@ -20,4 +20,3 @@
     return target;
 }
 
-//# sourceMappingURL=merge.js.map

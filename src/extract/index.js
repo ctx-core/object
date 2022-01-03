@@ -7,4 +7,3 @@ export function extract(value, properties) {
     return result;
 }
 
-//# sourceMappingURL=index.js.map

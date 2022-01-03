@@ -9,4 +9,3 @@ import { clone } from './clone.js';
     return obj;
 }
 
-//# sourceMappingURL=defaults.js.map

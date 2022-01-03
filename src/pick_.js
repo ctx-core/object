@@ -7,4 +7,3 @@ import { pick } from './pick.js';
 }
 export { pick_ as _pick,  };
 
-//# sourceMappingURL=pick_.js.map

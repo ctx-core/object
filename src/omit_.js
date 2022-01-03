@@ -7,4 +7,3 @@ import { omit } from './omit.js';
 }
 export { omit_ as _omit,  };
 
-//# sourceMappingURL=omit_.js.map

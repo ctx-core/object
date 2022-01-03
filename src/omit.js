@@ -12,4 +12,3 @@
     return memo;
 }
 
-//# sourceMappingURL=omit.js.map

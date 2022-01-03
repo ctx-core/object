@@ -19,4 +19,3 @@ export function maybe_unpick(obj, ...key_) {
     return unpick(obj, ...key_);
 }
 
-//# sourceMappingURL=unpick.js.map

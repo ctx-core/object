@@ -3,4 +3,3 @@
  * @type {function(): string}
  */ export const toString = Object.prototype.toString;
 
-//# sourceMappingURL=toString.js.map

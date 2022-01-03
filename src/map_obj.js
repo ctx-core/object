@@ -10,4 +10,3 @@
 }
 export { map_obj as map__obj };
 
-//# sourceMappingURL=map_obj.js.map
