@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 22.0.10
+
+### Patch Changes
+
+- version bump
+- Updated dependencies
+  - @ctx-core/function@20.2.23
+
 ## 22.0.9
 
 ### Patch Changes
