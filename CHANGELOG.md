@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 22.0.11
+
+### Patch Changes
+
+- uvu: ^0.5.2 -> ^0.5.3
+- Updated dependencies
+  - @ctx-core/function@20.2.24
+
 ## 22.0.10
 
 ### Patch Changes
