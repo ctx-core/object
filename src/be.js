@@ -1,6 +1,6 @@
-import { be_ } from './be_.js';
+import { be_ } from './be_.js'
 export function be(ctx, key, val_) {
-    return be_(key, val_)(ctx);
+	return be_(key, val_)(ctx)
 }
-export { be as b,  };
+export { be as b, }
 
