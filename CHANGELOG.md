@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 22.0.12
+
+### Patch Changes
+
+- sideEffects = false
+- Updated dependencies
+  - @ctx-core/function@20.2.25
+
 ## 22.0.11
 
 ### Patch Changes
