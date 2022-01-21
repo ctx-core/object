@@ -1,6 +1,7 @@
 /**
  * Returns obj with zipped val_o
- */ export function zip_o_(key_a, val_a) {
+ */
+export function zip_o_(key_a, val_a) {
 	const zip_o = {}
 	if (key_a) {
 		for (let i = 0; i < key_a.length; i++) {

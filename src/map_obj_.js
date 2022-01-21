@@ -1,7 +1,8 @@
 import { map_obj } from './map_obj.js'
 /**
  * Returns function to map `obj` to `fn` returning object with values.
- */ export function map_obj_(fn) {
+ */
+export function map_obj_(fn) {
 	return (obj)=>map_obj(obj, fn)
 
 }

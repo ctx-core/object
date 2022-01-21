@@ -1,6 +1,7 @@
 /**
  * Returns Array of `[value, key]` in `obj`
- */ export function value_key_aa_(obj) {
+ */
+export function value_key_aa_(obj) {
 	const value_key_aa = []
 	for (let key in obj) {
 		value_key_aa.push([

@@ -1,6 +1,7 @@
 /**
  * Performs a deep merge on the target with each source_a
- */ export function merge(target, ...source_a) {
+ */
+export function merge(target, ...source_a) {
 	if (!target) return
 	// Loop through each object and conduct a merge
 	for (let i = 0; i < source_a.length; i++) {

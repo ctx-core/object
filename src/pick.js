@@ -1,6 +1,7 @@
 /**
  * New `obj` with only `key_` keys.
- */ export function pick(obj, ...key_) {
+ */
+export function pick(obj, ...key_) {
 	const memo = {}
 	for (let i = 0; i < key_.length; i++) {
 		const key = key_[i]

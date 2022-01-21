@@ -1,6 +1,7 @@
 /**
  * Returns true if obj has at least 1 key
- */ export function has_some_key(obj) {
+ */
+export function has_some_key(obj) {
 	for (let _ in obj) {
 		return true
 	}

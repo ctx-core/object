@@ -7,7 +7,8 @@ import { assign } from './assign.js'
  *			return 'bar.js'
  *		}
  *	})
- */ export function mixin(target, ...source_a) {
+ */
+export function mixin(target, ...source_a) {
 	source_a.forEach((source)=>{
 		let descriptors1 = Object.keys(source).reduce((descriptors, key)=>{
 			assign(descriptors, {

@@ -1,6 +1,7 @@
 /**
  * Assigns to obj array of keys the return value of function in key_a_fn_aa.
- */ export function assign_fn_key_a(obj, ...key_a_fn_aa) {
+ */
+export function assign_fn_key_a(obj, ...key_a_fn_aa) {
 	for (let i = 0; i < key_a_fn_aa.length; i++) {
 		const [key_, fn] = key_a_fn_aa[i]
 		for (let j = 0; j < key_.length; j += 1) {

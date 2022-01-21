@@ -1,6 +1,7 @@
 /**
  * Exclude keys from obj
- */ export function exclude(obj, ...key_) {
+ */
+export function exclude(obj, ...key_) {
 	if (!obj) return
 	const out = {}
 	const exclude1 = new Set(key_)

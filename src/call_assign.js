@@ -1,6 +1,7 @@
 /**
  * Assigns function calls into obj
- */ export function call_assign(obj, ...assign_fn_h_a) {
+ */
+export function call_assign(obj, ...assign_fn_h_a) {
 	for (let i = 0; i < assign_fn_h_a.length; i++) {
 		const assign_fn_h = assign_fn_h_a[i]
 		for (let prop_name in assign_fn_h) {

@@ -1,4 +1,5 @@
 /**
  * Object keys
- */ export const keys = Object.keys.bind(Object)
+ */
+export const keys = Object.keys.bind(Object)
 

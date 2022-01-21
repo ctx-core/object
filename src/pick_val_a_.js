@@ -1,6 +1,7 @@
 /**
  * Returns an array of objects with [pick](#pick) applied.
- */ export function pick_val_a_(obj, ...key_a) {
+ */
+export function pick_val_a_(obj, ...key_a) {
 	if (!obj) return
 	const val_a = []
 	for (let i = 0; i < key_a.length; i++) {

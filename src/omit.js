@@ -1,6 +1,7 @@
 /**
  * New `obj` without `key_a` keys.
- */ export function omit(obj, ...key_a) {
+ */
+export function omit(obj, ...key_a) {
 	if (!obj) return
 	let memo = {}
 	for (const key in obj) {

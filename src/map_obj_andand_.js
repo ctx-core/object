@@ -2,7 +2,8 @@ import { map_obj_andand } from './map_obj_andand.js'
 /**
  * Returns function to
  * map `values` `andand` `key_a` in `obj` to `fn`, returning object with values return by `fn`.
- */ export function map_obj_andand_(...key_a) {
+ */
+export function map_obj_andand_(...key_a) {
 	return (obj)=>map_obj_andand(obj, ...key_a)
 
 }

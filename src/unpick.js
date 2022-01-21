@@ -2,7 +2,8 @@ import { assign } from './assign.js'
 import { keys } from './keys.js'
 /**
  * Does not include `key_` from `obj`
- */ export function unpick(obj, ...key_) {
+ */
+export function unpick(obj, ...key_) {
 	const memo = {}
 	const obj_key_a = keys(obj)
 	for (let i = 0; i < obj_key_a.length; i++) {

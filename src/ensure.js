@@ -6,7 +6,8 @@ import { keys } from './keys.js'
  * @example
  * obj = {baz: 99}
  * ensure(obj, {foo: 1, baz: 4}, {foo: 2, bar: 3}) // {baz:99, foo: 1, bar: 3}
- */ export function ensure(obj, ...rest_ctx_a) {
+ */
+export function ensure(obj, ...rest_ctx_a) {
 	if (!obj) return
 	for (let i = 0; i < rest_ctx_a.length; i++) {
 		const rest = rest_ctx_a[i]
