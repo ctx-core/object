@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.0.13
+
+### Patch Changes
+
+- assign,keys,values: typeof Object.\* instead of hardcoded type declaration
+
 ## 22.0.12
 
 ### Patch Changes

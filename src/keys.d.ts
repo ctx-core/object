@@ -1,4 +1,4 @@
 /**
  * Object keys
  */
-export declare const keys:(obj:object)=>string[]
+export declare const keys:typeof Object.keys
