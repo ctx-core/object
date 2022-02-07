@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.1.0
+
+### Minor Changes
+
+- - entries*gen*
+
 ## 22.0.13
 
 ### Patch Changes
