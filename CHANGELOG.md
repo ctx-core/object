@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.1.3
+
+### Patch Changes
+
+- version bump
+
 ## 22.1.2
 
 ### Patch Changes
