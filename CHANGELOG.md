@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.1.2
+
+### Patch Changes
+
+- fix: obj*key_r*: return type
+
 ## 22.1.1
 
 ### Patch Changes
