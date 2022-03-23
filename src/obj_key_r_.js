@@ -4,7 +4,7 @@
 export function obj_key_r_(obj, key) {
 	const obj_key_r = {}
 	for (let attr_key in obj) {
-		obj_key_r[attr_key] = (obj[attr_key] && obj[attr_key])[key]
+		obj_key_r[attr_key] = obj[attr_key][key]
 	}
 	return obj_key_r
 }
