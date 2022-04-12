@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "22.1.3",
+	"version": "22.1.4",
 	"description": "ctx-core object",
 	"keywords": [
 		"ctx-core",
@@ -20,9 +20,7 @@
 	"types": "./src/index.d.ts",
 	"svelte": "./src/index.js",
 	"exports": {
-		".": {
-			"import": "./src/index.js"
-		},
+		".": "./src/index.js",
 		"./package.json": "./package.json"
 	},
 	"scripts": {
@@ -35,7 +33,7 @@
 		"test-unit-coverage": "c8 pnpm test-unit"
 	},
 	"dependencies": {
-		"@ctx-core/function": "^20.6.0"
+		"@ctx-core/function": "workspace:^20.6.1"
 	},
 	"devDependencies": {
 		"c8": "^7.11.0",
