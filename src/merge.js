@@ -20,4 +20,3 @@ export function merge(target, ...source_a) {
 	}
 	return target
 }
-

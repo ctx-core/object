@@ -58,4 +58,3 @@ export function unset_weak(ctx, prop) {
 	delete ctx[prop]
 }
 export { weak_r_ as weak_ctx_, }
-

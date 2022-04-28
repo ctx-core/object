@@ -12,4 +12,3 @@ export function call_assign(obj, ...assign_fn_h_a) {
 	return obj
 }
 export { call_assign as assign__call }
-

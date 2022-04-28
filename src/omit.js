@@ -11,4 +11,3 @@ export function omit(obj, ...key_a) {
 	}
 	return memo
 }
-

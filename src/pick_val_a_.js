@@ -12,4 +12,3 @@ export function pick_val_a_(obj, ...key_a) {
 	return val_a
 }
 export { pick_val_a_ as pick_value_a_, pick_val_a_ as _pick_value_a1, pick_val_a_ as _a1__value__pick, }
-

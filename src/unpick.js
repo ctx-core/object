@@ -18,4 +18,3 @@ export function maybe_unpick(obj, ...key_) {
 	if (!obj) return
 	return unpick(obj, ...key_)
 }
-

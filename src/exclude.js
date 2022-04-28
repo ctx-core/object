@@ -12,4 +12,3 @@ export function exclude(obj, ...key_) {
 	}
 	return out
 }
-

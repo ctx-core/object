@@ -3,4 +3,3 @@ export function nullish_or_(val, or_) {
 	if (val === null) return null
 	return or_()
 }
-

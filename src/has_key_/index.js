@@ -8,4 +8,3 @@ export function has_key_(obj, in_key) {
 	return in_key ? !!~$keys.indexOf(in_key) : !!$keys.length
 }
 export { has_key_ as _has_key, has_key_ as _has__key, }
-

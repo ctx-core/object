@@ -5,4 +5,3 @@ import { assign } from './assign.js'
 export function clone(...arg_a) {
 	return assign({}, ...arg_a)
 }
-

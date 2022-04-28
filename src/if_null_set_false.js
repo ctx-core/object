@@ -9,4 +9,3 @@ export function if_null_set_false(obj, ...key_a) {
 	return obj
 }
 export { if_null_set_false as set__false__if__null }
-

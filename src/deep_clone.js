@@ -6,4 +6,3 @@ export function deep_clone(obj) {
 	return JSON.parse(JSON.stringify(obj))
 }
 export { deep_clone as clone__deep }
-

@@ -21,4 +21,3 @@ export function ensure(obj, ...rest_ctx_a) {
 	}
 	return obj
 }
-

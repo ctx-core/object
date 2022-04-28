@@ -8,4 +8,3 @@ export function has_some_key(obj) {
 	return false
 }
 export { has_some_key as has__some__key }
-

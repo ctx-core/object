@@ -12,4 +12,3 @@ export function assign_fn_key_a(obj, ...key_a_fn_aa) {
 	return obj
 }
 export { assign_fn_key_a as assign_fn_key_a1, assign_fn_key_a as assign__key_a1__fn, }
-

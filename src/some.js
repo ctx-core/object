@@ -11,4 +11,3 @@ export function some(obj, compare_some) {
 	}
 	return false
 }
-

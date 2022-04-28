@@ -6,4 +6,3 @@ export function or_null(opts = {}) {
 	return value == null ? or_value : nor_value || value
 }
 export { or_null as or__null }
-

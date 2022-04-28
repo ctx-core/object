@@ -9,4 +9,3 @@ export function defaults(obj, ...defaults_a) {
 	}
 	return obj
 }
-

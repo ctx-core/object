@@ -12,4 +12,3 @@ export function hasOwnProperty_pick(obj, ...key_a) {
 	return memo
 }
 export { hasOwnProperty_pick as pick__hasOwnProperty }
-

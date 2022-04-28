@@ -7,4 +7,3 @@ export function unpick_keys(rec, keys_obj) {
 	return unpick(rec, ...keys(keys_obj))
 }
 export { unpick_keys as unpick__keys }
-

@@ -7,4 +7,3 @@ export function clone_assign_fn_key_a(obj, ...key_a_fn_aa) {
 	return assign_fn_key_a(clone(obj), ...key_a_fn_aa)
 }
 export { clone_assign_fn_key_a as clone_assign_fn_key_a1, clone_assign_fn_key_a as clone__assign__key_a1__fn, }
-

@@ -9,4 +9,3 @@ export function map_obj(in_obj, fn) {
 	return obj
 }
 export { map_obj as map__obj }
-

@@ -29,4 +29,3 @@ export function mixin(target, ...source_a) {
 	})
 	return target
 }
-

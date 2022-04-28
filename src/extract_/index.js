@@ -8,4 +8,3 @@ export function extract_(properties) {
 	}
 }
 export { extract_ as _extract, }
-

@@ -15,4 +15,3 @@ export function maybe_pick(obj, ...key_) {
 	if (!obj) return
 	return pick(obj, ...key_)
 }
-

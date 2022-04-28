@@ -5,4 +5,3 @@ export function extract(value, properties) {
 	}
 	return result
 }
-
