@@ -1,5 +1,12 @@
 # @ctx-core/object
 
+## 22.1.9
+
+### Patch Changes
+
+- obj*key_r*: fix: generic types: <T>
+- obj*key_r*<T>: fix: generic type inference
+
 ## 22.1.8
 
 ### Patch Changes
