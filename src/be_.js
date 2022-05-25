@@ -12,13 +12,17 @@ export function be_(key_or_val_, val_) {
 			}
 			const key = val_ ? key_or_val_ : undefined
 			if (pending.get(be)) {
-				console.trace(`be_: key '${String(key)}' has a circular dependency`)
+				const pending_value_a = []
+				for (const value of pending.values()) {
+					pending_value_a.push(value)
+				}
+				console.trace(`be_: key '${String(key)}' has a circular dependency`, { pending_value_a })
 				throw `be_: key '${String(key)}' has a circular dependency`
 			}
 			if (!val_) {
 				val_ = key_or_val_
 			}
-			pending.set(be, true)
+			pending.set(be, key || be)
 			const val = val_(ctx, be, opts)
 			if (ctx.get(be) === undefined) {
 				if (val === undefined) throw `be_: ${String(key)}: function must return a non-undefined value or directly set the ctx with the property ${String(key)}`

@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.2.0
+
+### Minor Changes
+
+- feat: be\_: circular dependency: +pending_value_a in console.error message
+
 ## 22.1.10
 
 ### Patch Changes
