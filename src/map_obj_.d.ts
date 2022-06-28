@@ -1,4 +1,4 @@
-import type { nullish } from '@ctx-core/function'
+import { type nullish } from '@ctx-core/function'
 import { map_obj_fn_T } from './map_obj.js'
 /**
  * Returns function to map `obj` to `fn` returning object with values.

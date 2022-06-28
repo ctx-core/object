@@ -1,4 +1,4 @@
-import type { nullish } from '@ctx-core/function'
+import { type nullish } from '@ctx-core/function'
 /**
  * Returns an array of objects with [pick](#pick) applied.
  */

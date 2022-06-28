@@ -1,4 +1,4 @@
-import type { nullish } from '@ctx-core/function'
+import { type nullish } from '@ctx-core/function'
 /**
  * Maps values in `in_obj` to `fn`, returning object with values returned by `fn`.
  */
