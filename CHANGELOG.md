@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.4.0
+
+### Minor Changes
+
+- - Map**object\_,M**o\_: convert Map to object
+
 ## 22.3.0
 
 ### Minor Changes
