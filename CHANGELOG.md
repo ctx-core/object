@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.4.1
+
+### Patch Changes
+
+- Map\__object_: fix: generic type issue: K extends string | number | symbol
+
 ## 22.4.0
 
 ### Minor Changes
