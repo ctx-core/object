@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.7.0
+
+### Minor Changes
+
+- set**ctx**match*=>is_ctx*
+
 ## 22.6.0
 
 ### Minor Changes

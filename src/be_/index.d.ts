@@ -24,7 +24,7 @@ export declare type Be<Out extends NonNullable<unknown>> = (ctx:Ctx, opts?:be_op
 export declare type B<Out extends NonNullable<unknown>> = Be<Out>
 export declare type be__val__T<Out extends NonNullable<unknown>> = (ctx:Ctx, key:Be<Out>, opts?:be_opts_T)=>Out
 export interface be__opts_T<Out extends NonNullable<unknown>> {
-	set__ctx__match_?(map_ctx:MapCtx, ctx:Ctx):boolean
+	is_ctx_?(map_ctx:MapCtx, ctx:Ctx):boolean
 }
 export interface be_opts_T {
 	force?:boolean
