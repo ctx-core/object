@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 22.6.0
+
+### Minor Changes
+
+- be*: + opts:be**opts_T: + set**ctx\_\_match*
+
+  set**ctx**match\_ returns a boolean if the given MapCtx will be used to set the factory function argument
+
 ## 22.5.0
 
 ### Minor Changes

@@ -44,4 +44,18 @@ test('be_|nested array', ()=>{
 	equal(ctx2.has(child_), false)
 	equal(ctx3.has(child_), false)
 })
+test('be_|set__ctx__match_', ()=>{
+	const ctx0 = ctx_()
+	const ctx1 = ctx_()
+	ctx1.set('matching', true)
+	const ctx = [ctx0, ctx1]
+	const root_ = be_('root_', ()=>1, {
+		set__ctx__match_(map_ctx) {
+			return !!map_ctx.get('matching')
+		}
+	})
+	equal(root_(ctx), 1)
+	equal(ctx0.has(root_), false)
+	equal(ctx1.has(root_), true)
+})
 test.run()

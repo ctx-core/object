@@ -1,10 +1,13 @@
 import { isArray } from '../isArray/index.js'
 export const pending_symbol = Symbol('pending')
-export function be_(key_or_val_, val_) {
+export function be_(key_or_val_, val_, be__opts) {
+	const set__ctx__match_ = be__opts ? be__opts.set__ctx__match_ : null
 	const be = (argv__ctx, opts) => {
+		if (!argv__ctx) throw `be must have a Ctx passed as an argument`
 		const saved__val = saved__val_(argv__ctx, be)
 		if (saved__val !== undefined && (!opts || !opts.force)) return saved__val
-		const ctx = first__Map__ctx_(argv__ctx)
+		const ctx = set__ctx_(argv__ctx, set__ctx__match_)
+		if (!ctx) throw `set__ctx__match_ must be true for at least one Ctx`
 		let pending = ctx.get(pending_symbol)
 		if (!pending) {
 			pending = new Map()
@@ -49,14 +52,14 @@ function saved__val_(argv__ctx, be) {
 		return argv__ctx.get(be)
 	}
 }
-function first__Map__ctx_(ctx) {
+function set__ctx_(ctx, set__ctx__match_) {
 	if (isArray(ctx)) {
 		for (let i = 0; i < ctx.length; i++) {
 			const i_ctx = ctx[i]
-			const first__be = first__Map__ctx_(i_ctx)
-			if (first__be) return first__be
+			const first__ctx = set__ctx_(i_ctx, set__ctx__match_)
+			if (first__ctx) return first__ctx
 		}
-	} else {
+	} else if (!set__ctx__match_ || set__ctx__match_(ctx)) {
 		return ctx
 	}
 }
