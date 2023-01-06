@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.8.0
+
+### Minor Changes
+
+- be\__opts_T: is_ctx_=>is*source*
+
 ## 22.7.0
 
 ### Minor Changes
