@@ -1,2 +1,2 @@
-import type { Ctx } from '../be_'
-export declare function ctx_():Ctx
+import type { MapCtx } from '../be_'
+export declare function ctx_():MapCtx

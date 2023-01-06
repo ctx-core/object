@@ -14,7 +14,7 @@ test('entries_gen_', ()=>{
 		key_a.push(key)
 		val_a.push(val)
 	}
-	equal(['id', 'name', 'date'], key_a)
-	equal([1, 'My name', date], val_a)
+	equal(key_a, ['id', 'name', 'date'])
+	equal(val_a, [1, 'My name', date])
 })
 test.run()

@@ -1,5 +1,15 @@
 # @ctx-core/object
 
+## 22.5.0
+
+### Minor Changes
+
+- Ctx: feat: nesting in an array
+
+  - PrimitiveCtx
+
+  be\_: handle nested Ctx Map or array
+
 ## 22.4.1
 
 ### Patch Changes

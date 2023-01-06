@@ -5,7 +5,17 @@ export declare const pending_symbol:unique symbol
  */
 export declare function be_<Out extends NonNullable<unknown>>(val_:be__val__T<Out>):Be<Out>
 export declare function be_<Out extends NonNullable<unknown>>(key:string, val_:be__val__T<Out>):Be<Out>
-export declare type Ctx = Map<Be<any>|string, unknown>
+export declare type MapCtx = Map<Be<any>|string, unknown>
+declare type MapCtx1 = MapCtx|MapCtx[]
+declare type MapCtx2 = MapCtx1|MapCtx1[]
+declare type MapCtx3 = MapCtx2|MapCtx2[]
+declare type MapCtx4 = MapCtx3|MapCtx3[]
+declare type MapCtx5 = MapCtx4|MapCtx4[]
+declare type MapCtx6 = MapCtx5|MapCtx5[]
+declare type MapCtx7 = MapCtx6|MapCtx6[]
+declare type MapCtx8 = MapCtx7|MapCtx7[]
+declare type MapCtx9 = MapCtx8|MapCtx8[]
+export declare type Ctx = MapCtx9
 export declare type Be<Out extends NonNullable<unknown>> = (ctx:Ctx, opts?:be_opts_T)=>Out
 export declare type B<Out extends NonNullable<unknown>> = Be<Out>
 export declare type be__val__T<Out extends NonNullable<unknown>> = (ctx:Ctx, key:Be<Out>, opts?:be_opts_T)=>Out
