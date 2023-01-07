@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.9.1
+
+### Patch Changes
+
+- error message: is*source* must be true for at least one Ctx: ∋ console.trace
+
 ## 22.9.0
 
 ### Minor Changes

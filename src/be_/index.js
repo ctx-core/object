@@ -7,7 +7,11 @@ export function be_(key_or_val_, val_, be__opts) {
 		const saved__val = saved__val_(argv__ctx, be)
 		if (saved__val !== undefined && (!opts || !opts.force)) return saved__val
 		const ctx = set__ctx_(argv__ctx, is_source_)
-		if (!ctx) throw `is_source_ must be true for at least one Ctx`
+		if (!ctx) {
+			const error_msg = `is_source_ must be true for at least one Ctx`
+			console.trace(error_msg)
+			throw error_msg
+		}
 		let pending = ctx.get(pending_symbol)
 		if (!pending) {
 			pending = new Map()
@@ -19,8 +23,9 @@ export function be_(key_or_val_, val_, be__opts) {
 			for (const value of pending.values()) {
 				pending_value_a.push(value)
 			}
-			console.trace(`be_: key '${String(key)}' has a circular dependency`, { pending_value_a })
-			throw `be_: key '${String(key)}' has a circular dependency`
+			const error_msg = `be_: key '${String(key)}' has a circular dependency`
+			console.trace(error_msg, { pending_value_a })
+			throw error_msg
 		}
 		if (!val_) {
 			val_ = key_or_val_
