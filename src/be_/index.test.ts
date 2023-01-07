@@ -1,6 +1,6 @@
 import { test } from 'uvu'
 import { equal } from 'uvu/assert'
-import { be_, ctx_ } from '../index.js'
+import { be_, Ctx, ctx_ } from '../index.js'
 test('be_|Map', ()=>{
 	const ctx = ctx_()
 	const root_ = be_('root_', ()=>1)
@@ -57,5 +57,13 @@ test('be_|is_source_', ()=>{
 	equal(root_(ctx), 1)
 	equal(ctx0.has(root_), false)
 	equal(ctx1.has(root_), true)
+})
+test('Ctx|NestedMapCtx', ()=>{
+	const ctx0 = ctx_()
+	const ctx1 = ctx_()
+	ctx1.set('matching', true)
+	const ctx = [ctx0, ctx1]
+	const nested__ctx_ = be_<Ctx>('nested__ctx_', ctx=>[ctx])
+	equal(nested__ctx_(ctx), [ctx])
 })
 test.run()
