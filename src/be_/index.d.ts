@@ -10,7 +10,7 @@ export declare function be_<Out extends NonNullable<unknown>>(
 	key:string, val_:be__val__T<Out>, be__opts?:be__opts_T<Out>
 ):Be<Out>
 export declare type MapCtx = Map<Be<any>|string|symbol, unknown>
-interface NestedMapCtx extends Array<NestedMapCtx|MapCtx> {}
+export interface NestedMapCtx extends Array<NestedMapCtx|MapCtx> {}
 export type Ctx = MapCtx|NestedMapCtx
 export declare type Be<Out extends NonNullable<unknown>> = (ctx:Ctx, opts?:be_opts_T)=>Out
 export declare type B<Out extends NonNullable<unknown>> = Be<Out>

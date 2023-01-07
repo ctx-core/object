@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.9.0
+
+### Minor Changes
+
+- export interface NestedMapCtx
+
 ## 22.8.2
 
 ### Patch Changes
