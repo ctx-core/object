@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.8.2
+
+### Patch Changes
+
+- be*: be: val* argument: fix: pass in nested Ctx (argv\_\_ctx) as an argument instead of the source MapCtx
+
 ## 22.8.1
 
 ### Patch Changes

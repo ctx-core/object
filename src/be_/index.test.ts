@@ -64,6 +64,6 @@ test('Ctx|NestedMapCtx', ()=>{
 	ctx1.set('matching', true)
 	const ctx = [ctx0, ctx1]
 	const nested__ctx_ = be_<Ctx>('nested__ctx_', ctx=>[ctx])
-	equal(nested__ctx_(ctx), [ctx])
+	equal(nested__ctx_(ctx), [[ctx0, ctx1]])
 })
 test.run()
