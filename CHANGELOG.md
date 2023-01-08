@@ -1,11 +1,17 @@
 # @ctx-core/object
 
+## 23.0.1
+
+### Patch Changes
+
+- be*: is_source* must be true for at least one Ctx error msg: + key
+
 ## 23.0.0
 
 ### Major Changes
 
 - - ctx**delete: replaces be* expired* option in be**opts_T
-- - + alias_symbol in ctx
+- - - alias_symbol in ctx
 - - string alias is now a Map<Be, value>
 
 ## 22.10.0

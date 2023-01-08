@@ -11,8 +11,9 @@ export function be_(key_or_val_, val_, be__opts) {
 			return saved__val
 		}
 		const ctx = set__ctx_(argv__ctx, is_source_)
+		const key = val_ ? key_or_val_ : undefined
 		if (!ctx) {
-			const error_msg = `is_source_ must be true for at least one Ctx`
+			const error_msg = `be: ${String(key)}: is_source_ must be true for at least one Ctx`
 			console.trace(error_msg)
 			throw error_msg
 		}
@@ -25,7 +26,6 @@ export function be_(key_or_val_, val_, be__opts) {
 			ctx.set(alias_symbol, new WeakMap())
 		}
 		const alias = ctx.get(alias_symbol)
-		const key = val_ ? key_or_val_ : undefined
 		if (pending.get(be)) {
 			const pending_value_a = []
 			for (const value of pending.values()) {
