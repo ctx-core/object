@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 23.1.0
+
+### Minor Changes
+
+- be\_,Be,be**val**T: Ctx generic type
+
 ## 23.0.1
 
 ### Patch Changes

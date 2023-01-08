@@ -91,4 +91,12 @@ test('ctx__delete', ()=>{
 	equal(ctx1.has(val_), false)
 	equal(ctx1.has('val_'), false)
 })
+test('be_|Ctx generic type', ()=>{
+	const valid_ctx = ctx_() as test_ctx_T
+	const val_ = be_<boolean, test_ctx_T>('val_', ()=>true)
+	val_(valid_ctx)
+	// val_(ctx_()) // type error
+})
 test.run()
+declare const test_ctx_sym:unique symbol
+type test_ctx_T = Ctx&{ [test_ctx_sym]:any }
