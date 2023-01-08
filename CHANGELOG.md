@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 22.10.0
+
+### Minor Changes
+
+- be*: be\_\_opts_T: feat: + expired*: if the value is cached & expired\_ returns true, rerun the initializer function
+
 ## 22.9.1
 
 ### Patch Changes

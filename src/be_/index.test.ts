@@ -66,4 +66,24 @@ test('Ctx|NestedMapCtx', ()=>{
 	const nested__ctx_ = be_<Ctx>('nested__ctx_', ctx=>[ctx])
 	equal(nested__ctx_(ctx), [[ctx0, ctx1]])
 })
+test('Ctx|expired_', ()=>{
+	const ctx = ctx_()
+	let counter = 0
+	let expired__arg_a:Ctx[][] = []
+	const nested__ctx_ = be_<boolean>('nested__ctx_', ()=>{
+		counter++
+		return true
+	}, { expired_(...argv) {
+			expired__arg_a.push(argv)
+			return true
+		}})
+	equal(counter, 0)
+	equal(expired__arg_a, [])
+	equal(nested__ctx_(ctx), true)
+	equal(counter, 1)
+	equal(expired__arg_a, [])
+	equal(nested__ctx_(ctx), true)
+	equal(counter, 2)
+	equal(expired__arg_a, [[ctx]])
+})
 test.run()

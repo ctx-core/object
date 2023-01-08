@@ -2,10 +2,13 @@ import { isArray } from '../isArray/index.js'
 export const pending_symbol = Symbol('pending')
 export function be_(key_or_val_, val_, be__opts) {
 	const is_source_ = be__opts ? be__opts.is_source_ : null
+	const expired_ = be__opts ? be__opts.expired_ : null
 	const be = (argv__ctx, opts) => {
 		if (!argv__ctx) throw `be must have a Ctx passed as an argument`
 		const saved__val = saved__val_(argv__ctx, be)
-		if (saved__val !== undefined && (!opts || !opts.force)) return saved__val
+		if (saved__val !== undefined && (!opts || !opts.force) && (!expired_ || !expired_(argv__ctx))) {
+			return saved__val
+		}
 		const ctx = set__ctx_(argv__ctx, is_source_)
 		if (!ctx) {
 			const error_msg = `is_source_ must be true for at least one Ctx`
