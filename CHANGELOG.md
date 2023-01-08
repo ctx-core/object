@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 23.0.0
+
+### Major Changes
+
+- - ctx**delete: replaces be* expired* option in be**opts_T
+- - + alias_symbol in ctx
+- - string alias is now a Map<Be, value>
+
 ## 22.10.0
 
 ### Minor Changes

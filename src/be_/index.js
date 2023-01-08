@@ -1,5 +1,6 @@
 import { isArray } from '../isArray/index.js'
 export const pending_symbol = Symbol('pending')
+export const alias_symbol = Symbol('alias')
 export function be_(key_or_val_, val_, be__opts) {
 	const is_source_ = be__opts ? be__opts.is_source_ : null
 	const expired_ = be__opts ? be__opts.expired_ : null
@@ -20,6 +21,10 @@ export function be_(key_or_val_, val_, be__opts) {
 			pending = new Map()
 			ctx.set(pending_symbol, pending)
 		}
+		if (!ctx.has(alias_symbol)) {
+			ctx.set(alias_symbol, new WeakMap())
+		}
+		const alias = ctx.get(alias_symbol)
 		const key = val_ ? key_or_val_ : undefined
 		if (pending.get(be)) {
 			const pending_value_a = []
@@ -40,14 +45,37 @@ export function be_(key_or_val_, val_, be__opts) {
 			ctx.set(be, val)
 		}
 		if (key) {
-			const key_a = ctx.get(key) || []
-			key_a.push(val)
-			ctx.set(key, key_a)
+			alias.set(be, key)
+			if (!ctx.has(key)) ctx.set(key, new Map())
+			const be_M_key = ctx.get(key)
+			be_M_key.set(be, val)
 		}
 		pending.delete(be)
 		return val
 	}
 	return be
+}
+export function ctx__delete(argv__ctx, be) {
+	if (isArray(argv__ctx)) {
+		for (let i = 0; i < argv__ctx.length; i++) {
+			const ctx = argv__ctx[i]
+			ctx__delete(ctx, be)
+		}
+	} else {
+		const alias = argv__ctx.get(alias_symbol)
+		if (alias) {
+			const key = alias.get(be)
+			if (key) {
+				const be_M_val = argv__ctx.get(key)
+				if (be_M_val) {
+					be_M_val.delete(be, key)
+					if (!be_M_val.length) argv__ctx.delete(key)
+				}
+				alias.delete(be)
+			}
+		}
+		argv__ctx.delete(be)
+	}
 }
 function saved__val_(argv__ctx, be) {
 	if (isArray(argv__ctx)) {
