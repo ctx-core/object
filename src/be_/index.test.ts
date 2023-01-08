@@ -69,6 +69,9 @@ test('Ctx|NestedMapCtx', ()=>{
 test('ctx__delete', ()=>{
 	const ctx0 = ctx_()
 	const val_ = be_<boolean>('val_', ()=>true)
+	ctx__delete(ctx0, val_)
+	equal(ctx0.has(val_), false)
+	equal(ctx0.has('val_'), false)
 	equal(val_(ctx0), true)
 	equal(ctx0.get(val_), true)
 	equal(ctx0.get('val_'), new Map([[val_, true]]))
