@@ -1,6 +1,6 @@
 import { test } from 'uvu'
 import { equal } from 'uvu/assert'
-import { be_, Ctx, ctx_, ctx__delete } from '../index.js'
+import { be_, be__delete, be__set, type Ctx, ctx_ } from '../index.js'
 test('be_|Map', ()=>{
 	const ctx = ctx_()
 	const root_ = be_('root_', ()=>1)
@@ -66,16 +66,30 @@ test('Ctx|NestedMapCtx', ()=>{
 	const nested__ctx_ = be_<Ctx>('nested__ctx_', ctx=>[ctx])
 	equal(nested__ctx_(ctx), [[ctx0, ctx1]])
 })
-test('ctx__delete', ()=>{
+test('be__set', ()=>{
+	const ctx0 = ctx_()
+	const val_ = be_<number>('val_', ()=>0, {
+		is_source_: map_ctx=>map_ctx === ctx0
+	})
+	be__set(ctx0, val_, 1)
+	equal(val_(ctx0), 1)
+	const ctx1 = ctx_()
+	const ctx_a = [ctx1, ctx0]
+	be__set(ctx_a, val_, 2)
+	equal(val_(ctx_a), 2)
+	equal(val_(ctx0), 2)
+	equal(ctx1.has(val_), false)
+})
+test('be__delete', ()=>{
 	const ctx0 = ctx_()
 	const val_ = be_<boolean>('val_', ()=>true)
-	ctx__delete(ctx0, val_)
+	be__delete(ctx0, val_)
 	equal(ctx0.has(val_), false)
 	equal(ctx0.has('val_'), false)
 	equal(val_(ctx0), true)
 	equal(ctx0.get(val_), true)
 	equal(ctx0.get('val_'), new Map([[val_, true]]))
-	ctx__delete(ctx0, val_)
+	be__delete(ctx0, val_)
 	equal(ctx0.has(val_), false)
 	equal(ctx0.has('val_'), false)
 	const ctx1 = ctx_()
@@ -85,7 +99,7 @@ test('ctx__delete', ()=>{
 	equal(val_(nested__ctx), true)
 	equal(ctx0.get('val_'), new Map([[val_, true]]))
 	equal(ctx1.get('val_'), new Map([[val_, true]]))
-	ctx__delete(nested__ctx, val_)
+	be__delete(nested__ctx, val_)
 	equal(ctx0.has(val_), false)
 	equal(ctx0.has('val_'), false)
 	equal(ctx1.has(val_), false)

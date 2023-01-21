@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 24.0.0
+
+### Major Changes
+
+- pending_symbol,alias_symbol: private Symbol.for
+
+### Minor Changes
+
+- be**delete: aliased by ctx**delete
+- - be**set: aliased by ctx**set
+
 ## 23.1.0
 
 ### Minor Changes
