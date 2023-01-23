@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 24.0.1
+
+### Patch Changes
+
+- be\_: error: be must have a Ctx passed as an argument: + console.trace
+
 ## 24.0.0
 
 ### Major Changes

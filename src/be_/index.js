@@ -6,7 +6,11 @@ export function be_(key_or_val_, val_, be__opts) {
 	const is_source_ = be__opts ? be__opts.is_source_ : null
 	const expired_ = be__opts ? be__opts.expired_ : null
 	const be = (argv__ctx, opts) => {
-		if (!argv__ctx) throw `be must have a Ctx passed as an argument`
+		if (!argv__ctx) {
+			let error_msg = `be must have a Ctx passed as an argument`
+			console.trace(error_msg)
+			throw error_msg
+		}
 		be_M_is_source__set(argv__ctx, be, is_source_)
 		const saved__val = saved__val_(argv__ctx, be)
 		if (saved__val !== undefined && (!opts || !opts.force) && (!expired_ || !expired_(argv__ctx))) {
