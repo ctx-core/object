@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 24.1.1
+
+### Patch Changes
+
+- tsconfig.json: - importsNotUsedAsValues
+- Updated dependencies
+  - @ctx-core/function@21.6.1
+
 ## 24.1.0
 
 ### Minor Changes
