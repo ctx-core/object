@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 24.1.2
+
+### Patch Changes
+
+- be**label**value\_\_Map_T: fix: key type: Be<NonNullable<unknown>>
+
 ## 24.1.1
 
 ### Patch Changes

@@ -27,7 +27,7 @@ export interface be__opts_T<Val extends NonNullable<unknown>> {
 export interface be_opts_T {
 	force?:boolean
 }
-export type be__label__value__Map_T = Map<Be<unknown>, unknown>
+export type be__label__value__Map_T = Map<Be<NonNullable<unknown>>, unknown>
 export {
 	be_ as _be,
 	be_ as b_,
