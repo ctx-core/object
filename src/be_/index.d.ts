@@ -1,13 +1,13 @@
 export declare const pending_symbol:unique symbol
 /**
- * Returns a function to ensure that an member key is defined on a ctx object,
+ * Returns a function to ensure that a member label is defined on a ctx object,
  * otherwise it creates the value using the val_ factory function.
  */
 export declare function be_<Val extends NonNullable<unknown>, ctx_T extends Ctx = Ctx>(
 	val_:be__val__T<Val, ctx_T>, be__opts?:be__opts_T<Val>
 ):Be<Val, ctx_T>
 export declare function be_<Val extends NonNullable<unknown>, ctx_T extends Ctx = Ctx>(
-	key:string, val_:be__val__T<Val, ctx_T>, be__opts?:be__opts_T<Val>
+	label:string, val_:be__val__T<Val, ctx_T>, be__opts?:be__opts_T<Val>
 ):Be<Val, ctx_T>
 export declare function be__set<Val extends NonNullable<unknown>, ctx_T extends Ctx = Ctx>(
 	ctx:Ctx, be:Be<Val>, val:Val
@@ -20,13 +20,14 @@ export declare type Be<Val extends NonNullable<unknown>, ctx_T extends Ctx = Ctx
 	(ctx:ctx_T, opts?:be_opts_T)=>Val
 export declare type B<Val extends NonNullable<unknown>, ctx_T extends Ctx = Ctx> = Be<Val, ctx_T>
 export declare type be__val__T<Val extends NonNullable<unknown>, ctx_T extends Ctx = Ctx> =
-	(ctx:ctx_T, key:Be<Val, ctx_T>, opts?:be_opts_T)=>Val
+	(ctx:ctx_T, label:Be<Val, ctx_T>, opts?:be_opts_T)=>Val
 export interface be__opts_T<Val extends NonNullable<unknown>> {
 	is_source_?(map_ctx:MapCtx, ctx:Ctx):boolean
 }
 export interface be_opts_T {
 	force?:boolean
 }
+export type be__label__value__Map_T = Map<Be<unknown>, unknown>
 export {
 	be_ as _be,
 	be_ as b_,

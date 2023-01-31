@@ -1,8 +1,8 @@
 import { isArray } from '../isArray/index.js'
-const be_M_key_symbol = Symbol.for('be_M_key')
+const be_M_label_symbol = Symbol.for('be_M_label')
 const be_M_is_source__symbol = Symbol.for('be_M_is_source__')
 const pending_symbol = Symbol.for('pending')
-export function be_(key_or_val_, val_, be__opts) {
+export function be_(label_or_val_, val_, be__opts) {
 	const is_source_ = be__opts ? be__opts.is_source_ : null
 	const expired_ = be__opts ? be__opts.expired_ : null
 	const be = (argv__ctx, opts) => {
@@ -17,9 +17,9 @@ export function be_(key_or_val_, val_, be__opts) {
 			return saved__val
 		}
 		const ctx = source__map_ctx_(argv__ctx, is_source_)
-		const key = val_ ? key_or_val_ : undefined
+		const label = val_ ? label_or_val_ : undefined
 		if (!ctx) {
-			const error_msg = `be: ${String(key)}: is_source_ must be true for at least one Ctx`
+			const error_msg = `be: ${String(label)}: is_source_ must be true for at least one Ctx`
 			console.trace(error_msg)
 			throw error_msg
 		}
@@ -33,23 +33,24 @@ export function be_(key_or_val_, val_, be__opts) {
 			for (const value of pending.values()) {
 				pending_value_a.push(value)
 			}
-			const error_msg = `be_: key '${String(key)}' has a circular dependency`
+			const error_msg = `be_: label '${String(label)}' has a circular dependency`
 			console.trace(error_msg, { pending_value_a })
 			throw error_msg
 		}
 		if (!val_) {
-			val_ = key_or_val_
+			val_ = label_or_val_
 		}
-		pending.set(be, key || be)
+		pending.set(be, label || be)
 		const val = val_(argv__ctx, be, opts)
 		if (ctx.get(be) === undefined) {
-			if (val === undefined) throw `be_: ${String(key)}: function must return a non-undefined value or directly set the ctx with the property ${String(key)}`
+			if (val === undefined) throw `be_: ${String(label)}: function must return a non-undefined value or directly set the ctx with the property ${String(label)}`
 			ctx.set(be, val)
 		}
-		if (key) {
-			be_M_key_(ctx).set(be, key)
-			if (!ctx.has(key)) ctx.set(key, new Map())
-			const be_M_val = ctx.get(key)
+		if (label) {
+			be_M_label_(ctx).set(be, label)
+			if (!ctx.has(label)) ctx.set(label, new Map())
+			/** @type {import('./index.d.ts').be__label__value__Map_T} */
+			const be_M_val = ctx.get(label)
 			be_M_val.set(be, val)
 		}
 		pending.delete(be)
@@ -57,11 +58,11 @@ export function be_(key_or_val_, val_, be__opts) {
 	}
 	return be
 }
-function be_M_key_(ctx) {
-	if (!ctx.has(be_M_key_symbol)) {
-		ctx.set(be_M_key_symbol, new WeakMap())
+function be_M_label_(ctx) {
+	if (!ctx.has(be_M_label_symbol)) {
+		ctx.set(be_M_label_symbol, new WeakMap())
 	}
-	return ctx.get(be_M_key_symbol)
+	return ctx.get(be_M_label_symbol)
 }
 function be_M_is_source__(ctx) {
 	if (!ctx.has(be_M_is_source__symbol)) {
@@ -99,16 +100,17 @@ export function be__delete(argv__ctx, be) {
 			be__delete(argv__ctx[i], be)
 		}
 	} else {
-		const be_M_key = argv__ctx.get(be_M_key_symbol)
-		if (be_M_key) {
-			const key = be_M_key.get(be)
-			if (key) {
-				const _be_M_key = argv__ctx.get(key)
-				if (_be_M_key) {
-					_be_M_key.delete(be, key)
-					if (!_be_M_key.length) argv__ctx.delete(key)
+		const be_M_label = argv__ctx.get(be_M_label_symbol)
+		if (be_M_label) {
+			const label = be_M_label.get(be)
+			if (label) {
+				/** @type {import('./index.d.ts').be__label__value__Map_T} */
+				const _be_M_label = argv__ctx.get(label)
+				if (_be_M_label) {
+					_be_M_label.delete(be)
+					if (!_be_M_label.length) argv__ctx.delete(label)
 				}
-				be_M_key.delete(be)
+				be_M_label.delete(be)
 			}
 		}
 		argv__ctx.delete(be)
