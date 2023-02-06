@@ -7,9 +7,7 @@ export function be_(label_or_val_, val_, be__opts) {
 	const expired_ = be__opts ? be__opts.expired_ : null
 	const be = (argv__ctx, opts) => {
 		if (!argv__ctx) {
-			let error_msg = `be must have a Ctx passed as an argument`
-			console.trace(error_msg)
-			throw new Error(error_msg)
+			throw new Error(`be must have a Ctx passed as an argument`)
 		}
 		be_M_is_source__set(argv__ctx, be, is_source_)
 		const saved__val = saved__val_(argv__ctx, be)
@@ -19,9 +17,7 @@ export function be_(label_or_val_, val_, be__opts) {
 		const ctx = source__map_ctx_(argv__ctx, is_source_)
 		const label = val_ ? label_or_val_ : undefined
 		if (!ctx) {
-			const error_msg = `be: ${String(label)}: is_source_ must be true for at least one Ctx`
-			console.trace(error_msg)
-			throw new Error(error_msg)
+			throw new Error(`be: ${String(label)}: is_source_ must be true for at least one Ctx`)
 		}
 		let pending = ctx.get(pending_symbol)
 		if (!pending) {
@@ -33,9 +29,7 @@ export function be_(label_or_val_, val_, be__opts) {
 			for (const value of pending.values()) {
 				pending_value_a.push(value)
 			}
-			const error_msg = `be_: label '${String(label)}' has a circular dependency`
-			console.trace(error_msg, { pending_value_a })
-			throw new Error(error_msg)
+			throw new Error(`be_: label '${String(label)}' has a circular dependency:\n${pending_value_a.join('\n')}`)
 		}
 		if (!val_) {
 			val_ = label_or_val_
@@ -44,9 +38,7 @@ export function be_(label_or_val_, val_, be__opts) {
 		const val = val_(argv__ctx, be, opts)
 		if (ctx.get(be) === undefined) {
 			if (val === undefined) {
-				const error_msg = `be_: ${String(label)}: function must return a non-undefined value or directly set the ctx with the property ${String(label)}`
-				console.trace(error_msg)
-				throw new Error(error_msg)
+				throw new Error(`be_: ${String(label)}: function must return a non-undefined value or directly set the ctx with the property ${String(label)}`)
 			}
 			ctx.set(be, val)
 		}

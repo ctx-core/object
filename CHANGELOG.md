@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 24.1.4
+
+### Patch Changes
+
+- be\_: error: - console.trace: rely on throw new Error for correct stack trace
+
 ## 24.1.3
 
 ### Patch Changes
