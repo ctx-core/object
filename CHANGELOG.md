@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 24.1.3
+
+### Patch Changes
+
+- be\_: throw new Error(error_msg)
+
 ## 24.1.2
 
 ### Patch Changes
