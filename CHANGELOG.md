@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 25.1.0
+
+### Minor Changes
+
+- be\__val_: also support label argument
+
 ## 25.0.1
 
 ### Patch Changes

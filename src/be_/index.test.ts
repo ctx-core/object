@@ -1,6 +1,6 @@
 import { test } from 'uvu'
 import { equal } from 'uvu/assert'
-import { be_, be__delete, be__set, type Ctx, ctx_ } from '../index.js'
+import { be_, be__delete, be__set, be__val_, type Ctx, ctx_ } from '../index.js'
 test('be_|Map', ()=>{
 	const ctx = ctx_()
 	const root_ = be_('root_', ()=>1)
@@ -58,7 +58,13 @@ test('be_|is_source_', ()=>{
 	equal(ctx0.has(root_), false)
 	equal(ctx1.has(root_), true)
 })
-test('Ctx|NestedMapCtx', ()=>{
+test('be_|Ctx generic type', ()=>{
+	const valid_ctx = ctx_() as test_ctx_T
+	const val_ = be_<boolean, test_ctx_T>('val_', ()=>true)
+	val_(valid_ctx)
+	// val_(ctx_()) // type error
+})
+test('be_|Ctx|NestedMapCtx', ()=>{
 	const ctx0 = ctx_()
 	const ctx1 = ctx_()
 	ctx1.set('matching', true)
@@ -105,11 +111,14 @@ test('be__delete', ()=>{
 	equal(ctx1.has(val_), false)
 	equal(ctx1.has('val_'), false)
 })
-test('be_|Ctx generic type', ()=>{
-	const valid_ctx = ctx_() as test_ctx_T
-	const val_ = be_<boolean, test_ctx_T>('val_', ()=>true)
-	val_(valid_ctx)
-	// val_(ctx_()) // type error
+test('be__val_', ()=>{
+	const ctx = ctx_()
+	const val_ = be_<boolean>('val_', ()=>true)
+	equal(val_(ctx), true)
+	equal(be__val_(val_, ctx), true)
+	be__set(val_, ctx, false)
+	equal(val_(ctx), false)
+	equal(be__val_(val_, ctx), false)
 })
 test.run()
 declare const test_ctx_sym:unique symbol

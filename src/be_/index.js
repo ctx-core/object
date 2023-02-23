@@ -203,28 +203,28 @@ export {
 	be__delete as ctx__delete,
 }
 /**
- * @param {Be}be
+ * @param {Be|string}be_or_label
  * @param {Ctx}argv__ctx
  * @returns {unknown}
  * @private
  */
-export function be__val_(be, argv__ctx) {
+export function be__val_(be_or_label, argv__ctx) {
 	if (isArray(argv__ctx)) {
 		for (let i = 0; i < argv__ctx.length; i++) {
 			const ctx = argv__ctx[i]
-			const saved__val = be__val_(be, ctx)
+			const saved__val = be__val_(be_or_label, ctx)
 			if (saved__val !== undefined) return saved__val
 		}
 	} else {
 		/** @type {MapCtx} */
 		const map_ctx = /** @type {any} */argv__ctx
-		return map_ctx.get(be)
+		return map_ctx.get(be_or_label)
 	}
 }
 /**
  * @param {Ctx}ctx
  * @param {is_source__T}is_source_
- * @returns {*}
+ * @returns {unknown}
  * @private
  */
 function source__map_ctx_(ctx, is_source_) {
