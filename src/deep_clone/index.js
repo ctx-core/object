@@ -1,5 +1,7 @@
 /**
  * Performs a deep clone of the value
+ * @param {unknown}obj
+ * @returns {unknown}
  */
 export function deep_clone(obj) {
 	if (obj === undefined) return obj

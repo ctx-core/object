@@ -1,17 +1,25 @@
 /**
- * New `obj` with only `key_` keys.
+ * New `obj` with only `key_a` keys.
+ * @param {object}obj
+ * @param {string}key_a
+ * @returns {object}
  */
-export function pick(obj, ...key_) {
+export function pick(obj, ...key_a) {
 	const memo = {}
-	for (let i = 0; i < key_.length; i++) {
-		const key = key_[i]
+	for (let i = 0; i < key_a.length; i++) {
+		const key = key_a[i]
 		if (key in obj) {
 			memo[key] = obj[key]
 		}
 	}
 	return memo
 }
-export function maybe_pick(obj, ...key_) {
+/**
+ * @param {object}obj
+ * @param {string}key_a
+ * @returns {object|unknown}
+ */
+export function maybe_pick(obj, ...key_a) {
 	if (!obj) return
-	return pick(obj, ...key_)
+	return pick(obj, ...key_a)
 }

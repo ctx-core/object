@@ -1,7 +1,12 @@
 /**
- * Returns boolean of `obj` is an object
+ * Returns boolean of `val` is an object
+ * @param {unknown}val
+ * @returns {boolean}
  */
-export function isObject(obj) {
-	return !!(obj && new String(obj) === '[object Object]')
+export function isObject(val) {
+	return !!(val && new String(val) === '[object Object]')
 }
-export { isObject as _is_Object, isObject as _is__Object }
+export {
+	isObject as _is_Object,
+	isObject as _is__Object,
+}

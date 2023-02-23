@@ -2,6 +2,9 @@ import { map_obj_andand } from '../map_obj_andand/index.js'
 /**
  * Returns function to
  * map `values` `andand` `key_a` in `obj` to `fn`, returning object with values return by `fn`.
+ * @param {import('@ctx-core/function').andand_key_T}key_a
+ * @returns {(obj:object)=>object}
+ * @private
  */
 export function map_obj_andand_(...key_a) {
 	return (obj)=>map_obj_andand(obj, ...key_a)

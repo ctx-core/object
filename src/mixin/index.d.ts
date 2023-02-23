@@ -7,4 +7,7 @@
  *		}
  *	})
  */
-export declare function mixin<I extends unknown = unknown, O = I>(target:I, ...source_a:O[]):I
+export declare function mixin<
+	I extends unknown = unknown,
+	O = I
+>(target:I, ...source_a:O[]):I

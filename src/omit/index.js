@@ -1,5 +1,8 @@
 /**
  * New `obj` without `key_a` keys.
+ * @param {object}obj
+ * @param {string}key_a
+ * @returns {object|undefined}
  */
 export function omit(obj, ...key_a) {
 	if (!obj) return

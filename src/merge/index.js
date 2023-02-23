@@ -1,5 +1,8 @@
 /**
  * Performs a deep merge on the target with each source_a
+ * @param {unknown}target
+ * @param {unknown}source_a
+ * @returns {unknown}
  */
 export function merge(target, ...source_a) {
 	if (!target) return

@@ -1,6 +1,9 @@
 import { assign } from '../assign/index.js'
 /**
  * Mixin properties from source_a into target
+ * @param {unknown}target
+ * @param {unknown}source_a
+ * @returns {unknown}
  * @example
  * mixin(obj, {
  *		get foo() {

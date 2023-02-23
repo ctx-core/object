@@ -1,6 +1,13 @@
 import { be_ } from '../be_/index.js'
+/** @typedef {import('./index.d.ts').rc_be__val__T}rc_be__val__T */
 export const be_m_set_key = Symbol('be_m_set')
-export function rc_be_(key_or_val, arg_val_) {
+/**
+ * @param {string|rc_be__val__T}key_or_val_
+ * @param {rc_be__val__T}[val_]
+ * @returns {import('./index.d.ts').rc_be__return_T}
+ * @private
+ */
+export function rc_be_(key_or_val_, val_) {
 	return (ctx1, opts1)=>{
 		const ctx_any = ctx1
 		const destroy_cb_a = []
@@ -8,10 +15,17 @@ export function rc_be_(key_or_val, arg_val_) {
 			on_destroy,
 			onDestroy: on_destroy
 		}
-		const val_ = arg_val_ ? arg_val_ : key_or_val
-		const key = arg_val_ ? key_or_val : null
-		const be1 = arg_val_ ? be_(val_) : be_(key, (ctx, be, opts)=>arg_val_.call(val_this, ctx, be, opts)
-		)
+		/** @type {rc_be__val__T} */
+		const val_ = val_ ? val_ : key_or_val_
+		const key = val_ ? key_or_val_ : null
+		const be1 =
+			val_
+			? be_(val_)
+			: be_(
+				key,
+				(ctx, be, opts)=>
+					val_.call(val_this, ctx, be, opts)
+			)
 		let be_m_set = ctx_any[be_m_set_key]
 		if (!be_m_set) {
 			be_m_set = new Map()
@@ -42,4 +56,7 @@ export function rc_be_(key_or_val, arg_val_) {
 		}
 	}
 }
-export { rc_be_ as _rc_be, rc_be_ as _rc_b, }
+export {
+	rc_be_ as _rc_be,
+	rc_be_ as _rc_b,
+}

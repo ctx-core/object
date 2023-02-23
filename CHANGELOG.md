@@ -1,5 +1,28 @@
 # @ctx-core/object
 
+## 25.0.0
+
+### Major Changes
+
+- be\_\_set: argument order: (be:Be<Val>, argv\*\*ctx:Ctx)
+- be**delete: argument order: (be:Be<Val>, argv**ctx:Ctx)
+
+### Minor Changes
+
+- - or_null\_\_opts_T: aliased by opts_or
+- - ensure\_\_refresh_opts_T: aliased by refresh_ctx_T
+- - be\__val_<Val>(be:Be<Val>, ctx:Ctx):Val
+- - strong\_\_call: aliased by ref_strong
+- - weak\_\_call: aliased by ref_weak
+- - strong\_\_assign: aliased by set_strong
+- - ensure_refresh\_\_o_T: aliased by ensure_refresh_obj_type
+
+### Patch Changes
+
+- omit: fix: generic type: <I extends object = object>
+- value*key_aa*: fix: generic type: <I extends object = object>
+- omit\_: fix: generic type: <T extends object = object>
+
 ## 24.1.8
 
 ### Patch Changes

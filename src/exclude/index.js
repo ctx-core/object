@@ -1,5 +1,8 @@
 /**
  * Exclude keys from obj
+ * @param {unknown}obj
+ * @param {string}key_
+ * @returns {unknown}
  */
 export function exclude(obj, ...key_) {
 	if (!obj) return

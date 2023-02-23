@@ -71,11 +71,11 @@ test('be__set', ()=>{
 	const val_ = be_<number>('val_', ()=>0, {
 		is_source_: map_ctx=>map_ctx === ctx0
 	})
-	be__set(ctx0, val_, 1)
+	be__set(val_, ctx0, 1)
 	equal(val_(ctx0), 1)
 	const ctx1 = ctx_()
 	const ctx_a = [ctx1, ctx0]
-	be__set(ctx_a, val_, 2)
+	be__set(val_, ctx_a, 2)
 	equal(val_(ctx_a), 2)
 	equal(val_(ctx0), 2)
 	equal(ctx1.has(val_), false)
@@ -83,13 +83,13 @@ test('be__set', ()=>{
 test('be__delete', ()=>{
 	const ctx0 = ctx_()
 	const val_ = be_<boolean>('val_', ()=>true)
-	be__delete(ctx0, val_)
+	be__delete(val_, ctx0)
 	equal(ctx0.has(val_), false)
 	equal(ctx0.has('val_'), false)
 	equal(val_(ctx0), true)
 	equal(ctx0.get(val_), true)
 	equal(ctx0.get('val_'), new Map([[val_, true]]))
-	be__delete(ctx0, val_)
+	be__delete(val_, ctx0)
 	equal(ctx0.has(val_), false)
 	equal(ctx0.has('val_'), false)
 	const ctx1 = ctx_()
@@ -99,7 +99,7 @@ test('be__delete', ()=>{
 	equal(val_(nested__ctx), true)
 	equal(ctx0.get('val_'), new Map([[val_, true]]))
 	equal(ctx1.get('val_'), new Map([[val_, true]]))
-	be__delete(nested__ctx, val_)
+	be__delete(val_, nested__ctx)
 	equal(ctx0.has(val_), false)
 	equal(ctx0.has('val_'), false)
 	equal(ctx1.has(val_), false)

@@ -1,5 +1,9 @@
+/** @typedef {import('./index.d.ts').assign_fn_T}assign_fn_T */
 /**
  * Assigns function calls into obj
+ * @param {object}obj
+ * @param {Record<string, assign_fn_T>}assign_fn_h_a
+ * @returns {Record<string, unknown>}
  */
 export function call_assign(obj, ...assign_fn_h_a) {
 	for (let i = 0; i < assign_fn_h_a.length; i++) {

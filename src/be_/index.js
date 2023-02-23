@@ -2,22 +2,49 @@ import { isArray } from '../isArray/index.js'
 const be_M_label_symbol = Symbol.for('be_M_label')
 const be_M_is_source__symbol = Symbol.for('be_M_is_source__')
 const pending_symbol = Symbol.for('pending')
-export function be_(label_or_val_, val_, be__opts) {
-	const is_source_ = be__opts ? be__opts.is_source_ : null
+/** @typedef {import('./index.d.ts').Be}Be */
+/** @typedef {import('./index.d.ts').Ctx}Ctx */
+/** @typedef {import('./index.d.ts').MapCtx}MapCtx */
+/** @typedef {import('./index.d.ts').be__opts_T}be__opts_T */
+/** @typedef {import('./index.d.ts').be__val__T}be__val__T */
+/** @typedef {import('./index.d.ts').is_source__T}is_source__T */
+/**
+ * @param {string|be__val__T}label_or_val_
+ * @param {be__val__T|be__opts_T}[val_]
+ * @param {be__opts_T}[be__opts]
+ * @returns {Be}
+ * @private
+ */
+export function be_(
+	label_or_val_,
+	val_,
+	be__opts
+) {
+	const is_source_ =
+		be__opts
+		? be__opts.is_source_
+		: null
 	const expired_ = be__opts ? be__opts.expired_ : null
-	const be = (argv__ctx, opts) => {
+	const be = (argv__ctx, opts)=>{
 		if (!argv__ctx) {
 			throw new Error(`be must have a Ctx passed as an argument`)
 		}
-		be_M_is_source__set(argv__ctx, be, is_source_)
-		const saved__val = saved__val_(argv__ctx, be)
-		if (saved__val !== undefined && (!opts || !opts.force) && (!expired_ || !expired_(argv__ctx))) {
+		be_M_is_source__set(be, argv__ctx, is_source_)
+		const saved__val = be__val_(be, argv__ctx)
+		if (
+			saved__val !== undefined
+			&& (!opts || !opts.force)
+			&& (!expired_ || !expired_(argv__ctx))
+		) {
 			return saved__val
 		}
 		const ctx = source__map_ctx_(argv__ctx, is_source_)
 		const label = val_ ? label_or_val_ : undefined
 		if (!ctx) {
-			throw new Error(`be: ${String(label)}: is_source_ must be true for at least one Ctx`)
+			throw new Error(
+				`be: ${
+					String(label)
+				}: is_source_ must be true for at least one Ctx`)
 		}
 		let pending = ctx.get(pending_symbol)
 		if (!pending) {
@@ -29,7 +56,10 @@ export function be_(label_or_val_, val_, be__opts) {
 			for (const value of pending.values()) {
 				pending_value_a.push(value)
 			}
-			throw new Error(`be_: label '${String(label)}' has a circular dependency:\n${pending_value_a.join('\n')}`)
+			throw new Error(
+				`be_: label '${
+					String(label)
+				}' has a circular dependency:\n${pending_value_a.join('\n')}`)
 		}
 		if (!val_) {
 			val_ = label_or_val_
@@ -38,7 +68,12 @@ export function be_(label_or_val_, val_, be__opts) {
 		const val = val_(argv__ctx, be, opts)
 		if (ctx.get(be) === undefined) {
 			if (val === undefined) {
-				throw new Error(`be_: ${String(label)}: function must return a non-undefined value or directly set the ctx with the property ${String(label)}`)
+				throw new Error(
+					`be_: ${
+						String(label)
+					}: function must return a non-undefined value or directly set the ctx with the property ${
+						String(label)
+					}`)
 			}
 			ctx.set(be, val)
 		}
@@ -54,75 +89,144 @@ export function be_(label_or_val_, val_, be__opts) {
 	}
 	return be
 }
+export {
+	be_ as _be,
+	be_ as b_,
+	be_ as _b,
+}
+/**
+ * @param {MapCtx}ctx
+ * @returns {WeakMap<Be, string>}
+ * @private
+ */
 function be_M_label_(ctx) {
 	if (!ctx.has(be_M_label_symbol)) {
 		ctx.set(be_M_label_symbol, new WeakMap())
 	}
-	return ctx.get(be_M_label_symbol)
+	return /** @type {WeakMap<Be, string>} */ctx.get(be_M_label_symbol)
 }
+/**
+ * @param {MapCtx}ctx
+ * @returns {WeakMap<Be, is_source__T>}
+ * @private
+ */
 function be_M_is_source__(ctx) {
 	if (!ctx.has(be_M_is_source__symbol)) {
 		ctx.set(be_M_is_source__symbol, new WeakMap())
 	}
-	return ctx.get(be_M_is_source__symbol)
+	return /** @type {WeakMap<Be, is_source__T>} */ctx.get(be_M_is_source__symbol)
 }
-function be_M_is_source__set(argv__ctx, be, is_source_) {
+/**
+ * @param {Be}be
+ * @param {Ctx}argv__ctx
+ * @param {is_source__T}[is_source_]
+ * @private
+ */
+function be_M_is_source__set(
+	be,
+	argv__ctx,
+	is_source_
+) {
 	if (isArray(argv__ctx)) {
 		for (let i = 0; i < argv__ctx.length; i++) {
-			be_M_is_source__set(argv__ctx[i], be)
+			be_M_is_source__set(be, argv__ctx[i])
 		}
 	} else {
-		be_M_is_source__(argv__ctx).set(be, is_source_)
+		/** @type {MapCtx} */
+		const map_ctx = /** @type {any} */argv__ctx
+		be_M_is_source__(map_ctx).set(be, is_source_)
 	}
 }
-function be__is_source__(argv__ctx, be) {
+/**
+ * @param {Be}be
+ * @param {Ctx}argv__ctx
+ * @returns {is_source__T}
+ * @private
+ */
+function be__is_source__(be, argv__ctx) {
 	if (isArray(argv__ctx)) {
 		for (let i = 0; i < argv__ctx.length; i++) {
-			const be__is_source_ = be__is_source__(argv__ctx[i], be)
+			const be__is_source_ = be__is_source__(be, argv__ctx[i])
 			if (be__is_source_) return be__is_source_
 		}
 	} else {
-		return be_M_is_source__(argv__ctx).get(be)
+		/** @type {MapCtx} */
+		const map_ctx = /** @type {any} */argv__ctx
+		return be_M_is_source__(map_ctx).get(be)
 	}
 }
-export function be__set(ctx, be, val) {
-	const source__map_ctx = source__map_ctx_(ctx, be__is_source__(ctx, be))
+/**
+ * @param {Be}be
+ * @param {Ctx}ctx
+ * @param {unknown}val
+ * @returns {unknown}
+ * @private
+ */
+export function be__set(be, ctx, val) {
+	const source__map_ctx = source__map_ctx_(ctx, be__is_source__(be, ctx))
 	if (!source__map_ctx) return
 	return source__map_ctx.set(be, val)
 }
-export function be__delete(argv__ctx, be) {
+export {
+	be__set as ctx__set,
+}
+/**
+ * @param {Be}be
+ * @param {Ctx}argv__ctx
+ * @private
+ */
+export function be__delete(be, argv__ctx) {
 	if (isArray(argv__ctx)) {
 		for (let i = 0; i < argv__ctx.length; i++) {
-			be__delete(argv__ctx[i], be)
+			be__delete(be, argv__ctx[i])
 		}
 	} else {
-		const be_M_label = argv__ctx.get(be_M_label_symbol)
+		/** @type {MapCtx} */
+		const map_ctx = /** @type {any} */argv__ctx
+		const be_M_label = map_ctx.get(be_M_label_symbol)
 		if (be_M_label) {
 			const label = be_M_label.get(be)
 			if (label) {
 				/** @type {import('./index.d.ts').be__label__value__Map_T} */
-				const _be_M_label = argv__ctx.get(label)
+				const _be_M_label = map_ctx.get(label)
 				if (_be_M_label) {
 					_be_M_label.delete(be)
-					if (!_be_M_label.length) argv__ctx.delete(label)
+					if (!_be_M_label.length) map_ctx.delete(label)
 				}
 				be_M_label.delete(be)
 			}
 		}
-		argv__ctx.delete(be)
+		map_ctx.delete(be)
 	}
 }
-function saved__val_(argv__ctx, be) {
+export {
+	be__delete as ctx__delete,
+}
+/**
+ * @param {Be}be
+ * @param {Ctx}argv__ctx
+ * @returns {unknown}
+ * @private
+ */
+export function be__val_(be, argv__ctx) {
 	if (isArray(argv__ctx)) {
 		for (let i = 0; i < argv__ctx.length; i++) {
 			const ctx = argv__ctx[i]
-			const saved__val = saved__val_(ctx, be)
+			const saved__val = be__val_(be, ctx)
 			if (saved__val !== undefined) return saved__val
 		}
 	} else {
-		return argv__ctx.get(be)
+		/** @type {MapCtx} */
+		const map_ctx = /** @type {any} */argv__ctx
+		return map_ctx.get(be)
 	}
 }
+/**
+ * @param {Ctx}ctx
+ * @param {is_source__T}is_source_
+ * @returns {*}
+ * @private
+ */
 function source__map_ctx_(ctx, is_source_) {
 	if (isArray(ctx)) {
 		for (let i = 0; i < ctx.length; i++) {
@@ -130,8 +234,7 @@ function source__map_ctx_(ctx, is_source_) {
 			const first__ctx = source__map_ctx_(i_ctx, is_source_)
 			if (first__ctx) return first__ctx
 		}
-	} else if (!is_source_ || is_source_(ctx)) {
+	} else if (!is_source_ || is_source_(/** @type {MapCtx} */ctx, ctx)) {
 		return ctx
 	}
 }
-export { be_ as _be, be_ as b_, be_ as _b, }
