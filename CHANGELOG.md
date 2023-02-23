@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 25.0.1
+
+### Patch Changes
+
+- be\__val_: fix: return type
+
 ## 25.0.0
 
 ### Major Changes
