@@ -1,7 +1,7 @@
 import { isArray } from '../isArray/index.js'
 const be_M_label_symbol = Symbol.for('be_M_label')
-const be_M_is_source__symbol = Symbol.for('be_M_is_source__')
 const pending_symbol = Symbol.for('pending')
+const be_M_is_source_ = new WeakMap()
 /** @typedef {import('./index.d.ts').Be}Be */
 /** @typedef {import('./index.d.ts').Ctx}Ctx */
 /** @typedef {import('./index.d.ts').MapCtx}MapCtx */
@@ -29,7 +29,6 @@ export function be_(
 		if (!argv__ctx) {
 			throw new Error(`be must have a Ctx passed as an argument`)
 		}
-		be_M_is_source__set(be, argv__ctx, is_source_)
 		const saved__val = be__val_(be, argv__ctx)
 		if (
 			saved__val !== undefined
@@ -87,6 +86,7 @@ export function be_(
 		pending.delete(be)
 		return val
 	}
+	be_M_is_source_.set(be, is_source_)
 	return be
 }
 export {
@@ -106,54 +106,12 @@ function be_M_label_(ctx) {
 	return /** @type {WeakMap<Be, string>} */ctx.get(be_M_label_symbol)
 }
 /**
- * @param {MapCtx}ctx
- * @returns {WeakMap<Be, is_source__T>}
- * @private
- */
-function be_M_is_source__(ctx) {
-	if (!ctx.has(be_M_is_source__symbol)) {
-		ctx.set(be_M_is_source__symbol, new WeakMap())
-	}
-	return /** @type {WeakMap<Be, is_source__T>} */ctx.get(be_M_is_source__symbol)
-}
-/**
  * @param {Be}be
- * @param {Ctx}argv__ctx
- * @param {is_source__T}[is_source_]
- * @private
- */
-function be_M_is_source__set(
-	be,
-	argv__ctx,
-	is_source_
-) {
-	if (isArray(argv__ctx)) {
-		for (let i = 0; i < argv__ctx.length; i++) {
-			be_M_is_source__set(be, argv__ctx[i])
-		}
-	} else {
-		/** @type {MapCtx} */
-		const map_ctx = /** @type {any} */argv__ctx
-		be_M_is_source__(map_ctx).set(be, is_source_)
-	}
-}
-/**
- * @param {Be}be
- * @param {Ctx}argv__ctx
  * @returns {is_source__T}
  * @private
  */
-function be__is_source__(be, argv__ctx) {
-	if (isArray(argv__ctx)) {
-		for (let i = 0; i < argv__ctx.length; i++) {
-			const be__is_source_ = be__is_source__(be, argv__ctx[i])
-			if (be__is_source_) return be__is_source_
-		}
-	} else {
-		/** @type {MapCtx} */
-		const map_ctx = /** @type {any} */argv__ctx
-		return be_M_is_source__(map_ctx).get(be)
-	}
+export function be__is_source_(be) {
+  return be_M_is_source_.get(be)
 }
 /**
  * @param {Be}be
@@ -163,9 +121,13 @@ function be__is_source__(be, argv__ctx) {
  * @private
  */
 export function be__set(be, ctx, val) {
-	const source__map_ctx = source__map_ctx_(ctx, be__is_source__(be, ctx))
+	const source__map_ctx = source__map_ctx_(ctx, be__is_source_(be))
 	if (!source__map_ctx) return
-	return source__map_ctx.set(be, val)
+	source__map_ctx.set(be, val)
+	const be_M_label = be_M_label_(source__map_ctx)
+	if (be_M_label) {
+		source__map_ctx.set(be_M_label.get(be), val)
+	}
 }
 export {
 	be__set as ctx__set,

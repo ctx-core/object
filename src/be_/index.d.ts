@@ -23,13 +23,13 @@ export {
 	be_ as b_,
 	be_ as _b,
 }
+export declare function be__is_source_(be:Be<any>):(map_ctx:MapCtx, ctx:Ctx)=>boolean
 export declare function be__set<
 	Val extends NonNullable<unknown>,
 	ctx_T extends Ctx = Ctx
 >(
 	be:Be<Val>,
-	ctx:Ctx, val:Val
-):MapCtx
+	ctx:Ctx, val:Val):void
 export {
 	be__set as ctx__set,
 }
@@ -72,9 +72,11 @@ export interface be__opts_T<
 	Val extends NonNullable<unknown>
 > {
 	is_source_?:is_source__T
+	expired_?:expired__T
 }
 export interface be_opts_T {
 	force?:boolean
 }
 export type be__label__value__Map_T = Map<Be<NonNullable<unknown>>, unknown>
 export type is_source__T = (map_ctx:MapCtx, ctx:Ctx)=>boolean
+export type expired__T = (ctx:Ctx)=>boolean
