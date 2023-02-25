@@ -1,5 +1,18 @@
 # @ctx-core/object
 
+## 26.0.0
+
+### Major Changes
+
+- Be: label=>id
+- be\_,be**set,be**delete: ctx.get(id) is a single value instead of be_M_val
+- - be**label**value\_\_Map_T
+- be*: throw Error if id is previously set by a call to another be*
+
+### Minor Changes
+
+- globalThis[Symbol.for('be_M_id')] = new WeakMap
+
 ## 25.2.1
 
 ### Patch Changes
