@@ -1,5 +1,19 @@
 # @ctx-core/object
 
+## 25.2.0
+
+### Minor Changes
+
+- - be\__is_source_
+- - expired\_\_T
+
+### Patch Changes
+
+- be\_\_set: NestedMapCtx: fix: set label value in addition to be value
+- be*: fix: immediately register be\_\_opts.is_source* into be\__is_source_ when be is instantiated
+- be**opts_T: fix: + expired?:expired**T
+- be**set: before be is invoked for the first time: fix: correctly use is*source* from be**is*source*
+
 ## 25.1.0
 
 ### Minor Changes
