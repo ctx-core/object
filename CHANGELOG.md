@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 25.2.1
+
+### Patch Changes
+
+- be*M_is_source*: fix: set globalThis[be_M_is_source__sym] to support multiple versions of this library in the runtime
+
 ## 25.2.0
 
 ### Minor Changes

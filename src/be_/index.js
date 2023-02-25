@@ -1,7 +1,9 @@
 import { isArray } from '../isArray/index.js'
-const be_M_label_symbol = Symbol.for('be_M_label')
-const pending_symbol = Symbol.for('pending')
-const be_M_is_source_ = new WeakMap()
+const be_M_label_sym = Symbol.for('be_M_label')
+const pending_sym = Symbol.for('pending')
+const be_M_is_source__sym = Symbol.for('be_M_is_source_')
+if (!globalThis[be_M_is_source__sym]) globalThis[be_M_is_source__sym] = new WeakMap()
+const be_M_is_source_ = globalThis[be_M_is_source__sym]
 /** @typedef {import('./index.d.ts').Be}Be */
 /** @typedef {import('./index.d.ts').Ctx}Ctx */
 /** @typedef {import('./index.d.ts').MapCtx}MapCtx */
@@ -45,10 +47,10 @@ export function be_(
 					String(label)
 				}: is_source_ must be true for at least one Ctx`)
 		}
-		let pending = ctx.get(pending_symbol)
+		let pending = ctx.get(pending_sym)
 		if (!pending) {
 			pending = new Map()
-			ctx.set(pending_symbol, pending)
+			ctx.set(pending_sym, pending)
 		}
 		if (pending.get(be)) {
 			const pending_value_a = []
@@ -100,10 +102,10 @@ export {
  * @private
  */
 function be_M_label_(ctx) {
-	if (!ctx.has(be_M_label_symbol)) {
-		ctx.set(be_M_label_symbol, new WeakMap())
+	if (!ctx.has(be_M_label_sym)) {
+		ctx.set(be_M_label_sym, new WeakMap())
 	}
-	return /** @type {WeakMap<Be, string>} */ctx.get(be_M_label_symbol)
+	return /** @type {WeakMap<Be, string>} */ctx.get(be_M_label_sym)
 }
 /**
  * @param {Be}be
@@ -145,7 +147,7 @@ export function be__delete(be, argv__ctx) {
 	} else {
 		/** @type {MapCtx} */
 		const map_ctx = /** @type {any} */argv__ctx
-		const be_M_label = map_ctx.get(be_M_label_symbol)
+		const be_M_label = map_ctx.get(be_M_label_sym)
 		if (be_M_label) {
 			const label = be_M_label.get(be)
 			if (label) {
