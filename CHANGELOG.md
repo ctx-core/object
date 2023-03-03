@@ -1,5 +1,17 @@
 # @ctx-core/object
 
+## 27.1.0
+
+### Minor Changes
+
+- - is*ctx*
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/function@21.9.0
+
 ## 27.0.0
 
 ### Major Changes

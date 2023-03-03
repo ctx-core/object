@@ -1,4 +1,4 @@
-import { isArray } from '../isArray/index.js'
+import { isArray } from '@ctx-core/function'
 const pending_sym = Symbol.for('pending')
 const be_M_is_source__sym = Symbol.for('be_M_is_source_')
 if (!globalThis[be_M_is_source__sym]) globalThis[be_M_is_source__sym] = new WeakMap()
