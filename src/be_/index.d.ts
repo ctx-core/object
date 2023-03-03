@@ -8,7 +8,7 @@ export declare function be_<
 	ctx_T extends Ctx = Ctx
 >(
 	val_:be__val__T<Val, ctx_T>,
-	be__opts?:be__opts_T<Val>
+	be__opts?:be__opts_T
 ):Be<Val, ctx_T>
 export declare function be_<
 	Val extends NonNullable<unknown>,
@@ -16,7 +16,7 @@ export declare function be_<
 >(
 	id:string,
 	val_:be__val__T<Val, ctx_T>,
-	be__opts?:be__opts_T<Val>
+	be__opts?:be__opts_T
 ):Be<Val, ctx_T>
 export {
 	be_ as _be,
@@ -69,9 +69,7 @@ export declare type be__val__T<
 	Val extends NonNullable<unknown>,
 	ctx_T extends Ctx = Ctx
 > = (ctx:ctx_T, be:Be<Val, ctx_T>, opts?:be_opts_T)=>Val
-export interface be__opts_T<
-	Val extends NonNullable<unknown>
-> {
+export interface be__opts_T {
 	is_source_?:is_source__T
 	expired_?:expired__T
 }

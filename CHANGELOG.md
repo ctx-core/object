@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.0.0
+
+### Major Changes
+
+- be\_\_opts_T: - type generic
+
 ## 26.0.0
 
 ### Major Changes
