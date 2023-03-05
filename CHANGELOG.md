@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.1.3
+
+### Patch Changes
+
+- be\_: jsdoc: + Auto-memoization function for the Ctx.
+
 ## 27.1.2
 
 ### Patch Changes

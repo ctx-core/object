@@ -1,5 +1,7 @@
 export declare const pending_symbol:unique symbol
 /**
+ * Auto-memoization function for the Ctx.
+ *
  * Returns a function to ensure that a member id is defined on a ctx object,
  * otherwise it creates the value using the val_ factory function.
  */

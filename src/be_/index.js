@@ -13,6 +13,10 @@ const be_M_id = globalThis[be_M_id_sym]
 /** @typedef {import('./index.d.ts').be__val__T}be__val__T */
 /** @typedef {import('./index.d.ts').is_source__T}is_source__T */
 /**
+ * Auto-memoization function for the Ctx.
+ *
+ * Returns a function to ensure that a member id is defined on a ctx object,
+ * otherwise it creates the value using the val_ factory function.
  * @param {string|be__val__T}id_or_val_
  * @param {be__val__T|be__opts_T}[val_]
  * @param {be__opts_T}[be__opts]
