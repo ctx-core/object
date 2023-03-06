@@ -1,4 +1,4 @@
-export type { isArray } from '@ctx-core/function'
+export { isArray } from '@ctx-core/function'
 export * from './a_assign'
 export * from './assign'
 export * from './assign_fn_key_a'

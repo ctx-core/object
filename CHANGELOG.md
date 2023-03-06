@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.1.4
+
+### Patch Changes
+
+- isArray: fix: export { isArray } from '@ctx-core/function'
+
 ## 27.1.3
 
 ### Patch Changes
