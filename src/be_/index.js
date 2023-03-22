@@ -14,6 +14,25 @@ const be_M_id = globalThis[be_M_id_sym]
 /** @typedef {import('./index.d.ts').is_source__T}is_source__T */
 /**
  * Auto-memoization function for the Ctx.
+ * Memoized on globalThis to allow packages being loaded multiple times, which can happen during bundling.
+ *
+ * Returns a function to ensure that a member id is defined on a ctx object,
+ * otherwise it creates the value using the val_ factory function.
+ * @param {string}id
+ * @param {be__val__T}val_
+ * @param {be__opts_T}[be__opts]
+ * @returns {Be}
+ * @private
+ */
+export function globalThis__be_(id, val_, be__opts) {
+	const symbol = Symbol.for(id)
+	if (!globalThis[symbol]) {
+		globalThis[symbol] = be_(id, val_, be__opts)
+	}
+	return globalThis[symbol]
+}
+/**
+ * Auto-memoization function for the Ctx.
  *
  * Returns a function to ensure that a member id is defined on a ctx object,
  * otherwise it creates the value using the val_ factory function.

@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.2.0
+
+### Minor Changes
+
+- - globalThis\__be_
+
 ## 27.1.7
 
 ### Patch Changes

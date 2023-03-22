@@ -1,4 +1,12 @@
 export declare const pending_symbol:unique symbol
+export declare function globalThis__be_<
+	Val extends NonNullable<unknown>,
+	ctx_T extends Ctx = Ctx
+>(
+	id:string,
+	val_:be__val__T<Val, ctx_T>,
+	be__opts?:be__opts_T
+):Be<Val, ctx_T>
 /**
  * Auto-memoization function for the Ctx.
  *

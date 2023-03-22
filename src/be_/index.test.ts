@@ -3,12 +3,17 @@ import { equal } from 'uvu/assert'
 import { be_, be__delete, be__set, be__val_, type Ctx, ctx_ } from '../index.js'
 test('be_|Map', ()=>{
 	const ctx = ctx_()
-	const root_ = be_('root_', ()=>1)
-	const child_ = be_('child_', ctx=>root_(ctx) + 1)
+	let incrementer_num = 0
+	const incrementer = ()=>++incrementer_num
+	const root_ = be_('root_', ()=>incrementer())
+	const child_ = be_('child_', ctx=>root_(ctx) + incrementer())
 	const child1_ = be_('child1_', ctx=>root_(ctx) + child_(ctx))
 	equal(root_(ctx), 1)
-	equal(child_(ctx), 2)
-	equal(child1_(ctx), 3)
+	equal(ctx.get('root_'), 1)
+	equal(child_(ctx), 3)
+	equal(ctx.get('child_'), 3)
+	equal(child1_(ctx), 4)
+	equal(ctx.get('child1_'), 4)
 })
 test('be_|simple array', ()=>{
 	const ctx0 = ctx_()
