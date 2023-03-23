@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.3.0
+
+### Minor Changes
+
+- - globalThis\_\_prop\_\_ensure
+
 ## 27.2.0
 
 ### Minor Changes
