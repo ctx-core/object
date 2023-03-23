@@ -1,6 +1,6 @@
 import { test } from 'uvu'
-import { globalThis__prop__ensure } from '../index'
 import { equal } from 'uvu/assert'
+import { globalThis__prop__ensure } from '../index.js'
 const test_fn_sym = Symbol.for('test_fn_sym')
 test('globalThis__prop__ensure|string', ()=>{
 	const test__globalThis = globalThis as test__globalThis_T

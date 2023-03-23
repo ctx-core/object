@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.3.1
+
+### Patch Changes
+
+- ∋ globalThis**prop**ensure
+
 ## 27.3.0
 
 ### Minor Changes

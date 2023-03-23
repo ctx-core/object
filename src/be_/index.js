@@ -1,11 +1,12 @@
 import { isArray } from '@ctx-core/function'
+import { globalThis__prop__ensure } from '../globalThis__prop__ensure/index.js'
 const pending_sym = Symbol.for('pending')
-const be_M_is_source__sym = Symbol.for('be_M_is_source_')
-if (!globalThis[be_M_is_source__sym]) globalThis[be_M_is_source__sym] = new WeakMap()
-const be_M_is_source_ = globalThis[be_M_is_source__sym]
-const be_M_id_sym = Symbol.for('be_M_id')
-if (!globalThis[be_M_id_sym]) globalThis[be_M_id_sym] = new WeakMap()
-const be_M_id = globalThis[be_M_id_sym]
+const be_M_is_source_ = globalThis__prop__ensure(
+	Symbol.for('be_M_is_source_'),
+	()=>new WeakMap())
+const be_M_id = globalThis__prop__ensure(
+	Symbol.for('be_M_id'),
+	()=>new WeakMap())
 /** @typedef {import('./index.d.ts').Be}Be */
 /** @typedef {import('./index.d.ts').Ctx}Ctx */
 /** @typedef {import('./index.d.ts').MapCtx}MapCtx */
@@ -25,11 +26,7 @@ const be_M_id = globalThis[be_M_id_sym]
  * @private
  */
 export function globalThis__be_(id, val_, be__opts) {
-	const symbol = Symbol.for(id)
-	if (!globalThis[symbol]) {
-		globalThis[symbol] = be_(id, val_, be__opts)
-	}
-	return globalThis[symbol]
+	return globalThis__prop__ensure(Symbol.for(id), ()=>be_(id, val_, be__opts))
 }
 /**
  * Auto-memoization function for the Ctx.
