@@ -9,9 +9,9 @@ export function assign_fn_key_a(
 	...key_a_fn_aa
 ) {
 	for (let i = 0; i < key_a_fn_aa.length; i++) {
-		const [key_, fn] = key_a_fn_aa[i]
-		for (let j = 0; j < key_.length; j += 1) {
-			const key = key_[j]
+		const [key_a, fn] = key_a_fn_aa[i]
+		for (let j = 0; j < key_a.length; j += 1) {
+			const key = key_a[j]
 			obj[key] = fn(obj[key], obj, key)
 		}
 	}
