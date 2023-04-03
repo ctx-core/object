@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.4.1
+
+### Patch Changes
+
+- be_opts_T alias: fix: export type be**opts_T = be**params_T
+
 ## 27.4.0
 
 ### Minor Changes

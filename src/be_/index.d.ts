@@ -83,7 +83,7 @@ export interface be__params_T {
 	is_source_?:is_source__T
 	expired_?:expired__T
 }
-export type be__params_T = be__params_T
+export type be__opts_T = be__params_T
 export interface be_params_T {
 	force?:boolean
 }
