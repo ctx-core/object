@@ -10,7 +10,7 @@ const be_M_id = globalThis__prop__ensure(
 /** @typedef {import('./index.d.ts').Be}Be */
 /** @typedef {import('./index.d.ts').Ctx}Ctx */
 /** @typedef {import('./index.d.ts').MapCtx}MapCtx */
-/** @typedef {import('./index.d.ts').be__opts_T}be__opts_T */
+/** @typedef {import('./index.d.ts').be__params_T}be__params_T */
 /** @typedef {import('./index.d.ts').be__val__T}be__val__T */
 /** @typedef {import('./index.d.ts').is_source__T}is_source__T */
 /**
@@ -21,12 +21,12 @@ const be_M_id = globalThis__prop__ensure(
  * otherwise it creates the value using the val_ factory function.
  * @param {string}id
  * @param {be__val__T}val_
- * @param {be__opts_T}[be__opts]
+ * @param {be__params_T}[be__params]
  * @returns {Be}
  * @private
  */
-export function globalThis__be_(id, val_, be__opts) {
-	return globalThis__prop__ensure(Symbol.for(id), ()=>be_(id, val_, be__opts))
+export function globalThis__be_(id, val_, be__params) {
+	return globalThis__prop__ensure(Symbol.for(id), ()=>be_(id, val_, be__params))
 }
 /**
  * Auto-memoization function for the Ctx.
@@ -34,34 +34,34 @@ export function globalThis__be_(id, val_, be__opts) {
  * Returns a function to ensure that a member id is defined on a ctx object,
  * otherwise it creates the value using the val_ factory function.
  * @param {string|be__val__T}id_or_val_
- * @param {be__val__T|be__opts_T}[val_]
- * @param {be__opts_T}[be__opts]
+ * @param {be__val__T|be__params_T}[val_]
+ * @param {be__params_T}[be__params]
  * @returns {Be}
  * @private
  */
 export function be_(
 	id_or_val_,
-	val__or_be__opts,
-	be__opts
+	val__or_be__params,
+	be__params
 ) {
 	/** @type {string} */
 	const id = typeof id_or_val_ === 'string' ? id_or_val_ : null
 	/** @type {be__val__T} */
-	const val_ = typeof id_or_val_ === 'string' ? val__or_be__opts : id_or_val_
-	be__opts = typeof id_or_val_ === 'string' ? be__opts : val__or_be__opts
+	const val_ = typeof id_or_val_ === 'string' ? val__or_be__params : id_or_val_
+	be__params = typeof id_or_val_ === 'string' ? be__params : val__or_be__params
 	const is_source_ =
-		be__opts
-		? be__opts.is_source_
+		be__params
+		? be__params.is_source_
 		: null
-	const expired_ = be__opts ? be__opts.expired_ : null
-	const be = (argv__ctx, opts)=>{
+	const expired_ = be__params ? be__params.expired_ : null
+	const be = (argv__ctx, params)=>{
 		if (!argv__ctx) {
 			throw new Error(`be must have a Ctx passed as an argument`)
 		}
 		const saved__val = be__val_(be, argv__ctx)
 		if (
 			saved__val !== undefined
-			&& (!opts || !opts.force)
+			&& (!params || !params.force)
 			&& (!expired_ || !expired_(argv__ctx))
 		) {
 			return saved__val
@@ -89,7 +89,7 @@ export function be_(
 				}: circular dependency:\n${pending_value_a.join('\n')}`)
 		}
 		pending.set(be, id || be)
-		const val = val_(argv__ctx, be, opts)
+		const val = val_(argv__ctx, be, params)
 		if (ctx.get(be) === undefined) {
 			if (val === undefined) {
 				throw new Error(

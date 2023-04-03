@@ -1,5 +1,12 @@
 # @ctx-core/object
 
+## 27.4.0
+
+### Minor Changes
+
+- be_params_T: aliased by be_opts_T
+- - be\_\_params_T: aliased by be\_\_opts_T
+
 ## 27.3.4
 
 ### Patch Changes

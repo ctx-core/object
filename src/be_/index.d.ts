@@ -5,7 +5,7 @@ export declare function globalThis__be_<
 >(
 	id:string,
 	val_:be__val__T<Val, ctx_T>,
-	be__opts?:be__opts_T
+	be__params?:be__params_T
 ):Be<Val, ctx_T>
 /**
  * Auto-memoization function for the Ctx.
@@ -18,7 +18,7 @@ export declare function be_<
 	ctx_T extends Ctx = Ctx
 >(
 	val_:be__val__T<Val, ctx_T>,
-	be__opts?:be__opts_T
+	be__params?:be__params_T
 ):Be<Val, ctx_T>
 export declare function be_<
 	Val extends NonNullable<unknown>,
@@ -26,7 +26,7 @@ export declare function be_<
 >(
 	id:string,
 	val_:be__val__T<Val, ctx_T>,
-	be__opts?:be__opts_T
+	be__params?:be__params_T
 ):Be<Val, ctx_T>
 export {
 	be_ as _be,
@@ -62,7 +62,7 @@ export type Ctx = MapCtx|NestedMapCtx
 export declare type Be<
 	Val extends NonNullable<unknown>,
 	ctx_T extends Ctx = Ctx
-> = (ctx:ctx_T, opts?:be_opts_T)=>Val
+> = (ctx:ctx_T, opts?:be_params_T)=>Val
 export declare type B<
 	Val extends NonNullable<unknown>,
 	ctx_T extends Ctx = Ctx
@@ -78,13 +78,15 @@ export declare type be_T<
 export declare type be__val__T<
 	Val extends NonNullable<unknown>,
 	ctx_T extends Ctx = Ctx
-> = (ctx:ctx_T, be:Be<Val, ctx_T>, opts?:be_opts_T)=>Val
-export interface be__opts_T {
+> = (ctx:ctx_T, be:Be<Val, ctx_T>, params?:be_params_T)=>Val
+export interface be__params_T {
 	is_source_?:is_source__T
 	expired_?:expired__T
 }
-export interface be_opts_T {
+export type be__params_T = be__params_T
+export interface be_params_T {
 	force?:boolean
 }
+export type be_opts_T = be_params_T
 export type is_source__T = (map_ctx:MapCtx, ctx:Ctx)=>boolean
 export type expired__T = (ctx:Ctx)=>boolean
