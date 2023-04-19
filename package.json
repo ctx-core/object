@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "27.4.22",
+	"version": "27.4.23",
 	"description": "ctx-core object",
 	"keywords": [
 		"ctx-core",
@@ -33,7 +33,7 @@
 		"test-unit-coverage": "c8 pnpm test-unit"
 	},
 	"dependencies": {
-		"@ctx-core/function": "^21.17.18"
+		"@ctx-core/function": "^21.17.19"
 	},
 	"devDependencies": {
 		"c8": "^7.13.0",
