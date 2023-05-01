@@ -1,5 +1,14 @@
 # @ctx-core/object
 
+## 27.4.25
+
+### Patch Changes
+
+- be\_: argument name change:
+
+      id_or_val_=>id_OR_val_
+      val__or_be__params=>val__OR_be__params
+
 ## 27.4.24
 
 ### Patch Changes

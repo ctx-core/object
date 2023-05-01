@@ -55,7 +55,7 @@ export {
 }
 export declare function be__val_<
 	Val extends NonNullable<unknown>
->(be_or_id:Be<Val>|string, ctx:Ctx):Val|unknown|null
+>(be_OR_id:Be<Val>|string, ctx:Ctx):Val|unknown|null
 export declare type MapCtx = Map<Be<any>|string|symbol, unknown>
 export interface NestedMapCtx extends Array<NestedMapCtx|MapCtx> {}
 export type Ctx = MapCtx|NestedMapCtx
