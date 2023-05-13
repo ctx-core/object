@@ -45,15 +45,27 @@ export function be_(
 	be__params
 ) {
 	/** @type {string} */
-	const id = typeof id_OR_val_ === 'string' ? id_OR_val_ : null
+	const id =
+		typeof id_OR_val_ === 'string'
+		? id_OR_val_
+		: null
 	/** @type {be__val__T} */
-	const val_ = typeof id_OR_val_ === 'string' ? val__OR_be__params : id_OR_val_
-	be__params = typeof id_OR_val_ === 'string' ? be__params : val__OR_be__params
+	const val_ =
+		typeof id_OR_val_ === 'string'
+		? val__OR_be__params
+		: id_OR_val_
+	be__params =
+		typeof id_OR_val_ === 'string'
+		? be__params
+		: val__OR_be__params
 	const is_source_ =
 		be__params
 		? be__params.is_source_
 		: null
-	const expired_ = be__params ? be__params.expired_ : null
+	const expired_ =
+		be__params
+		? be__params.expired_
+		: null
 	const be = (argv__ctx, params)=>{
 		if (!argv__ctx) {
 			throw new Error(`be must have a Ctx passed as an argument`)
@@ -94,9 +106,13 @@ export function be_(
 			if (val === undefined) {
 				throw new Error(
 					`be_: ${
-						String(id)
-					}: function must return a non-undefined value or directly set the ctx with the property ${
-						String(id)
+						id
+						? String(id) + ': '
+						: ''
+					}: val_ must return a non-undefined value. ${
+						id
+						? ''
+						: '\n' + val_.toString()
 					}`)
 			}
 			ctx.set(be, val)

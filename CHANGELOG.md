@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.4.26
+
+### Patch Changes
+
+- be*: val*: when returns undefined: no id: error message: + function definition
+
 ## 27.4.25
 
 ### Patch Changes
