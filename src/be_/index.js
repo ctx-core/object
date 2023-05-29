@@ -17,16 +17,25 @@ const be_M_id = globalThis__prop__ensure(
  * Auto-memoization function for the Ctx.
  * Memoized on globalThis to allow packages being loaded multiple times, which can happen during bundling.
  *
- * Returns a function to ensure that a member id is defined on a ctx object,
- * otherwise it creates the value using the val_ factory function.
- * @param {string}id
- * @param {be__val__T}val_
+ * Returns a function to ensure that a member id_OR_val_ is defined on a ctx object,
+ * otherwise it creates the value using the val__OR_be__params factory function.
+ * @param {string|be__val__T}id_OR_val_
+ * @param {be__val__T|be__params_T}[val__OR_be__params]
  * @param {be__params_T}[be__params]
  * @returns {Be}
  * @private
  */
-export function globalThis__be_(id, val_, be__params) {
-	return globalThis__prop__ensure(Symbol.for(id), ()=>be_(id, val_, be__params))
+export function globalThis__be_(
+	id_OR_val_,
+	val__OR_be__params,
+	be__params
+) {
+	return globalThis__prop__ensure(
+		Symbol.for(id_OR_val_),
+		()=>be_(
+			id_OR_val_,
+			val__OR_be__params,
+			be__params))
 }
 /**
  * Auto-memoization function for the Ctx.
@@ -34,7 +43,7 @@ export function globalThis__be_(id, val_, be__params) {
  * Returns a function to ensure that a member id is defined on a ctx object,
  * otherwise it creates the value using the val_ factory function.
  * @param {string|be__val__T}id_OR_val_
- * @param {be__val__T|be__params_T}[val_]
+ * @param {be__val__T|be__params_T}[val__OR_be__params]
  * @param {be__params_T}[be__params]
  * @returns {Be}
  * @private

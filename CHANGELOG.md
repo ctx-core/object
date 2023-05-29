@@ -1,5 +1,15 @@
 # @ctx-core/object
 
+## 27.5.0
+
+### Minor Changes
+
+- be**params*T: + be*?:typeof be\_|typeof globalThis**be\_
+
+### Patch Changes
+
+- globalThis\__be_: fix: + polymorphic arguments matching be\_
+
 ## 27.4.26
 
 ### Patch Changes

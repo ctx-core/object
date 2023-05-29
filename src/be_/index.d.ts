@@ -3,6 +3,13 @@ export declare function globalThis__be_<
 	Val extends NonNullable<unknown>,
 	ctx_T extends Ctx = Ctx
 >(
+	val_:be__val__T<Val, ctx_T>,
+	be__params?:be__params_T
+):Be<Val, ctx_T>
+export declare function globalThis__be_<
+	Val extends NonNullable<unknown>,
+	ctx_T extends Ctx = Ctx
+>(
 	id:string,
 	val_:be__val__T<Val, ctx_T>,
 	be__params?:be__params_T
@@ -82,6 +89,7 @@ export declare type be__val__T<
 export interface be__params_T {
 	is_source_?:is_source__T
 	expired_?:expired__T
+	be_?:typeof be_
 }
 export type be__opts_T = be__params_T
 export interface be_params_T {
