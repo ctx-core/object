@@ -1,6 +1,6 @@
 import { test } from 'uvu'
 import { equal } from 'uvu/assert'
-import { be_, be__delete, be__set, be__val_, type Ctx, ctx_, ctx__set, MapCtx } from '../index.js'
+import { be_, be__delete, be__set, be__val_, type Ctx, ctx_, ctx__delete, ctx__set, MapCtx } from '../index.js'
 test('be_|Map', ()=>{
 	const ctx = ctx_()
 	let incrementer_num = 0
@@ -126,6 +126,24 @@ test('be__delete', ()=>{
 	equal(ctx0.has('val_'), false)
 	equal(ctx1.has(val_), false)
 	equal(ctx1.has('val_'), false)
+})
+test('ctx__delete', ()=>{
+	const ctx0 = ctx_()
+	ctx__delete(ctx0, 'key')
+	equal(ctx0.has('key'), false)
+	ctx0.set('key', true)
+	equal(ctx0.get('key'), true)
+	ctx__delete(ctx0, 'key')
+	equal(ctx0.has('key'), false)
+	const ctx1 = ctx_()
+	const nested__ctx = [ctx0, ctx1]
+	ctx0.set('key', true)
+	ctx1.set('key', true)
+	equal(ctx0.get('key'), true)
+	equal(ctx1.get('key'), true)
+	ctx__delete(nested__ctx, 'key')
+	equal(ctx0.has('key'), false)
+	equal(ctx1.has('key'), false)
 })
 test('be__val_', ()=>{
 	const ctx = ctx_()

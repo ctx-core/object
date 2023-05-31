@@ -63,11 +63,15 @@ export declare function be__delete<
 	Val extends NonNullable<unknown>
 >(
 	be:Be<Val>,
-	argv__ctx:Ctx
+	ctx:Ctx
 ):void
-export {
-	be__delete as ctx__delete,
-}
+export declare function ctx__delete<
+	Val extends NonNullable<unknown>
+>(
+	ctx:Ctx,
+	be_OR_id:Be<Val>|string|symbol,
+	is_source_?:is_source__T
+):void
 export declare function be__val_<
 	Val extends NonNullable<unknown>
 >(be_OR_id:Be<Val>|string, ctx:Ctx):Val|unknown|null

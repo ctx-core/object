@@ -191,26 +191,40 @@ export function ctx__set(
 }
 /**
  * @param {Be}be
- * @param {Ctx}argv__ctx
+ * @param {Ctx}ctx
  * @private
  */
-export function be__delete(be, argv__ctx) {
-	if (isArray(argv__ctx)) {
-		for (let i = 0; i < argv__ctx.length; i++) {
-			be__delete(be, argv__ctx[i])
+export function be__delete(be, ctx) {
+	ctx__delete(ctx, be, be__is_source_(be))
+}
+/**
+ * @param {Ctx}ctx
+ * @param {Be|string|symbol}be_OR_id
+ * @param {is_source__T}[is_source_]
+ */
+export function ctx__delete(
+	ctx,
+	be_OR_id,
+	is_source_
+) {
+	if (is_source_ == null) is_source_ = ()=>true
+	if (isArray(ctx)) {
+		for (let i = 0; i < ctx.length; i++) {
+			if (is_source_(ctx[i], ctx)) {
+				ctx__delete(ctx[i], be_OR_id)
+			}
 		}
 	} else {
 		/** @type {MapCtx} */
-		const map_ctx = /** @type {any} */argv__ctx
-		const id = be_M_id.get(be)
-		if (id) {
-			map_ctx.delete(id)
+		const map_ctx = /** @type {any} */ctx
+		if (is_source_(map_ctx, ctx)) {
+			const id = be_M_id.get(be_OR_id)
+			if (id) {
+				map_ctx.delete(id)
+			}
+			map_ctx.delete(be_OR_id)
 		}
-		map_ctx.delete(be)
 	}
-}
-export {
-	be__delete as ctx__delete,
 }
 /**
  * @param {Be|string}be_or_id

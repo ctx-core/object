@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 28.0.0
+
+### Major Changes
+
+- ctx\_\_delete: argument order change:
+
+      (ctx:Ctx, be_OR_id:Be<Val>|string|symbol, val:Val, is_source_?:is_source__T)
+
 ## 27.9.0
 
 ### Minor Changes
