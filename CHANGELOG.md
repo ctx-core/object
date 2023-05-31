@@ -1,5 +1,15 @@
 # @ctx-core/object
 
+## 27.9.0
+
+### Minor Changes
+
+- - be*prop_pair*,be_prop_pair_T
+
+### Patch Changes
+
+- ctx\__set: is_source_: fix: nullish values are defaulted to ()=>true
+
 ## 27.8.1
 
 ### Patch Changes

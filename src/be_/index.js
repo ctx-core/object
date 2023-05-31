@@ -178,8 +178,9 @@ export function ctx__set(
 	ctx,
 	be_OR_id,
 	val,
-	is_source_ = ()=>true
+	is_source_
 ) {
+	if (is_source_ == null) is_source_ = ()=>true
 	const source__map_ctx = source__map_ctx_(ctx, is_source_)
 	if (!source__map_ctx) return
 	source__map_ctx.set(be_OR_id, val)
