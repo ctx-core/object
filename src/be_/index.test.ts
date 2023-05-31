@@ -93,11 +93,11 @@ test('be__set', ()=>{
 })
 test('ctx__set', ()=>{
 	const ctx0 = ctx_()
-	ctx__set('key', ctx0, 1)
+	ctx__set(ctx0, 'key', 1)
 	equal(ctx0.get('key'), 1)
 	const ctx1 = ctx_()
 	const ctx_a = [ctx1, ctx0]
-	ctx__set('key', ctx_a, 2,
+	ctx__set(ctx_a, 'key', 2,
 		(map_ctx:MapCtx)=>map_ctx.get('key') != null)
 	equal(ctx0.get('key'), 2)
 	equal(ctx1.has('key'), false)
