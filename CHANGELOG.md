@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.8.1
+
+### Patch Changes
+
+- fix test
+
 ## 27.8.0
 
 ### Minor Changes
