@@ -1,5 +1,21 @@
 # @ctx-core/object
 
+## 27.8.0
+
+### Minor Changes
+
+- ctx\_\_set: argument order change:
+
+      (ctx:Ctx, be_OR_id:Be<Val>|string|symbol, val:Val, is_source_?:is_source__T)
+
+## 27.7.0
+
+### Minor Changes
+
+- ctx\_\_set: argument order change:
+
+      (ctx:Ctx, be_OR_id:Be<Val>|string|symbol, val:Val, is_source_?:is_source__T)
+
 ## 27.6.0
 
 ### Minor Changes

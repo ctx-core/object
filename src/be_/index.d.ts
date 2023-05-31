@@ -54,14 +54,11 @@ export declare function ctx__set<
 	Val extends NonNullable<unknown>,
 	ctx_T extends Ctx = Ctx
 >(
-	be_OR_id:Be<Val>|string|symbol,
 	ctx:Ctx,
+	be_OR_id:Be<Val>|string|symbol,
 	val:Val,
 	is_source_?:is_source__T
 ):void
-export {
-	be__set as ctx__set,
-}
 export declare function be__delete<
 	Val extends NonNullable<unknown>
 >(
