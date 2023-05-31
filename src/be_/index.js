@@ -164,16 +164,29 @@ export function be__is_source_(be) {
  * @private
  */
 export function be__set(be, ctx, val) {
-	const source__map_ctx = source__map_ctx_(ctx, be__is_source_(be))
+	ctx__set(be, ctx, val, be__is_source_(be))
+}
+/**
+ * @param {Be|string|symbol}be_OR_id
+ * @param {Ctx}ctx
+ * @param {unknown}val
+ * @param {is_source__T}[is_source_]
+ * @returns {unknown}
+ * @private
+ */
+export function ctx__set(
+	be_OR_id,
+	ctx,
+	val,
+	is_source_ = ()=>true
+) {
+	const source__map_ctx = source__map_ctx_(ctx, is_source_)
 	if (!source__map_ctx) return
-	source__map_ctx.set(be, val)
-	const id = be_M_id.get(be)
+	source__map_ctx.set(be_OR_id, val)
+	const id = be_M_id.get(be_OR_id)
 	if (id) {
 		source__map_ctx.set(id, val)
 	}
-}
-export {
-	be__set as ctx__set,
 }
 /**
  * @param {Be}be

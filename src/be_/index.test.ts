@@ -1,6 +1,6 @@
 import { test } from 'uvu'
 import { equal } from 'uvu/assert'
-import { be_, be__delete, be__set, be__val_, type Ctx, ctx_ } from '../index.js'
+import { be_, be__delete, be__set, be__val_, type Ctx, ctx_, ctx__set, MapCtx } from '../index.js'
 test('be_|Map', ()=>{
 	const ctx = ctx_()
 	let incrementer_num = 0
@@ -91,6 +91,17 @@ test('be__set', ()=>{
 	equal(val_(ctx0), 2)
 	equal(ctx1.has(val_), false)
 })
+test('ctx__set', ()=>{
+	const ctx0 = ctx_()
+	ctx__set('key', ctx0, 1)
+	equal(ctx0.get('key'), 1)
+	const ctx1 = ctx_()
+	const ctx_a = [ctx1, ctx0]
+	ctx__set('key', ctx_a, 2,
+		(map_ctx:MapCtx)=>map_ctx.get('key') != null)
+	equal(ctx0.get('key'), 2)
+	equal(ctx1.has('key'), false)
+})
 test('be__delete', ()=>{
 	const ctx0 = ctx_()
 	const val_ = be_<boolean>('val_', ()=>true)
@@ -99,7 +110,7 @@ test('be__delete', ()=>{
 	equal(ctx0.has('val_'), false)
 	equal(val_(ctx0), true)
 	equal(ctx0.get(val_), true)
-	equal(ctx0.get('val_' ), true)
+	equal(ctx0.get('val_'), true)
 	be__delete(val_, ctx0)
 	equal(ctx0.has(val_), false)
 	equal(ctx0.has('val_'), false)

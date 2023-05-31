@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 27.6.0
+
+### Minor Changes
+
+- ctx\_\_set: set the value of a be|string|symbol on a Ctx
+
 ## 27.5.0
 
 ### Minor Changes

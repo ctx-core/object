@@ -47,7 +47,18 @@ export declare function be__set<
 	ctx_T extends Ctx = Ctx
 >(
 	be:Be<Val>,
-	ctx:Ctx, val:Val):void
+	ctx:Ctx,
+	val:Val
+):void
+export declare function ctx__set<
+	Val extends NonNullable<unknown>,
+	ctx_T extends Ctx = Ctx
+>(
+	be_OR_id:Be<Val>|string|symbol,
+	ctx:Ctx,
+	val:Val,
+	is_source_?:is_source__T
+):void
 export {
 	be__set as ctx__set,
 }
@@ -64,7 +75,8 @@ export declare function be__val_<
 	Val extends NonNullable<unknown>
 >(be_OR_id:Be<Val>|string, ctx:Ctx):Val|unknown|null
 export declare type MapCtx = Map<Be<any>|string|symbol, unknown>
-export interface NestedMapCtx extends Array<NestedMapCtx|MapCtx> {}
+export interface NestedMapCtx extends Array<NestedMapCtx|MapCtx> {
+}
 export type Ctx = MapCtx|NestedMapCtx
 export declare type Be<
 	Val extends NonNullable<unknown>,
