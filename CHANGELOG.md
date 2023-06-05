@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 28.0.1
+
+### Patch Changes
+
+- Be: arguments: opts=>params: params?:be_params_T
+
 ## 28.0.0
 
 ### Major Changes

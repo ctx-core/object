@@ -82,7 +82,7 @@ export type Ctx = MapCtx|NestedMapCtx
 export declare type Be<
 	Val extends NonNullable<unknown>,
 	ctx_T extends Ctx = Ctx
-> = (ctx:ctx_T, opts?:be_params_T)=>Val
+> = (ctx:ctx_T, params?:be_params_T)=>Val
 export declare type B<
 	Val extends NonNullable<unknown>,
 	ctx_T extends Ctx = Ctx
