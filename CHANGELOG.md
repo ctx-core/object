@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 28.0.2
+
+### Patch Changes
+
+- be*: fix: ctx passed into val* matches is*source* ctx
+
 ## 28.0.1
 
 ### Patch Changes

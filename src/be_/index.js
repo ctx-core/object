@@ -110,7 +110,7 @@ export function be_(
 				}: circular dependency:\n${pending_value_a.join('\n')}`)
 		}
 		pending.set(be, id || be)
-		const val = val_(argv__ctx, be, params)
+		const val = val_(ctx, be, params)
 		if (ctx.get(be) === undefined) {
 			if (val === undefined) {
 				throw new Error(
