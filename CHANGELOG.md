@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 28.0.3
+
+### Patch Changes
+
+- be*: fix: val* receives Ctx instead of MapCtx
+
 ## 28.0.2
 
 ### Patch Changes

@@ -64,7 +64,7 @@ test('be_|is_source_', ()=>{
 		}
 	})
 	equal(root_(ctx), 1)
-	equal(be__ctx_a, [ctx1])
+	equal(be__ctx_a, [[ctx0, ctx1]])
 	equal(ctx0.has(root_), false)
 	equal(ctx1.has(root_), true)
 })
@@ -80,7 +80,7 @@ test('be_|Ctx|NestedMapCtx', ()=>{
 	ctx1.set('matching', true)
 	const ctx = [ctx0, ctx1]
 	const nested__ctx_ = be_<Ctx>('nested__ctx_', ctx=>[ctx])
-	equal(nested__ctx_(ctx), [ctx0])
+	equal(nested__ctx_(ctx), [[ctx0, ctx1]])
 })
 test('be__set', ()=>{
 	const ctx0 = ctx_()
