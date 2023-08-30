@@ -107,7 +107,10 @@ export function be_(
 			throw new Error(
 				`be_: ${
 					String(id)
-				}: circular dependency:\n${pending_value_a.join('\n')}`)
+				}: circular dependency:\n${pending_value_a.map(pending_value=>
+					typeof pending_value === 'function'
+					? 'Function'
+					: pending_value).join('\n')}`)
 		}
 		pending.set(be, id || be)
 		const val = val_(argv__ctx, be, params)

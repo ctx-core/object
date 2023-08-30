@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 28.0.5
+
+### Patch Changes
+
+- be\_: circular dependency error: pending_value_a members that are functions are printed to console.error as 'function'
+
 ## 28.0.4
 
 ### Patch Changes
