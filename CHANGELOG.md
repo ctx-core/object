@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 28.1.0
+
+### Minor Changes
+
+- Be: + &{ id?:string }
+
 ## 28.0.7
 
 ### Patch Changes

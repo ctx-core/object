@@ -4,9 +4,6 @@ const pending_sym = Symbol.for('pending')
 const be_M_is_source_ = globalThis__prop__ensure(
 	Symbol.for('be_M_is_source_'),
 	()=>new WeakMap())
-const be_M_id = globalThis__prop__ensure(
-	Symbol.for('be_M_id'),
-	()=>new WeakMap())
 /** @typedef {import('./index.d.ts').Be}Be */
 /** @typedef {import('./index.d.ts').Ctx}Ctx */
 /** @typedef {import('./index.d.ts').MapCtx}MapCtx */
@@ -136,14 +133,7 @@ export function be_(
 		return val
 	}
 	be_M_is_source_.set(be, is_source_)
-	if (id) {
-		if (be_M_id.has(id)) {
-			throw new Error(`be_: ${
-				String(id)
-			}: already registered to another Be`)
-		}
-		be_M_id.set(be, id)
-	}
+	be.id = id
 	return be
 }
 export {
@@ -187,7 +177,7 @@ export function ctx__set(
 	const source__map_ctx = source__map_ctx_(ctx, is_source_)
 	if (!source__map_ctx) return
 	source__map_ctx.set(be_OR_id, val)
-	const id = be_M_id.get(be_OR_id)
+	const { id } = be_OR_id
 	if (id) {
 		source__map_ctx.set(id, val)
 	}
@@ -221,7 +211,7 @@ export function ctx__delete(
 		/** @type {MapCtx} */
 		const map_ctx = /** @type {any} */ctx
 		if (is_source_(map_ctx, ctx)) {
-			const id = be_M_id.get(be_OR_id)
+			const { id } = be_OR_id
 			if (id) {
 				map_ctx.delete(id)
 			}
