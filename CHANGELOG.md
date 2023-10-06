@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 28.2.0
+
+### Minor Changes
+
+- - ctx\__new: aliased by ctx_
+
 ## 28.1.0
 
 ### Minor Changes

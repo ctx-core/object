@@ -1,8 +1,8 @@
 import { test } from 'uvu'
 import { equal } from 'uvu/assert'
-import { be_, be_prop_pair_, ctx_, type MapCtx } from '../index.js'
+import { be_, be_prop_pair_, ctx__new, type MapCtx } from '../index.js'
 test('be_prop_pair_|+base_name|+atom__new|+be__params', ()=>{
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	const is_source_ = (map_ctx:MapCtx)=>map_ctx === ctx
 	let custom__be__called = false
 	const custom__be_ = ((...argv:Parameters<typeof be_>)=>{
@@ -21,12 +21,12 @@ test('be_prop_pair_|+base_name|+atom__new|+be__params', ()=>{
 		}
 	)
 	equal(custom__be__called, true)
-	equal(foobar_([ctx_(), ctx]), 1)
-	foobar__set([ctx_(), ctx], 2)
-	equal(foobar_([ctx_(), ctx]), 2)
+	equal(foobar_([ctx__new(), ctx]), 1)
+	foobar__set([ctx__new(), ctx], 2)
+	equal(foobar_([ctx__new(), ctx]), 2)
 })
 test('be_prop_pair_|+base_name|+atom__new|-be__params', ()=>{
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	const [
 		foobar_,
 		foobar__set,
@@ -39,7 +39,7 @@ test('be_prop_pair_|+base_name|+atom__new|-be__params', ()=>{
 	equal(foobar_(ctx), 2)
 })
 test('be_prop_pair_|+base_name|-atom__new|+be__params', ()=>{
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	const is_source_ = (map_ctx:MapCtx)=>map_ctx === ctx
 	let custom__be__called = false
 	const custom__be_ = ((...argv:Parameters<typeof be_>)=>{
@@ -54,22 +54,22 @@ test('be_prop_pair_|+base_name|-atom__new|+be__params', ()=>{
 		be_: custom__be_,
 	})
 	equal(custom__be__called, true)
-	equal(foobar_([ctx_(), ctx]), null)
-	foobar__set([ctx_(), ctx], 2)
-	equal(foobar_([ctx_(), ctx]), 2)
+	equal(foobar_([ctx__new(), ctx]), null)
+	foobar__set([ctx__new(), ctx], 2)
+	equal(foobar_([ctx__new(), ctx]), 2)
 })
 test('be_prop_pair_|+base_name|-atom__new|-be__params', ()=>{
 	const [
 		foobar_,
 		foobar__set,
 	] = be_prop_pair_('foobar')
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	equal(foobar_(ctx), null)
 	foobar__set(ctx, 2)
 	equal(foobar_(ctx), 2)
 })
 test('be_prop_pair_|-base_name|+atom__new|+be__params', ()=>{
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	const is_source_ = (map_ctx:MapCtx)=>map_ctx === ctx
 	let custom__be__called = false
 	const custom__be_ = ((...argv:Parameters<typeof be_>)=>{
@@ -87,9 +87,9 @@ test('be_prop_pair_|-base_name|+atom__new|+be__params', ()=>{
 			be_: custom__be_,
 		})
 	equal(custom__be__called, true)
-	equal(foobar_([ctx_(), ctx]), 1)
-	foobar__set([ctx_(), ctx], 2)
-	equal(foobar_([ctx_(), ctx]), 2)
+	equal(foobar_([ctx__new(), ctx]), 1)
+	foobar__set([ctx__new(), ctx], 2)
+	equal(foobar_([ctx__new(), ctx]), 2)
 })
 test('be_prop_pair_|-base_name|+atom__new|-be__params', ()=>{
 	const [
@@ -97,13 +97,13 @@ test('be_prop_pair_|-base_name|+atom__new|-be__params', ()=>{
 		foobar__set,
 	] = be_prop_pair_(undefined, ()=>
 		1)
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	equal(foobar_(ctx), 1)
 	foobar__set(ctx, 2)
 	equal(foobar_(ctx), 2)
 })
 test('be_prop_pair_|-base_name|-atom__new|+be__params', ()=>{
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	const is_source_ = (map_ctx:MapCtx)=>map_ctx === ctx
 	let custom__be__called = false
 	const custom__be_ = ((...argv:Parameters<typeof be_>)=>{
@@ -118,16 +118,16 @@ test('be_prop_pair_|-base_name|-atom__new|+be__params', ()=>{
 		be_: custom__be_,
 	})
 	equal(custom__be__called, true)
-	equal(foobar_([ctx_(), ctx]), null)
-	foobar__set([ctx_(), ctx], 2)
-	equal(foobar_([ctx_(), ctx]), 2)
+	equal(foobar_([ctx__new(), ctx]), null)
+	foobar__set([ctx__new(), ctx], 2)
+	equal(foobar_([ctx__new(), ctx]), 2)
 })
 test('be_prop_pair_|-base_name|-atom__new|-be__params', ()=>{
 	const [
 		foobar_,
 		foobar__set,
 	] = be_prop_pair_()
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	equal(foobar_(ctx), null)
 	foobar__set(ctx, 2)
 	equal(foobar_(ctx), 2)

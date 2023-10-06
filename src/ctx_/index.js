@@ -4,9 +4,10 @@ const ctx_sym = Symbol.for('ctx')
  * @returns {import('../be_').MapCtx}
  * @private
  */
-export function ctx_() {
+export function ctx__new() {
 	return new Map([[ctx_sym, true]])
 }
+export { ctx__new as ctx_ }
 /**
  * @param {unknown}val
  * @returns {boolean}

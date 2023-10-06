@@ -1,8 +1,8 @@
 import { test } from 'uvu'
 import { equal } from 'uvu/assert'
-import { be_, be__delete, be__set, be__val_, type Ctx, ctx_, ctx__delete, ctx__set, MapCtx } from '../index.js'
+import { be_, be__delete, be__set, be__val_, type Ctx, ctx__new, ctx__delete, ctx__set, MapCtx } from '../index.js'
 test('be_|Map', ()=>{
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	let incrementer_num = 0
 	const incrementer = ()=>++incrementer_num
 	const root_ = be_('root_', ()=>incrementer())
@@ -16,8 +16,8 @@ test('be_|Map', ()=>{
 	equal(ctx.get('child1_'), 4)
 })
 test('be_|simple array', ()=>{
-	const ctx0 = ctx_()
-	const ctx1 = ctx_()
+	const ctx0 = ctx__new()
+	const ctx1 = ctx__new()
 	const ctx = [ctx0, ctx1]
 	const root_ = be_('root_', ()=>1)
 	equal(root_(ctx1), 1)
@@ -30,10 +30,10 @@ test('be_|simple array', ()=>{
 	equal(ctx1.has(child_), false)
 })
 test('be_|nested array', ()=>{
-	const ctx0 = ctx_()
-	const ctx1 = ctx_()
-	const ctx2 = ctx_()
-	const ctx3 = ctx_()
+	const ctx0 = ctx__new()
+	const ctx1 = ctx__new()
+	const ctx2 = ctx__new()
+	const ctx3 = ctx__new()
 	const ctx = [[[ctx0], ctx1], [ctx2, ctx3]]
 	const root_ = be_('root_', ()=>1)
 	equal(root_(ctx3), 1)
@@ -50,8 +50,8 @@ test('be_|nested array', ()=>{
 	equal(ctx3.has(child_), false)
 })
 test('be_|is_source_', ()=>{
-	const ctx0 = ctx_()
-	const ctx1 = ctx_()
+	const ctx0 = ctx__new()
+	const ctx1 = ctx__new()
 	ctx1.set('matching', true)
 	const ctx = [ctx0, ctx1]
 	const be__ctx_a:MapCtx[] = []
@@ -69,27 +69,27 @@ test('be_|is_source_', ()=>{
 	equal(ctx1.has(root_), true)
 })
 test('be_|Ctx generic type', ()=>{
-	const valid_ctx = ctx_() as test_ctx_T
+	const valid_ctx = ctx__new() as test_ctx_T
 	const val_ = be_<boolean, test_ctx_T>('val_', ()=>true)
 	val_(valid_ctx)
 	// val_(ctx_()) // type error
 })
 test('be_|Ctx|NestedMapCtx', ()=>{
-	const ctx0 = ctx_()
-	const ctx1 = ctx_()
+	const ctx0 = ctx__new()
+	const ctx1 = ctx__new()
 	ctx1.set('matching', true)
 	const ctx = [ctx0, ctx1]
 	const nested__ctx_ = be_<Ctx>('nested__ctx_', ctx=>[ctx])
 	equal(nested__ctx_(ctx), [[ctx0, ctx1]])
 })
 test('be__set', ()=>{
-	const ctx0 = ctx_()
+	const ctx0 = ctx__new()
 	const val_ = be_<number>('val_', ()=>0, {
 		is_source_: map_ctx=>map_ctx === ctx0
 	})
 	be__set(val_, ctx0, 1)
 	equal(val_(ctx0), 1)
-	const ctx1 = ctx_()
+	const ctx1 = ctx__new()
 	const ctx_a = [ctx1, ctx0]
 	be__set(val_, ctx_a, 2)
 	equal(val_(ctx_a), 2)
@@ -97,10 +97,10 @@ test('be__set', ()=>{
 	equal(ctx1.has(val_), false)
 })
 test('ctx__set', ()=>{
-	const ctx0 = ctx_()
+	const ctx0 = ctx__new()
 	ctx__set(ctx0, 'key', 1)
 	equal(ctx0.get('key'), 1)
-	const ctx1 = ctx_()
+	const ctx1 = ctx__new()
 	const ctx_a = [ctx1, ctx0]
 	ctx__set(ctx_a, 'key', 2,
 		(map_ctx:MapCtx)=>map_ctx.get('key') != null)
@@ -108,7 +108,7 @@ test('ctx__set', ()=>{
 	equal(ctx1.has('key'), false)
 })
 test('be__delete', ()=>{
-	const ctx0 = ctx_()
+	const ctx0 = ctx__new()
 	const val_ = be_<boolean>('val_', ()=>true)
 	be__delete(val_, ctx0)
 	equal(ctx0.has(val_), false)
@@ -119,7 +119,7 @@ test('be__delete', ()=>{
 	be__delete(val_, ctx0)
 	equal(ctx0.has(val_), false)
 	equal(ctx0.has('val_'), false)
-	const ctx1 = ctx_()
+	const ctx1 = ctx__new()
 	const nested__ctx = [ctx0, ctx1]
 	equal(val_(ctx0), true)
 	equal(val_(ctx1), true)
@@ -133,14 +133,14 @@ test('be__delete', ()=>{
 	equal(ctx1.has('val_'), false)
 })
 test('ctx__delete', ()=>{
-	const ctx0 = ctx_()
+	const ctx0 = ctx__new()
 	ctx__delete(ctx0, 'key')
 	equal(ctx0.has('key'), false)
 	ctx0.set('key', true)
 	equal(ctx0.get('key'), true)
 	ctx__delete(ctx0, 'key')
 	equal(ctx0.has('key'), false)
-	const ctx1 = ctx_()
+	const ctx1 = ctx__new()
 	const nested__ctx = [ctx0, ctx1]
 	ctx0.set('key', true)
 	ctx1.set('key', true)
@@ -151,7 +151,7 @@ test('ctx__delete', ()=>{
 	equal(ctx1.has('key'), false)
 })
 test('be__val_', ()=>{
-	const ctx = ctx_()
+	const ctx = ctx__new()
 	const val_ = be_<boolean>('val_', ()=>true)
 	equal(val_(ctx), true)
 	equal(be__val_(val_, ctx), true)

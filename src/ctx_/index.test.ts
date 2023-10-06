@@ -1,10 +1,10 @@
 import { test } from 'uvu'
 import { equal } from 'uvu/assert'
-import { ctx_, is_ctx_ } from '../index.js'
+import { ctx__new, is_ctx_ } from '../index.js'
 test('is_ctx_', ()=>{
-	const ctx0 = ctx_()
-	const ctx1 = ctx_()
-	const ctx2 = ctx_()
+	const ctx0 = ctx__new()
+	const ctx1 = ctx__new()
+	const ctx2 = ctx__new()
 	const not_ctx = {}
 	equal(is_ctx_(ctx0), true)
 	equal(is_ctx_([ctx0, [ctx1], [[ctx2]]]), true)
