@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 28.2.1
+
+### Patch Changes
+
+- tsx: ^3.13.0 -> ^3.14.0
+- Updated dependencies
+  - @ctx-core/function@21.20.2
+
 ## 28.2.0
 
 ### Minor Changes
