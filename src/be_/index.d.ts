@@ -32,7 +32,7 @@ export declare function be_<
 	ctx_T extends Ctx = Ctx
 >(
 	id:string,
-	val_:be__val__T<Val, MapCtx>,
+	val_:be__val__T<Val, ctx_T>,
 	be__params?:be__params_T
 ):Be<Val, ctx_T>
 export {

@@ -54,7 +54,7 @@ test('be_|is_source_', ()=>{
 	const ctx1 = ctx__new()
 	ctx1.set('matching', true)
 	const ctx = [ctx0, ctx1]
-	const be__ctx_a:MapCtx[] = []
+	const be__ctx_a:Ctx[] = []
 	const root_ = be_('root_', ctx=>{
 		be__ctx_a.push(ctx)
 		return 1

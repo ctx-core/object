@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 28.2.2
+
+### Patch Changes
+
+- be*: arguments: fix type that was too narrow: val*:be**val**T<Val, ctx_T>
+
 ## 28.2.1
 
 ### Patch Changes

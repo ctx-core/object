@@ -39,31 +39,31 @@ export function globalThis__be_(
  *
  * Returns a function to ensure that a member id is defined on a ctx object,
  * otherwise it creates the value using the val_ factory function.
- * @param {string|be__val__T}id_OR_val_
- * @param {be__val__T|be__params_T}[val__OR_be__params]
+ * @param {string|be__val__T}id_OR_val__new
+ * @param {be__val__T|be__params_T}[val__new_OR_be__params]
  * @param {be__params_T}[be__params]
  * @returns {Be}
  * @private
  */
 export function be_(
-	id_OR_val_,
-	val__OR_be__params,
+	id_OR_val__new,
+	val__new_OR_be__params,
 	be__params
 ) {
 	/** @type {string} */
 	const id =
-		typeof id_OR_val_ === 'string'
-		? id_OR_val_
+		typeof id_OR_val__new === 'string'
+		? id_OR_val__new
 		: null
 	/** @type {be__val__T} */
-	const val_ =
-		typeof id_OR_val_ === 'string'
-		? val__OR_be__params
-		: id_OR_val_
+	const val__new =
+		typeof id_OR_val__new === 'string'
+		? val__new_OR_be__params
+		: id_OR_val__new
 	be__params =
-		typeof id_OR_val_ === 'string'
+		typeof id_OR_val__new === 'string'
 		? be__params
-		: val__OR_be__params
+		: val__new_OR_be__params
 	const is_source_ =
 		be__params
 		? be__params.is_source_
@@ -110,7 +110,7 @@ export function be_(
 					: pending_value).join('\n')}`)
 		}
 		pending.set(be, id || be)
-		const val = val_(argv__ctx, be, params)
+		const val = val__new(argv__ctx, be, params)
 		if (ctx.get(be) === undefined) {
 			if (val === undefined) {
 				throw new Error(
@@ -121,7 +121,7 @@ export function be_(
 					}: val_ must return a non-undefined value. ${
 						id
 						? ''
-						: '\n' + val_.toString()
+						: '\n' + val__new.toString()
 					}`)
 			}
 			ctx.set(be, val)
