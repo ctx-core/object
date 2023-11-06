@@ -1,5 +1,18 @@
 # @ctx-core/object
 
+## 29.0.0
+
+### Major Changes
+
+- be**is*source*→be**is_source\_\_
+
+### Minor Changes
+
+- + be_arg_triple
+- be\_: initial value: allow undefined
+- + be__has_
+- + be__has__ctx_
+
 ## 28.2.2
 
 ### Patch Changes

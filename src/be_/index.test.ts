@@ -1,6 +1,17 @@
 import { test } from 'uvu'
 import { equal } from 'uvu/assert'
-import { be_, be__delete, be__set, be__val_, type Ctx, ctx__new, ctx__delete, ctx__set, MapCtx } from '../index.js'
+import {
+	be_,
+	be__delete,
+	be__set,
+	be__val_,
+	type Ctx,
+	ctx__new,
+	ctx__delete,
+	ctx__set,
+	type MapCtx,
+	be__has_, be__has__ctx_
+} from '../index.js'
 test('be_|Map', ()=>{
 	const ctx = ctx__new()
 	let incrementer_num = 0
@@ -84,7 +95,7 @@ test('be_|Ctx|NestedMapCtx', ()=>{
 })
 test('be__set', ()=>{
 	const ctx0 = ctx__new()
-	const val_ = be_<number>('val_', ()=>0, {
+	const val_ = be_<number|undefined>('val_', ()=>undefined, {
 		is_source_: map_ctx=>map_ctx === ctx0
 	})
 	be__set(val_, ctx0, 1)
@@ -92,8 +103,8 @@ test('be__set', ()=>{
 	const ctx1 = ctx__new()
 	const ctx_a = [ctx1, ctx0]
 	be__set(val_, ctx_a, 2)
-	equal(val_(ctx_a), 2)
 	equal(val_(ctx0), 2)
+	equal(val_(ctx_a), 2)
 	equal(ctx1.has(val_), false)
 })
 test('ctx__set', ()=>{
@@ -150,10 +161,37 @@ test('ctx__delete', ()=>{
 	equal(ctx0.has('key'), false)
 	equal(ctx1.has('key'), false)
 })
+test('be__has_', ()=>{
+	const ctx0 = ctx__new()
+	ctx__delete(ctx0, 'key')
+	equal(be__has_('key', ctx0), false)
+	ctx0.set('key', true)
+	equal(be__has_('key', ctx0), true)
+	ctx__delete(ctx0, 'key')
+	equal(be__has_('key', ctx0), false)
+	const ctx1 = ctx__new()
+	const nested__ctx = [ctx0, ctx1]
+	ctx1.set('key', true)
+	equal(be__has_('key', nested__ctx), true)
+})
+test('be__has__ctx_', ()=>{
+	const ctx0 = ctx__new()
+	ctx__delete(ctx0, 'key')
+	equal(be__has__ctx_('key', ctx0), null)
+	ctx0.set('key', true)
+	equal(be__has__ctx_('key', ctx0), ctx0)
+	ctx__delete(ctx0, 'key')
+	equal(be__has__ctx_('key', ctx0), null)
+	const ctx1 = ctx__new()
+	const nested__ctx = [ctx0, ctx1]
+	ctx1.set('key', true)
+	equal(be__has__ctx_('key', nested__ctx), ctx1)
+})
 test('be__val_', ()=>{
 	const ctx = ctx__new()
 	const val_ = be_<boolean>('val_', ()=>true)
 	equal(val_(ctx), true)
+	equal(ctx.get(val_), true)
 	equal(be__val_(val_, ctx), true)
 	be__set(val_, ctx, false)
 	equal(val_(ctx), false)
