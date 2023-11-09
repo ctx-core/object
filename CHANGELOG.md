@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 30.0.0
+
+### Major Changes
+
+- ctx\__delete: - is_source_ argument: used internally
+
 ## 29.1.0
 
 ### Minor Changes

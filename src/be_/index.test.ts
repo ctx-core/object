@@ -143,7 +143,7 @@ test('be__delete', ()=>{
 	equal(ctx1.has(val_), false)
 	equal(ctx1.has('val_'), false)
 })
-test('ctx__delete', ()=>{
+test('ctx__delete|id', ()=>{
 	const ctx0 = ctx__new()
 	ctx__delete(ctx0, 'key')
 	equal(ctx0.has('key'), false)
@@ -160,6 +160,52 @@ test('ctx__delete', ()=>{
 	ctx__delete(nested__ctx, 'key')
 	equal(ctx0.has('key'), false)
 	equal(ctx1.has('key'), false)
+})
+test('ctx__delete|be', ()=>{
+	const ctx0 = ctx__new()
+	const num_ = be_(()=>1)
+	ctx__delete(ctx0, num_)
+	equal(ctx0.has(num_), false)
+	num_(ctx0)
+	equal(ctx0.has(num_), true)
+	ctx__delete(ctx0, num_)
+	equal(ctx0.has(num_), false)
+	num_(ctx0)
+	equal(ctx0.has(num_), true)
+	ctx__delete(ctx0, num_)
+	equal(ctx0.has(num_), false)
+	const ctx1 = ctx__new()
+	ctx1.set('ctx1', true)
+	const nested__ctx = [ctx0, ctx1]
+	num_(ctx0)
+	num_(ctx1)
+	equal(ctx0.has(num_), true)
+	equal(ctx1.has(num_), true)
+	ctx__delete(nested__ctx, num_)
+	equal(ctx0.has(num_), false)
+	equal(ctx1.has(num_), false)
+	num_(ctx0)
+	num_(ctx1)
+	equal(ctx0.has(num_), true)
+	equal(ctx1.has(num_), true)
+	ctx__delete(nested__ctx, num_)
+	equal(ctx0.has(num_), false)
+	equal(ctx1.has(num_), false)
+	const is_source__num_ =
+		be_(()=>1,
+			{ is_source_: ctx=>!!ctx.get('ctx1') })
+	is_source__num_(nested__ctx)
+	equal(ctx0.has(is_source__num_), false)
+	equal(ctx1.has(is_source__num_), true)
+	ctx__delete(nested__ctx, is_source__num_)
+	equal(ctx0.has(is_source__num_), false)
+	equal(ctx1.has(is_source__num_), false)
+	is_source__num_(nested__ctx)
+	equal(ctx0.has(is_source__num_), false)
+	equal(ctx1.has(is_source__num_), true)
+	ctx__delete(nested__ctx, is_source__num_)
+	equal(ctx0.has(is_source__num_), false)
+	equal(ctx1.has(is_source__num_), false)
 })
 test('be__has_', ()=>{
 	const ctx0 = ctx__new()
@@ -199,4 +245,6 @@ test('be__val_', ()=>{
 })
 test.run()
 declare const test_ctx_sym:unique symbol
-type test_ctx_T = Ctx&{ [test_ctx_sym]:any }
+type test_ctx_T = Ctx&{
+	[test_ctx_sym]:any
+}

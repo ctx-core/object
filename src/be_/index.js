@@ -178,7 +178,7 @@ export function ctx__set(
  * @private
  */
 export function be__delete(be, ctx) {
-	ctx__delete(ctx, be, be__is_source__(be))
+	ctx__delete(ctx, be)
 }
 /**
  * @param {Ctx}ctx
@@ -188,9 +188,10 @@ export function be__delete(be, ctx) {
 export function ctx__delete(
 	ctx,
 	be_OR_id,
-	is_source_
 ) {
-	if (!is_source_) is_source_ = ()=>true
+	const is_source_ =
+		be__is_source__(be_OR_id)
+		|| (()=>true)
 	if (isArray(ctx)) {
 		for (let i = 0; i < ctx.length; i++) {
 			if (is_source_(ctx[i], ctx)) {
