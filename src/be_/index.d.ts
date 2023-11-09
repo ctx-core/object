@@ -42,7 +42,7 @@ export {
 }
 export declare function be__is_source_<
 	ctx_T extends Ctx = Ctx
->(be:Be<any>):(map_ctx:MapCtx, ctx:ctx_T)=>boolean
+>(be:Be<unknown>):(map_ctx:MapCtx, ctx:ctx_T)=>boolean
 export declare function source__map_ctx_<
 	ctx_T extends Ctx = Ctx
 >(ctx:Ctx, is_source_:is_source__T):MapCtx
@@ -80,15 +80,15 @@ export declare function ctx__delete<
 ):void
 export declare function be__has_<
 	ctx_T extends Ctx = Ctx
->(be_OR_id:Be<any>|string, ctx:ctx_T):boolean
+>(be_OR_id:Be<unknown>|string, ctx:ctx_T):boolean
 export declare function be__has__ctx_<
 	ctx_T extends Ctx = Ctx
->(be_OR_id:Be<any>|string, ctx:ctx_T):MapCtx
+>(be_OR_id:Be<unknown>|string, ctx:ctx_T):MapCtx
 export declare function be__val_<
 	Val,
 	ctx_T extends Ctx = Ctx
 >(be_OR_id:Be<Val>|string, ctx:ctx_T):Val|unknown|null
-export declare type MapCtx = Map<Be<any>|string|symbol, unknown>
+export declare type MapCtx = Map<Be<unknown>|string|symbol, unknown>
 export interface NestedMapCtx extends Array<NestedMapCtx|MapCtx> {
 }
 export type Ctx = MapCtx|NestedMapCtx

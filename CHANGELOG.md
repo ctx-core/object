@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 29.1.0
+
+### Minor Changes
+
+- Be<unknown> instead of Be<any>:
+
+      be__is_source_
+      be__has_
+      be__has__ctx_
+      MapCtx
+
 ## 29.0.0
 
 ### Major Changes
@@ -8,10 +19,10 @@
 
 ### Minor Changes
 
-- + be_arg_triple
+- - be_arg_triple
 - be\_: initial value: allow undefined
-- + be__has_
-- + be__has__ctx_
+- - be\__has_
+- - be**has**ctx\_
 
 ## 28.2.2
 
