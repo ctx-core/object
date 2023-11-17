@@ -1,5 +1,27 @@
 # @ctx-core/object
 
+## 30.3.0
+
+### Minor Changes
+
+- - prototype\_\_set
+- - defineProperty
+- - getPrototypeOf: aliased by prototype\_
+- - defineProperties
+- - setPrototypeOf: aliased by prototype\_\_set
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - ctx-core@2.4.0
+
 ## 30.2.0
 
 ### Minor Changes
