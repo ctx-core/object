@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 30.4.3
+
+### Patch Changes
+
+- be\_: + be\_\_debug: extracted error checking: - 67B
+- Updated dependencies
+  - ctx-core@3.2.2
+
 ## 30.4.2
 
 ### Patch Changes
