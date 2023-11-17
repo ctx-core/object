@@ -1,5 +1,14 @@
 # @ctx-core/object
 
+## 30.3.1
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - ctx-core@3.0.0
+
 ## 30.3.0
 
 ### Minor Changes
