@@ -1,5 +1,20 @@
 # @ctx-core/object
 
+## 30.4.0
+
+### Minor Changes
+
+- be\_: shorten error messages
+
+  ctx\__delete: - is_source_ check
+
+  size-limit: - 135B
+
+### Patch Changes
+
+- Updated dependencies
+  - ctx-core@3.1.0
+
 ## 30.3.1
 
 ### Patch Changes
