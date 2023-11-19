@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 31.0.1
+
+### Patch Changes
+
+- tsx: ^4.1.3 -> ^4.1.4
+
 ## 31.0.0
 
 ### Major Changes
