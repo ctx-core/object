@@ -20,9 +20,7 @@
 - - be\_\_config_T
 - be\_: + ∋ be\_\_config_T:
 
-      + .id__set
-      + .expired__def
-      + .is_source__def
+      + .config
 
 ### Patch Changes
 
