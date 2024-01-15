@@ -1,5 +1,11 @@
 # @ctx-core/object
 
+## 31.1.69
+
+### Patch Changes
+
+- ctx-core: ^5.18.7 -> ^5.18.8
+
 ## 31.1.68
 
 ### Patch Changes
