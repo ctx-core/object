@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 31.2.0
+
+### Minor Changes
+
+- ondelete_Be: .ondelete: returns ondelete_Be<val_T, ns_T, ctx_T>
+
+### Patch Changes
+
+- Updated dependencies
+  - ctx-core@5.21.0
+
 ## 31.1.74
 
 ### Patch Changes
