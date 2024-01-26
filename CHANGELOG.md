@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 31.2.18
+
+### Patch Changes
+
+- be\_: argument type: ...config→...config_arg_a
+- Updated dependencies
+  - ctx-core@5.31.1
+
 ## 31.2.17
 
 ### Patch Changes
