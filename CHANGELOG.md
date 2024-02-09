@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 32.1.0
+
+### Minor Changes
+
+- wide_ctx_T<ns_union_T extends string = ''>: default ns_union_T to ''
+
+### Patch Changes
+
+- Updated dependencies
+  - ctx-core@6.1.0
+
 ## 32.0.0
 
 ### Major Changes
