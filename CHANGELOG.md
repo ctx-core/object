@@ -1,5 +1,21 @@
 # @ctx-core/object
 
+## 32.0.0
+
+### Major Changes
+
+- type rename:
+
+      Ctx→ctx_T
+      Ctx_wide_T→wide_ctx_T
+      Ctx_s_T→ctx_s_T
+      Ctx_s_wide_T→wide_ctx_s_T
+
+### Patch Changes
+
+- Updated dependencies
+  - ctx-core@6.0.0
+
 ## 31.3.11
 
 ### Patch Changes
