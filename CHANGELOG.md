@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 32.1.5
+
+### Patch Changes
+
+- ctx-core: ^6.2.1 -> ^6.2.2
+- Updated dependencies
+  - ctx-core@6.2.3
+
 ## 32.1.4
 
 ### Patch Changes
