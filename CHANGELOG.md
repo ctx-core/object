@@ -1,5 +1,18 @@
 # @ctx-core/object
 
+## 32.2.0
+
+### Minor Changes
+
+- - json\_\_parse
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - ctx-core@6.4.0
+
 ## 32.1.6
 
 ### Patch Changes
