@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 32.3.0
+
+### Minor Changes
+
+- wide_ctx_T: widen type: fix incorrect type errors: - ctx_T&
+
+### Patch Changes
+
+- Updated dependencies
+  - ctx-core@6.6.0
+
 ## 32.2.17
 
 ### Patch Changes
