@@ -1,5 +1,13 @@
 # @ctx-core/object
 
+## 32.3.1
+
+### Patch Changes
+
+- package.json: author: url,email
+- Updated dependencies
+  - ctx-core@6.6.1
+
 ## 32.3.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/object",
-	"version": "32.3.0",
+	"version": "32.3.1",
 	"description": "ctx-core object",
 	"keywords": [
 		"ctx-core",
@@ -15,7 +15,11 @@
 		"url": "https://github.com/ctx-core/object.git"
 	},
 	"license": "Apache-2.0",
-	"author": "Brian Takita",
+	"author": {
+		"name": "Brian Takita",
+		"url": "https://briantakita.me",
+		"email": "info+ctx-core-nav-ui-svelte@briantakita.me"
+	},
 	"type": "module",
 	"types": "./index.d.ts",
 	"exports": {
@@ -33,7 +37,7 @@
 		"disable:test:unit:coverage": "c8 pnpm test:unit"
 	},
 	"dependencies": {
-		"ctx-core": "^6.6.0"
+		"ctx-core": "^6.6.1"
 	},
 	"devDependencies": {
 		"c8": "^9.1.0",
