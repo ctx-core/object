@@ -1,5 +1,16 @@
 # @ctx-core/object
 
+## 32.4.0
+
+### Minor Changes
+
+- - ref\_\_bind
+
+### Patch Changes
+
+- Updated dependencies
+  - ctx-core@7.2.0
+
 ## 32.3.18
 
 ### Patch Changes
